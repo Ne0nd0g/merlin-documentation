@@ -6,6 +6,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 Use `sphinx-build --version` to determine the current version of sphinx in use
 
+## 2.0.0 - 2023-10-27
+
+### Added 
+
+- Merlin Command Line Interface (CLI) help
+  - Added `cli`, `commands`, and `listeners` help pages
+- Top level FAQ section
+
+### Changed
+
+- Updated documentation and associated commands to support Merlin version 2.0.0
+- Moved the menu commands from the Server section to the CLI section
+- Condensed Quick Start into a single page
+- Updated the Custom Build section with a Merlin Agent makefile variables
+- Moved logging information to individual sections like Server and CLI
+
 ## 1.0.0 - 2023-05-15
 
 ### Added

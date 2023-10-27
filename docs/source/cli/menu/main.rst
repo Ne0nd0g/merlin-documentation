@@ -1,85 +1,107 @@
 Main Menu
 =========
 
-help
-----
+After executing the Merlin server binary, interaction continues from the Merlin prompt ``Merlin»``.
+This is the default menu presented when starting the Merlin server.
+To view available commands for this menu, type `help` and press enter.
+Tab completion can be used at any time to provide the user a list of commands that can be selected.
 
-After executing the Merlin server binary, interaction continues from the Merlin prompt ``Merlin»``. This is the default menu presented when starting the Merlin server. To view available commands for this menu, type `help` and press enter. Tab completion can be used at any time to provide the user a list of commands that can be selected.
-
-| Merlin is equipped with a tab completion system that can be used to see what commands are available at any given time. Hit double tab to get a list of all available commands for the current menu context.
+| Merlin is equipped with a tab completion system that can be used to see what commands are available at any given time.
+Hit double tab to get a list of all available commands for the current menu context.
 
 .. code-block:: text
 
     Merlin» help
 
-       COMMAND  |          DESCRIPTION           |            OPTIONS
-    +-----------+--------------------------------+--------------------------------+
-      agent     | Interact with agents or list   | interact, list
-                | agents                         |
-      banner    | Print the Merlin banner        |
-      clear     | clears all unset jobs          |
-      group     | Add, remove, or list groups    | group <add | remove | list>
-                |                                | <group>
-      interact  | Interact with an agent         |
-      jobs      | Display all unfinished jobs    |
-      listeners | Move to the listeners menu     |
-      queue     | queue up commands for one, a   | queue <agentID> <command>
-                | group, or unknown agents       |
-      quit      | Exit and close the Merlin      | -y
+       COMMAND  |          DESCRIPTION           |             USAGE
+    ------------+--------------------------------+---------------------------------
+      !         | Execute a command on the local | ! command [args]
+                | system                         |
+      back      | Go to the main menu            | back
+      banner    | Display the Merlin ASCII art   | banner
+                | banner                         |
+      clear     | Cancel all Agent jobs that     | clear
+                | have not been sent             |
+      debug     | Switch debug output to the     | debug
+                | console on or off              |
+      group     | Add, list, or remove Agent     | group {add agentID groupName
+                | groupings                      | | list [groupName] |remove
+                |                                | agentID groupName}
+      interact  | Interact with an agent or a    | interact {agentID|listenerID}
+                | listener                       |
+      jobs      | Display all unfinished jobs    | jobs
+      listeners | Move to the listeners menu     | listeners
+      main      | Go to the Main menu            | main
+      modules   | Move to the modules menu       | modules
+      queue     | Queue up commands for one,     | queue {agentID|groupName}
+                | multiple, unknown agents, or a | command [args]
+                | group                          |
+      quit      | Stop and exit Merlin           | quit [-y]
+      reconnect | reconnect the CLI to a Merlin  | reconnect
                 | server                         |
-      remove    | Remove or delete a DEAD agent
-                | from the server
-      sessions  | Display a table of information |
-                | about all checked-in agent     |
+      remove    | Remove or delete an agent from | remove agentID
+                | the server so that it will     |
+                | not show up in the list of     |
+                | available agents.              |
+      sessions  | List established Agent         | sessions
                 | sessions                       |
-      socks     | Start a SOCKS5 listener        | [list, start, stop]
-                |                                | <interface:port> <agentID>
-      use       | Use a Merlin module            | module <module path>
-      version   | Print the Merlin server        |
-                | version                        |
-      !         | Execute a command on the host  | !<command> <args>
-                | operating system               |
-    Main Menu Help
 
-agent
------
+      socks     | Start, stop, or list a SOCKS5  | socks {list | start
+                | server on the Merlin server    | [interface:]port agentID |stop
+                |                                | [interface:]port agentID}
+      verbose   | Switch verbose output to the   | verbose
+                | console on or off              |
+      version   | Display the Merlin version     | version
 
-The ``agent`` command is used to interact with Merlin Agents. In most cases, the ``agent`` command is followed by a sub-command and then the agent's identifier. The agent identifiers are UUID version 4 strings. *The identifiers are long, but they can easily be filled in using Merlin's tab completion*. This ensures limited typing is required.
+    Visit the wiki for additional information https://merlin-c2.readthedocs.io/en/latest/server/menu/main.html
 
-Available agent sub-command are:
-* [list](#list)
-* [interact](#interact)
+!
+-
 
-list
-^^^^
+.. note::
+    USAGE: ``! command [args]``
 
-The ``list`` option for the agent command is used to provide a list of all the available agents.
+Any command that begins with a ``!`` (a.k.a bang or exclamation point) will be executed on host itself where the Merlin
+server is running. This is useful when you want simple information, such as your interface address, without having to
+open a new terminal.
 
-.. code-block:: text
-
-    Merlin» agent list
-
-    +--------------------------------------+---------------+-----------------+-----------+-----------+
-    |              AGENT GUID              |   PLATFORM    |      USER       |   HOST    | TRANSPORT |
-    +--------------------------------------+---------------+-----------------+-----------+-----------+
-    | 54a20389-4f8a-4e3f-9f8e-a0f686ce529e |  linux/amd64  |     root        | kali      |  HTTP/2   |
-    | c1090dbc-f2f7-4d90-a241-86e0c0217786 | windows/amd64 |   ACME\Dade     | WIN-7PD32 |  HTTP/2   |
-    | 6af7d4a1-170f-43b7-a107-758f7855e6ba | darwin/amd64  |   nikon         | nikon-mac |  HTTP/2   |
-    +--------------------------------------+---------------+-----------------+-----------+-----------+
-
-
-interact
-^^^^^^^^
-
-The ``interact`` option for the agent command is used to switch an agent context menu to interact with a single agent. This will cause the prompt to change indicating the agent you are interacting with and provide a new menu of commands.
+.. note::
+    There must be a space after the ``!`` for the command to be executed.
 
 .. code-block:: text
 
-    Merlin» agent interact 54a20389-4f8a-4e3f-9f8e-a0f686ce529e
-    Merlin[agent][54a20389-4f8a-4e3f-9f8e-a0f686ce529e]»
+    Merlin» ! ip a show ens32
+
+    [i] Executing system command...
+
+    [+] 2: ens32: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+        link/ether 00:0c:29:z3:ff:91 brd ff:ff:ff:ff:ff:ff
+        inet 192.168.211.221/24 brd 192.168.211.255 scope global dynamic noprefixroute ens32
+           valid_lft 1227sec preferred_lft 1227sec
+        inet6 fe80::a71d:1f6a:a0d1:7985/64 scope link noprefixroute
+           valid_lft forever preferred_lft forever
+
+    Merlin»
+
+back
+----
+
+.. note::
+    USAGE: ``back``
+
+The ``back`` command go to the parent menu, typically the main menu. When the ``back`` command is executed from the
+main menu, nothing will happen.
+
+.. code-block:: text
+
+    Merlin» back
+    Merlin»
 
 banner
 ------
+
+.. note::
+    USAGE: ``banner``
 
 The ``banner`` command is used too print the super cool ascii art banner along with the version and build numbers.
 
@@ -118,11 +140,14 @@ The ``banner`` command is used too print the super cool ascii art banner along w
         &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
            &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
                &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-                       Version: 0.8.0.BETA
+                       Version: 2.0.0
                        Build: nonRelease
 
 clear
 -----
+
+.. note::
+    USAGE: ``clear``
 
 The ``clear`` command will cancel all jobs in the queue that have not been sent to the agent yet.
 This command will only clear jobs for ALL agents.
@@ -133,8 +158,28 @@ This command will only clear jobs for ALL agents.
     Merlin»
     [+] All unsent jobs cleared at 2021-08-03T01:10:09Z
 
+debug
+-----
+
+.. note::
+    USAGE: ``debug``
+
+The ``debug`` command is a switch used to enable or disable debug output to the console.
+
+.. code-block:: text
+
+    Merlin» debug
+    [+] 2023-10-19T12:16:13Z Debug output enabled
+    Merlin» debug
+    Merlin»
+    [+] 2023-10-19T12:16:15Z Debug output disabled
+
+
 group
 -----
+
+.. note::
+    USAGE: ``group {add agentID groupName | list [groupName] |remove agentID groupName}``
 
 The ``group`` command interacts with server-side groups that agents can be added to and removed from.
 Arbitrary agent commands and modules can be executed against an entire group at one time.
@@ -148,10 +193,11 @@ Arbitrary agent commands and modules can be executed against an entire group at 
 add
 ^^^
 
+.. note::
+    USAGE: ``group add agentID groupName``
+
 The ``group add`` command adds an agent to a named group. If the group name does not exist, it will be created.
 The list of available agents can be tab completed.
-
-``group add <agentID> <GroupName>``
 
 .. code-block:: text
 
@@ -167,6 +213,9 @@ The list of available agents can be tab completed.
 
 list
 ^^^^
+
+.. note::
+    USAGE: ``group list``
 
 The ``group list`` command displays all existing group names to include agents that are members of a group.
 The ``all`` group always exists and is used to task every known agent.
@@ -187,10 +236,11 @@ The ``all`` group always exists and is used to task every known agent.
 remove
 ^^^^^^
 
+.. note::
+    USAGE: ``group remove agentID groupName``
+
 The ``group remove`` command is used to remove an agent from a named group. The list of ALL agents is tab completable
 but does not mean the agent is in the group. The list of existing groups can also be tab completed.
-
-``group remove <agentID> <GroupName>``
 
 .. code-block:: text
 
@@ -201,17 +251,31 @@ but does not mean the agent is in the group. The list of existing groups can als
 interact
 --------
 
-The ``interact`` command takes one argument, the agent ID, and is used to interact with the specified agent. **NOTE:** Use the built-in tab completion to cycle through and select the agent to interact with.
+.. note::
+    USAGE: ``interact {agentID|listenerID}``
+
+The ``interact`` command takes one argument, the agent or listener ID. The current menu determines what type of entity
+the command will interact with. The default is to interact with Agents across all menus. To interact with a Listener,
+use the 'listeners' menu." Use tab completion to cycle through and select available Agents or Listeners.
 
 .. code-block:: text
 
     Merlin» interact c22c435f-f7c4-445b-bcd4-0d4e020645af
     Merlin[agent][c22c435f-f7c4-445b-bcd4-0d4e020645af]»
 
+.. code-block:: text
+
+    Merlin» listeners
+    Merlin[listeners]» interact ae0c47c8-a1ca-4d65-9627-88843be8ddbc
+    Merlin[listeners][ae0c47c8-a1ca-4d65-9627-88843be8ddbc]»
+
 jobs
 ----
 
-The ``jobs`` command displays unfinished jobs for ALL agents.
+.. note::
+    USAGE: ``jobs``
+
+The ``jobs`` command displays unfinished jobs for ALL agents when executed from the main menu.
 
 .. code-block:: text
 
@@ -222,8 +286,24 @@ The ``jobs`` command displays unfinished jobs for ALL agents.
       d07edfda-e119-4be2-a20f-918ab701fa3c | UjNoTALgcn | pwd        | Created | 2021-08-03T01:39:57Z |
       99dbe632-984c-4c98-8f38-11535cb5d937 | UHOddpFQTm | run whoami | Sent    | 2021-08-03T01:40:11Z | 2021-08-03T01:40:17Z
 
+modules
+-------
+
+.. note::
+    USAGE: ``modules``
+
+The ``modules`` command will move into the Modules menu.
+
+.. code-block:: text
+
+    Merlin» modules
+    Merlin[modules]»
+
 queue
 -----
+
+.. note::
+    USAGE: ``queue {agentID|groupName} command [args]``
 
 The ``queue`` command can be used to pre-load, or queue, arbitrary commands/jobs against an agent or a group.
 Additionally, the agent does not have to exist for this command to be used.
@@ -278,18 +358,11 @@ Queue a command for an agent that has never checked in before and is currently u
 .. warning::
     Some agent control commands such as ``sleep`` can not be queued because the agent structure must exist on the server to calculate the JWT
 
-listeners
----------
-
-The ``listeners`` command will move into the Listeners menu.
-
-.. code-block:: text
-
-    Merlin» listeners
-    Merlin[listeners]»
-
 quit
 ----
+
+.. note::
+    USAGE: ``quit [-y]``
 
 The ``quit`` command is used to stop and exit the Merlin server. The user will be prompted for confirmation to prevent
 from accidentally quitting the program. The confirmation prompt can be skipped with ``quit -y``.
@@ -302,8 +375,25 @@ from accidentally quitting the program. The confirmation prompt can be skipped w
     yes
     [!]Quitting...
 
+listeners
+---------
+
+.. note::
+    USAGE: ``listeners``
+
+The ``listeners`` command will move into the Listeners menu.
+
+.. code-block:: text
+
+    Merlin» listeners
+    Merlin[listeners]»
+
+
 remove
 ------
+
+.. note::
+    USAGE: ``remove agentID``
 
 The ``remove`` command is used to remove or delete an agent from the server so that it will not show up in the list of available agents.
 
@@ -335,6 +425,9 @@ The ``remove`` command is used to remove or delete an agent from the server so t
 sessions
 --------
 
+.. note::
+    USAGE: ``sessions``
+
 The ``sessions`` command is used to quickly list information about established agents from the main menu to include their status.
 The sessions command is available from any menu in the CLI.
 
@@ -359,6 +452,9 @@ The sessions command is available from any menu in the CLI.
 socks
 -----
 
+.. note::
+    USAGE: ``socks {list | start [interface:]port agentID |stop [interface:]port agentID}``
+
 The ``socks`` command is used to start, stop, or list SOCKS5 listeners. There can only be one SOCKS5 listener per agent.
 
 * :ref:`socks2 list`
@@ -369,6 +465,9 @@ The ``socks`` command is used to start, stop, or list SOCKS5 listeners. There ca
 
 list
 ^^^^
+
+.. note::
+    USAGE: ``socks list``
 
 The ``list`` command will list active SOCKS5 listeners per agent. If the SOCKS5 listener was configured to listen on
 all interfaces (e.g., 0.0.0.0), then the interface will be listed as ``[::]:``.
@@ -387,6 +486,9 @@ all interfaces (e.g., 0.0.0.0), then the interface will be listed as ``[::]:``.
 
 start
 ^^^^^
+
+.. note::
+    USAGE: ``socks start [interface:]port agentID``
 
 .. warning::
     SOCKS5 listeners do not require authentication. Control access accordingly using firewall rules or SSH tunnels.
@@ -408,6 +510,9 @@ The fourth argument is the agent (tab completable) that you want to start the SO
 stop
 ^^^^
 
+.. note::
+    USAGE: ``socks stop [interface:]port agentID``
+
 The ``stop`` command will stop and remove the SOCKS5 listener for the current agent. This command **requires four arguments**.
 The third argument is the interface and port, or just the port, that you want to bind the listener to.
 This value doesn't really matter, but it is need for consistency to keep the agent ID in the fourth spot.
@@ -418,14 +523,27 @@ The fourth argument is the agent (tab completable) that you want to start the SO
     Merlin» socks stop 9050 c1090dbc-f2f7-4d90-a241-86e0c0217786
     [-] Successfully stopped SOCKS listener for agent c1090dbc-f2f7-4d90-a241-86e0c0217786 on 127.0.0.1:9055
 
+verbose
+-------
 
-use
----
+.. note::
+    USAGE: ``verbose``
 
-The ``use`` command is leveraged to access a feature such as modules. Currently there is only one option and that is ``use modules`` to access Merlin modules. View the modules page for additional details.
+The ``verbose`` command is a switch used to enable or disable verbose output to the console.
+
+.. code-block::
+
+    Merlin» verbose
+    [+] 2023-10-19T12:40:44Z Verbose output enabled
+    Merlin» verbose
+    [+] 2023-10-19T12:40:46Z Verbose output disabled
+    Merlin»
 
 version
 -------
+
+.. note::
+    USAGE: ``version``
 
 The ``version`` command is used to simply print the version numbers of the running Merlin server.
 
@@ -433,26 +551,7 @@ The ``version`` command is used to simply print the version numbers of the runni
 
     Merlin» version
 
-    Merlin version: 0.8.0.BETA
+    Merlin version: 1.0.0.
 
     Merlin»
 
-!
--
-
-Any command that begins with a ``!`` (a.k.a bang or exclamation point) will be executed on host itself where the Merlin server is running. This is useful when you want simple information, such as your interface address, without having to open a new terminal.
-
-.. code-block:: text
-
-    Merlin» !ip a show ens32
-
-    [i] Executing system command...
-
-    [+] 2: ens32: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
-        link/ether 00:0c:29:z3:ff:91 brd ff:ff:ff:ff:ff:ff
-        inet 192.168.211.221/24 brd 192.168.211.255 scope global dynamic noprefixroute ens32
-           valid_lft 1227sec preferred_lft 1227sec
-        inet6 fe80::a71d:1f6a:a0d1:7985/64 scope link noprefixroute
-           valid_lft forever preferred_lft forever
-
-    Merlin»

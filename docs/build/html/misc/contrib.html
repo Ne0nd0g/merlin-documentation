@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contributing &mdash; Merlin BETA documentation</title>
@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=850acc4c"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -57,8 +57,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../agent/dll.html">DLL Agent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../agent/custom.html">Custom Build</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin CLI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/cli.html">HOME</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Merlin Server</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/server.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../server/menu/main.html">Main Menu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../server/menu/agents.html">Agent Menu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../server/menu/listeners.html">Listener Menu</a></li>
@@ -109,13 +114,13 @@
            <div itemprop="articleBody">
              
   <section id="contributing">
-<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading"></a></h1>
+<h1>Contributing<a class="headerlink" href="#contributing" title="Link to this heading"></a></h1>
 <p>Thank you for your interest in contributing to Merlin. This document
 outlines some basic guidelines for submitting your contributions. This
 is a living document and it will be updated regularly as the project
 matures.</p>
 <section id="getting-started">
-<h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h2>
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
 <p>Go is slightly unique due to the way it imports packages. Simply forking
 Merlin and getting to work will result in problems due to imports. The
 proper way to work with a Go repository after forking it is:</p>
@@ -128,7 +133,7 @@ proper way to work with a Go repository after forking it is:</p>
 <a class="reference external" href="https://blog.sgmansfield.com/2016/06/working-with-forks-in-go/">on his blog</a>.</p>
 </section>
 <section id="logging">
-<h2>Logging<a class="headerlink" href="#logging" title="Permalink to this heading"></a></h2>
+<h2>Logging<a class="headerlink" href="#logging" title="Link to this heading"></a></h2>
 <p>Commands executed against an agent should be logged in the agent log.
 The results of messages executed on an agent, to include errors and
 successes, should also be sent back to the server and logged in the
@@ -140,7 +145,7 @@ log file.</p>
 logged.</p>
 </section>
 <section id="user-interface-messages">
-<h2>User Interface Messages<a class="headerlink" href="#user-interface-messages" title="Permalink to this heading"></a></h2>
+<h2>User Interface Messages<a class="headerlink" href="#user-interface-messages" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Informational messages are white and start with <code class="docutils literal notranslate"><span class="pre">[i]</span></code></p></li>
 <li><p>Warning and Error messages are red and start with <code class="docutils literal notranslate"><span class="pre">[!]</span></code></p></li>
@@ -152,14 +157,14 @@ logged.</p>
 </ul>
 </section>
 <section id="agent-messages">
-<h2>Agent Messages<a class="headerlink" href="#agent-messages" title="Permalink to this heading"></a></h2>
+<h2>Agent Messages<a class="headerlink" href="#agent-messages" title="Link to this heading"></a></h2>
 <p>Merlin Agents are designed to run on a compromised host during a
 penetration test. As such, the agent should never display any messages
 to user on standard out or standard error <em>unless</em> verbose messages are
 enable.</p>
 </section>
 <section id="pull-requests">
-<h2>Pull Requests<a class="headerlink" href="#pull-requests" title="Permalink to this heading"></a></h2>
+<h2>Pull Requests<a class="headerlink" href="#pull-requests" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Pull requests (PR) should be submitted to the <code class="docutils literal notranslate"><span class="pre">dev</span></code> branch</p></li>
 <li><p>Be sure to pull down any changes from <code class="docutils literal notranslate"><span class="pre">dev</span></code> prior to creating a PR</p></li>
@@ -174,7 +179,7 @@ enable.</p>
 </ul>
 </section>
 <section id="contributors">
-<h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this heading"></a></h2>
+<h2>Contributors<a class="headerlink" href="#contributors" title="Link to this heading"></a></h2>
 <p>Thank you to everyone that has contributed to Merlin. Your contributions help keep Merlin great and valuable.
 Merlin contributors can be viewed <a class="reference external" href="https://github.com/Ne0nd0g/merlin/graphs/contributors">here</a>.</p>
 </section>

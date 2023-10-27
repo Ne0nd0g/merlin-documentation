@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agent Menu &mdash; Merlin BETA documentation</title>
@@ -11,11 +11,11 @@
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script src="../../_static/sphinx_highlight.js"></script>
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=850acc4c"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -57,8 +57,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../../agent/dll.html">DLL Agent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../agent/custom.html">Custom Build</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin CLI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../cli/cli.html">HOME</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Merlin Server</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../server.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="main.html">Main Menu</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Agent Menu</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#help">help</a><ul>
@@ -203,10 +208,10 @@
            <div itemprop="articleBody">
              
   <section id="agent-menu">
-<h1>Agent Menu<a class="headerlink" href="#agent-menu" title="Permalink to this heading"></a></h1>
+<h1>Agent Menu<a class="headerlink" href="#agent-menu" title="Link to this heading"></a></h1>
 <p>The agent menu context is used to interact with a single agent. The Merlin prompt will include the word <code class="docutils literal notranslate"><span class="pre">agent</span></code> along with the identifier for the selected agent. Type <code class="docutils literal notranslate"><span class="pre">help</span></code> to see a list of available commands for the agent menu context.</p>
 <section id="help">
-<h2>help<a class="headerlink" href="#help" title="Permalink to this heading"></a></h2>
+<h2>help<a class="headerlink" href="#help" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The help menu will only show commands available to agent depending on its operating system</p>
@@ -217,7 +222,7 @@
 <li><p><a class="reference internal" href="#help-windows"><span class="std std-ref">windows</span></a></p></li>
 </ul>
 <section id="core">
-<span id="help-core"></span><h3>core<a class="headerlink" href="#core" title="Permalink to this heading"></a></h3>
+<span id="help-core"></span><h3>core<a class="headerlink" href="#core" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">core</span></code> commands are available to every agent regardless of which operating system they are running on</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» help
 
@@ -297,7 +302,7 @@
 </div>
 </section>
 <section id="linux">
-<span id="help-linux"></span><h3>linux<a class="headerlink" href="#linux" title="Permalink to this heading"></a></h3>
+<span id="help-linux"></span><h3>linux<a class="headerlink" href="#linux" title="Link to this heading"></a></h3>
 <p>These commands are only available to agents running on a <code class="docutils literal notranslate"><span class="pre">Linux</span></code> operating system.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>       COMMAND      |          DESCRIPTION           |            OPTIONS
 +-------------------+--------------------------------+--------------------------------+
@@ -306,7 +311,7 @@
 </div>
 </section>
 <section id="windows">
-<span id="help-windows"></span><h3>windows<a class="headerlink" href="#windows" title="Permalink to this heading"></a></h3>
+<span id="help-windows"></span><h3>windows<a class="headerlink" href="#windows" title="Link to this heading"></a></h3>
 <p>These commands are only available to agents running on a <code class="docutils literal notranslate"><span class="pre">Windows</span></code> operating system.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>       COMMAND      |          DESCRIPTION           |            OPTIONS
 +-------------------+--------------------------------+--------------------------------+
@@ -346,7 +351,7 @@
 </section>
 </section>
 <section id="cd">
-<span id="id1"></span><h2>cd<a class="headerlink" href="#cd" title="Permalink to this heading"></a></h2>
+<span id="id1"></span><h2>cd<a class="headerlink" href="#cd" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">cd</span></code> command is used to change the current working directory the Merlin agent is using. Relative paths can be used (e.g.,. <code class="docutils literal notranslate"><span class="pre">./../</span></code> or <code class="docutils literal notranslate"><span class="pre">downloads\\Merlin</span></code>). This command uses native Go and will not execute the <code class="docutils literal notranslate"><span class="pre">cd</span></code> binary program found on the host operating system.</p>
 <div class="line-block">
 <div class="line">The <code class="docutils literal notranslate"><span class="pre">\</span></code> in a Windows directory must be escaped like <code class="docutils literal notranslate"><span class="pre">C:\\Windows\\System32</span></code>.</div>
@@ -365,7 +370,7 @@ Changed working directory to C:\Program Files (x86)
 </div>
 </section>
 <section id="clear">
-<h2>clear<a class="headerlink" href="#clear" title="Permalink to this heading"></a></h2>
+<h2>clear<a class="headerlink" href="#clear" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">clear</span></code> command will cancel all jobs in the queue that have not been sent to the agent yet.
 This command will only clear jobs for the current agent.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» clear
@@ -374,7 +379,7 @@ This command will only clear jobs for the current agent.</p>
 </div>
 </section>
 <section id="back">
-<h2>back<a class="headerlink" href="#back" title="Permalink to this heading"></a></h2>
+<h2>back<a class="headerlink" href="#back" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">back</span></code> command is used to leave the Agent menu and return back to the <a class="reference internal" href="main.html"><span class="doc">Main Menu</span></a>.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» back
 Merlin»
@@ -382,7 +387,7 @@ Merlin»
 </div>
 </section>
 <section id="download">
-<span id="id2"></span><h2>download<a class="headerlink" href="#download" title="Permalink to this heading"></a></h2>
+<span id="id2"></span><h2>download<a class="headerlink" href="#download" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">download</span></code> command is used to download a file from the host where the agent is running back to the Merlin server. The file will be automatically saved in a folder with a name of the agent’s identifier in the <cite>dataagentsc1090dbc-f2f7-4d90-a241-86e0c0217786</cite> directory.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -401,7 +406,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
 </div>
 </section>
 <section id="env">
-<h2>env<a class="headerlink" href="#env" title="Permalink to this heading"></a></h2>
+<h2>env<a class="headerlink" href="#env" title="Link to this heading"></a></h2>
 <dl class="simple">
 <dt>The <code class="docutils literal notranslate"><span class="pre">env</span></code> command is used to interact with environment variables and has the following methods:</dt><dd><ul class="simple">
 <li><p><a class="reference internal" href="#get">get</a></p></li>
@@ -412,7 +417,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
 </dd>
 </dl>
 <section id="get">
-<h3>get<a class="headerlink" href="#get" title="Permalink to this heading"></a></h3>
+<h3>get<a class="headerlink" href="#get" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">env</span> <span class="pre">get</span></code> command is used to retrieve the value of an existing environment variable.
 The third, or last, argument is the name of environment variable to retrieve.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» env get TEST1
@@ -425,7 +430,7 @@ Environment variable TEST1=TESTINGTEST
 </div>
 </section>
 <section id="set">
-<span id="env-set"></span><h3>set<a class="headerlink" href="#set" title="Permalink to this heading"></a></h3>
+<span id="env-set"></span><h3>set<a class="headerlink" href="#set" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">env</span> <span class="pre">set</span></code> command is used create, or overwrite, an environment variable with the specified value.
 The third argument is the name of the environment variable and the fourth argument is the environment variables value.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» env set TEST1 TESTINGTEST
@@ -438,7 +443,7 @@ Set environment variable: TEST1=TESTINGTEST
 </div>
 </section>
 <section id="showall">
-<h3>showall<a class="headerlink" href="#showall" title="Permalink to this heading"></a></h3>
+<h3>showall<a class="headerlink" href="#showall" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">env</span> <span class="pre">showall</span></code> command enumerates and return all environment variables:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» env showall
 [-] Created job NzbQEytJpY for agent c1090dbc-f2f7-4d90-a241-86e0c0217786
@@ -460,7 +465,7 @@ SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 </div>
 </section>
 <section id="unset">
-<h3>unset<a class="headerlink" href="#unset" title="Permalink to this heading"></a></h3>
+<h3>unset<a class="headerlink" href="#unset" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">env</span> <span class="pre">unset</span></code> command clears, or empties, the environment variable name provided in the third argument:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» env unset TEST1
 [-] Created job hEYjNYeniT for agent c1090dbc-f2f7-4d90-a241-86e0c0217786
@@ -480,7 +485,7 @@ Environment variable TEST1=
 </section>
 </section>
 <section id="exit">
-<h2>exit<a class="headerlink" href="#exit" title="Permalink to this heading"></a></h2>
+<h2>exit<a class="headerlink" href="#exit" title="Link to this heading"></a></h2>
 <dl class="simple">
 <dt>The <code class="docutils literal notranslate"><span class="pre">exit</span></code> control type instructs the agent to exit or die. There is no response on the CLI after the instruction has been provided to the agent. This command is also an alias for agent -&gt; control -&gt; &lt;agent ID&gt; -&gt; exit. This is the shortest way to quickly kill an agent.</dt><dd><p>The command will prompt for confirmation to prevent accidentally exiting the agent. If you are certain use the <cite>-y</cite> flag to skip confirmation.</p>
 </dd>
@@ -495,7 +500,7 @@ Merlin»
 </div>
 </section>
 <section id="execute-assembly">
-<span id="id3"></span><h2>execute-assembly<a class="headerlink" href="#execute-assembly" title="Permalink to this heading"></a></h2>
+<span id="id3"></span><h2>execute-assembly<a class="headerlink" href="#execute-assembly" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This command is only available to agent running on a <code class="docutils literal notranslate"><span class="pre">Windows</span></code> operating system!</p>
@@ -563,7 +568,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
 </div>
 </section>
 <section id="execute-pe">
-<span id="id4"></span><h2>execute-pe<a class="headerlink" href="#execute-pe" title="Permalink to this heading"></a></h2>
+<span id="id4"></span><h2>execute-pe<a class="headerlink" href="#execute-pe" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This command is only available to agent running on a <code class="docutils literal notranslate"><span class="pre">Windows</span></code> operating system!</p>
@@ -609,7 +614,7 @@ Bye!
 </div>
 </section>
 <section id="execute-shellcode">
-<span id="id6"></span><h2>execute-shellcode<a class="headerlink" href="#execute-shellcode" title="Permalink to this heading"></a></h2>
+<span id="id6"></span><h2>execute-shellcode<a class="headerlink" href="#execute-shellcode" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This command is only available to agent running on a <code class="docutils literal notranslate"><span class="pre">Windows</span></code> operating system!</p>
@@ -643,7 +648,7 @@ Bye!
 </dd>
 </dl>
 <section id="self">
-<span id="id7"></span><h3>self<a class="headerlink" href="#self" title="Permalink to this heading"></a></h3>
+<span id="id7"></span><h3>self<a class="headerlink" href="#self" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">self</span></code> method allocates space within the Merlin Agent process and executes the shellcode.</p>
 <p>Syntax is <code class="docutils literal notranslate"><span class="pre">execute-shellcode</span> <span class="pre">self</span> <span class="pre">&lt;SHELLCODE&gt;</span></code></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» execute-shellcode self 505152535657556A605A6863616C6354594883EC2865488B32488B7618488B761048AD488B30488B7E3003573C8B5C17288B741F204801FE8B541F240FB72C178D5202AD813C0757696E4575EF8B741F1C4801FE8B34AE4801F799FFD74883C4305D5F5E5B5A5958C3
@@ -654,7 +659,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» [+]Results for job joQNJON
 </div>
 </section>
 <section id="remote">
-<h3>remote<a class="headerlink" href="#remote" title="Permalink to this heading"></a></h3>
+<h3>remote<a class="headerlink" href="#remote" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">remote</span></code> method creates a thread in another process using the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createremotethreadex">CreateRemoteThreadEx</a> Windows API call.</p>
 <p>Syntax is <code class="docutils literal notranslate"><span class="pre">execute-shellcode</span> <span class="pre">remote</span> <span class="pre">&lt;PID&gt;</span> <span class="pre">&lt;SHELLCODE&gt;</span></code> where PID is the Process ID you want to execute the shellcode under.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» execute-shellcode remote 6560 0x50, 0x51, 0x52, 0x53, 0x56, 0x57, 0x55, 0x6A, 0x60, 0x5A, 0x68, 0x63, 0x61, 0x6C, 0x63, 0x54, 0x59, 0x48, 0x83, 0xEC, 0x28, 0x65, 0x48, 0x8B, 0x32, 0x48, 0x8B, 0x76, 0x18, 0x48, 0x8B, 0x76, 0x10, 0x48, 0xAD, 0x48, 0x8B, 0x30, 0x48, 0x8B, 0x7E, 0x30, 0x03, 0x57, 0x3C, 0x8B, 0x5C, 0x17, 0x28, 0x8B, 0x74, 0x1F, 0x20, 0x48, 0x01, 0xFE, 0x8B, 0x54, 0x1F, 0x24, 0x0F, 0xB7, 0x2C, 0x17, 0x8D, 0x52, 0x02, 0xAD, 0x81, 0x3C, 0x07, 0x57, 0x69, 0x6E, 0x45, 0x75, 0xEF, 0x8B, 0x74, 0x1F, 0x1C, 0x48, 0x01, 0xFE, 0x8B, 0x34, 0xAE, 0x48, 0x01, 0xF7, 0x99, 0xFF, 0xD7, 0x48, 0x83, 0xC4, 0x30, 0x5D, 0x5F, 0x5E, 0x5B, 0x5A, 0x59, 0x58, 0xC3
@@ -665,7 +670,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» [+]Results for job PRumZQY
 </div>
 </section>
 <section id="rtlcreateuserthread">
-<span id="id8"></span><h3>RtlCreateUserThread<a class="headerlink" href="#rtlcreateuserthread" title="Permalink to this heading"></a></h3>
+<span id="id8"></span><h3>RtlCreateUserThread<a class="headerlink" href="#rtlcreateuserthread" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">rtlcreateuserthread</span></code> method creates a thread in another process using the undocumented <a class="reference external" href="http://undocumented.ntinternals.net/index.html?page=UserMode%2FUndocumented%20Functions%2FExecutable%20Images%2FRtlCreateUserThread.html">RtlCreateUserThread</a> Windows API call.</p>
 <p>Syntax is <code class="docutils literal notranslate"><span class="pre">execute-shellcode</span> <span class="pre">rtlcreateuserthread</span> <span class="pre">&lt;PID&gt;</span> <span class="pre">&lt;SHELLCODE&gt;</span></code> where PID is the Process ID you want to execute the shellcode under.</p>
 <p>Example:</p>
@@ -677,7 +682,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» [+]Results for job CCWrmdL
 </div>
 </section>
 <section id="userapc">
-<h3>UserAPC<a class="headerlink" href="#userapc" title="Permalink to this heading"></a></h3>
+<h3>UserAPC<a class="headerlink" href="#userapc" title="Link to this heading"></a></h3>
 <p id="id9">The <code class="docutils literal notranslate"><span class="pre">userapc</span></code> method creates a thread in another process using the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/desktop/api/processthreadsapi/nf-processthreadsapi-queueuserapc">QueueUserAPC</a> Windows API call.</p>
 <p>Syntax is <code class="docutils literal notranslate"><span class="pre">execute-shellcode</span> <span class="pre">userapc</span> <span class="pre">&lt;PID&gt;</span> <span class="pre">&lt;SHELLCODE&gt;</span></code> where PID is the Process ID you want to execute the shellcode under.</p>
 <div class="admonition note">
@@ -693,7 +698,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» [+]Results for job NPQGRnt
 </section>
 </section>
 <section id="group">
-<h2>group<a class="headerlink" href="#group" title="Permalink to this heading"></a></h2>
+<h2>group<a class="headerlink" href="#group" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">group</span></code> command interacts with server-side groups that agents can be added to and removed from.
 Arbitrary agent commands and modules can be executed against an entire group at one time.</p>
 <ul class="simple">
@@ -701,7 +706,7 @@ Arbitrary agent commands and modules can be executed against an entire group at 
 <li><p><a class="reference internal" href="#agentgroup-remove"><span class="std std-ref">remove</span></a></p></li>
 </ul>
 <section id="add">
-<span id="agentgroup-add"></span><h3>add<a class="headerlink" href="#add" title="Permalink to this heading"></a></h3>
+<span id="agentgroup-add"></span><h3>add<a class="headerlink" href="#add" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">add</span></code> command adds the current agent to a named group. If the group name does not exist, it will be created.
 The list of available agents can be tab completed.</p>
 <p><code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">add</span> <span class="pre">&lt;GroupName&gt;</span></code></p>
@@ -720,7 +725,7 @@ Merlin[agent][336154be-9ab9-4add-96e6-69c79f1ce77d]» info
 </div>
 </section>
 <section id="remove">
-<span id="agentgroup-remove"></span><h3>remove<a class="headerlink" href="#remove" title="Permalink to this heading"></a></h3>
+<span id="agentgroup-remove"></span><h3>remove<a class="headerlink" href="#remove" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">remove</span></code> command is used to remove an agent from a named group. The list of ALL agents is tab completable
 but does not mean the agent is in the group. The list of existing groups can also be tab completed.</p>
 <p><code class="docutils literal notranslate"><span class="pre">group</span> <span class="pre">remove</span> <span class="pre">&lt;agentID&gt;</span> <span class="pre">&lt;GroupName&gt;</span></code></p>
@@ -732,7 +737,7 @@ Merlin»
 </section>
 </section>
 <section id="ifconfig">
-<h2>ifconfig<a class="headerlink" href="#ifconfig" title="Permalink to this heading"></a></h2>
+<h2>ifconfig<a class="headerlink" href="#ifconfig" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code> command will enumerate all of the host’s network interfaces and return their configuration.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
 [-] Created job SEbZZEzGeH for agent c1090dbc-f2f7-4d90-a241-86e0c0217786
@@ -758,7 +763,7 @@ Bluetooth Network Connection
 </div>
 </section>
 <section id="info">
-<h2>info<a class="headerlink" href="#info" title="Permalink to this heading"></a></h2>
+<h2>info<a class="headerlink" href="#info" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">info</span></code> command is used to get information about a specific agent to include its configuration and environment.</p>
 <ul class="simple">
 <li><p>Status - The agent’s current communication status of either active, delayed, or dead</p></li>
@@ -818,7 +823,7 @@ Bluetooth Network Connection
 </div>
 </section>
 <section id="interact">
-<h2>interact<a class="headerlink" href="#interact" title="Permalink to this heading"></a></h2>
+<h2>interact<a class="headerlink" href="#interact" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">interact</span></code> command takes one argument, the agent ID, and is used to switch agents and interact with a different, specified agent.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -830,7 +835,7 @@ Merlin[agent][d07edfda-e119-4be2-a20f-918ab701fa3c]»
 </div>
 </section>
 <section id="invoke-assembly">
-<span id="id10"></span><h2>invoke-assembly<a class="headerlink" href="#invoke-assembly" title="Permalink to this heading"></a></h2>
+<span id="id10"></span><h2>invoke-assembly<a class="headerlink" href="#invoke-assembly" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This command is only available to agent running on a <code class="docutils literal notranslate"><span class="pre">Windows</span></code> operating system!</p>
@@ -867,7 +872,7 @@ Action: List Kerberos Tickets (Current User)
 </div>
 </section>
 <section id="ja3">
-<span id="id11"></span><h2>ja3<a class="headerlink" href="#ja3" title="Permalink to this heading"></a></h2>
+<span id="id11"></span><h2>ja3<a class="headerlink" href="#ja3" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://engineering.salesforce.com/tls-fingerprinting-with-ja3-and-ja3s-247362855967">JA3 is a method for fingerprinting TLS clients on the wire</a>. Every TLS client has a unique signature depending on its configuration of the following TLS options: <code class="docutils literal notranslate"><span class="pre">SSLVersion,Ciphers,Extensions,EllipticCurves,EllipticCurvePointFormats</span></code>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">ja3</span></code> option allows the agent to create a TLS client based on the provided JA3 hash signature. This is useful to evade detections based on a JA3 hash for a known tool (e.g.,. Merlin). <a class="reference external" href="https://engineering.salesforce.com/gquic-protocol-analysis-and-fingerprinting-in-zeek-a4178855d75f">This</a> article documents a JA3 fingerprint for Merlin. Known JA3 signatures can be downloaded from <a class="reference external" href="https://ja3er.com/">https://ja3er.com/</a></p>
 <div class="admonition note">
@@ -882,7 +887,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
 </div>
 </section>
 <section id="jobs">
-<h2>jobs<a class="headerlink" href="#jobs" title="Permalink to this heading"></a></h2>
+<h2>jobs<a class="headerlink" href="#jobs" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">jobs</span></code> command will display a table of all active jobs assigned to the agent. The output will not include jobs that have already completed.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» jobs
 
@@ -895,7 +900,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
 </div>
 </section>
 <section id="kill">
-<span id="id12"></span><h2>kill<a class="headerlink" href="#kill" title="Permalink to this heading"></a></h2>
+<span id="id12"></span><h2>kill<a class="headerlink" href="#kill" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">kill</span></code> command is used to force a running process to quit or exit by its numerical identifier. The Process ID (PID) must be provided.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» shell &quot;ps aux|grep gnome-calculator&quot;
 [-] Created job mBYVsnbYBS for agent c1090dbc-f2f7-4d90-a241-86e0c0217786
@@ -912,7 +917,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» kill 132905
 </div>
 </section>
 <section id="killdate">
-<span id="id13"></span><h2>killdate<a class="headerlink" href="#killdate" title="Permalink to this heading"></a></h2>
+<span id="id13"></span><h2>killdate<a class="headerlink" href="#killdate" title="Link to this heading"></a></h2>
 <p>Killdate is a UNIX timestamp that denotes a time the executable will not run after (if it is 0 it will not be used). Killdate is checked before the agent performs each checkin, including before the initial checkin.</p>
 <p>Killdate can be set in the agent/agent.go file before compiling, in the New function instantiation of a new agent. One scenario for using the killdate feature is an agent is persisted as a service and you want it to stop functioning after a certain date, in case the target organization fails to remediate the malicious service. Using killdate here would stop the agent from functioning after a certain specified UNIX system time.</p>
 <p>The Killdate can also be set or changed for running agents using the <code class="docutils literal notranslate"><span class="pre">set</span> <span class="pre">killdate</span></code> command from the agent menu. This will only modify the killdate for the running agent in memory and will not update the compiled binary file. <a class="reference external" href="http://unixtimestamp.50x.eu/">http://unixtimestamp.50x.eu/</a> can be used to generate a UNIX timestamp.</p>
@@ -924,7 +929,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
 </div>
 </section>
 <section id="list-assemblies">
-<h2>list-assemblies<a class="headerlink" href="#list-assemblies" title="Permalink to this heading"></a></h2>
+<h2>list-assemblies<a class="headerlink" href="#list-assemblies" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This command is only available to agent running on a <code class="docutils literal notranslate"><span class="pre">Windows</span></code> operating system!</p>
@@ -944,7 +949,7 @@ Hagrid
 </div>
 </section>
 <section id="load-assembly">
-<h2>load-assembly<a class="headerlink" href="#load-assembly" title="Permalink to this heading"></a></h2>
+<h2>load-assembly<a class="headerlink" href="#load-assembly" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This command is only available to agent running on a <code class="docutils literal notranslate"><span class="pre">Windows</span></code> operating system!</p>
@@ -973,7 +978,7 @@ An option third argument can be provided to reference the assembly as any other 
 </div>
 </section>
 <section id="ls">
-<span id="id14"></span><h2>ls<a class="headerlink" href="#ls" title="Permalink to this heading"></a></h2>
+<span id="id14"></span><h2>ls<a class="headerlink" href="#ls" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">ls</span></code> command is used to list a directory’s contents using native Go functions within Merlin. This command will not execute the <code class="docutils literal notranslate"><span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">dir</span></code> binary programs found on their associated host operating systems. If a directory is not specified, Merlin will list the contents of the current working directory. When specifying a Windows path, you must escape the backslash (e.g.,. <cite>C:\Temp</cite>). Wrap file paths containing a space in quotations. Alternatively, Linux file paths with a space can be called without quotes by escaping the space (e.g.,. <code class="docutils literal notranslate"><span class="pre">/root/some\</span> <span class="pre">folder/</span></code>). Relative paths can be used (e.g.,. <code class="docutils literal notranslate"><span class="pre">./../</span></code> or <code class="docutils literal notranslate"><span class="pre">downloads\\Merlin</span></code>) and they are resolved to their absolute path.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» ls /var
 [-]Created job eNJKIiLXXH for agent c1090dbc-f2f7-4d90-a241-86e0c0217786
@@ -1019,7 +1024,7 @@ drwxrwxrwx      2018-09-15 00:42:33     0       windows nt
 </div>
 </section>
 <section id="main">
-<h2>main<a class="headerlink" href="#main" title="Permalink to this heading"></a></h2>
+<h2>main<a class="headerlink" href="#main" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">main</span></code> command is used to leave the Agent menu and return back to the <a class="reference internal" href="main.html"><span class="doc">Main Menu</span></a>. It is an alias for the <code class="docutils literal notranslate"><span class="pre">back</span></code> command.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» main
 Merlin»
@@ -1027,7 +1032,7 @@ Merlin»
 </div>
 </section>
 <section id="maxretry">
-<span id="id15"></span><h2>maxretry<a class="headerlink" href="#maxretry" title="Permalink to this heading"></a></h2>
+<span id="id15"></span><h2>maxretry<a class="headerlink" href="#maxretry" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">maxretry</span></code> control type is used to change the _maximum_ number of failed login an agent will allow before the agent quits. For the sake of this conversation, a login means establishing contact with a Merlin Server and receiving no errors. The default is 7. There is no response on the CLI after the instruction has been provided to the agent. You can verify the setting was changed using the <code class="docutils literal notranslate"><span class="pre">agent</span> <span class="pre">info</span></code> command.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» maxretry 50
 Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
@@ -1036,7 +1041,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
 </div>
 </section>
 <section id="memfd">
-<h2>memfd<a class="headerlink" href="#memfd" title="Permalink to this heading"></a></h2>
+<h2>memfd<a class="headerlink" href="#memfd" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This command is only available to agent running on a <code class="docutils literal notranslate"><span class="pre">Linux</span></code> operating system!</p>
@@ -1062,7 +1067,7 @@ for detection guidance.</p>
 </div>
 </section>
 <section id="memory">
-<h2>memory<a class="headerlink" href="#memory" title="Permalink to this heading"></a></h2>
+<h2>memory<a class="headerlink" href="#memory" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This command is only available to agent running on a <code class="docutils literal notranslate"><span class="pre">Windows</span></code> operating system!</p>
@@ -1078,7 +1083,7 @@ for detection guidance.</p>
 <p>Uses direct syscalls for <code class="docutils literal notranslate"><span class="pre">NtReadVirtualMemory</span></code>, <code class="docutils literal notranslate"><span class="pre">NtProtectVirtualMemory</span></code>, &amp; <code class="docutils literal notranslate"><span class="pre">ZwWriteVirtualMemory</span></code> implemented
 using <a class="reference external" href="https://github.com/C-Sto/BananaPhone">BananaPhone</a></p>
 <section id="patch">
-<span id="id16"></span><h3>patch<a class="headerlink" href="#patch" title="Permalink to this heading"></a></h3>
+<span id="id16"></span><h3>patch<a class="headerlink" href="#patch" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">patch</span></code> command locates the address of the provided procedure/function, reads the existing bytes, and the
 overwrites them with the provided bytes. A second read is performed to validate the write event. The command would be
 the same as calling the <code class="docutils literal notranslate"><span class="pre">read</span></code> and <code class="docutils literal notranslate"><span class="pre">write</span></code> commands individually.</p>
@@ -1095,7 +1100,7 @@ Read  3 bytes from ntdll.dll!EtwEventWrite: 9090C3
 </div>
 </section>
 <section id="read">
-<span id="id17"></span><h3>read<a class="headerlink" href="#read" title="Permalink to this heading"></a></h3>
+<span id="id17"></span><h3>read<a class="headerlink" href="#read" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">read</span></code> command locates the address of the provided procedure/function and reads the specified number of bytes.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» memory read ntdll.dll EtwEventWrite 3
 [-] Created job YlqClnqRdK for agent c1090dbc-f2f7-4d90-a241-86e0c0217786
@@ -1107,7 +1112,7 @@ Read  3 bytes from ntdll.dll!EtwEventWrite: 9090C3
 </div>
 </section>
 <section id="write">
-<span id="id18"></span><h3>write<a class="headerlink" href="#write" title="Permalink to this heading"></a></h3>
+<span id="id18"></span><h3>write<a class="headerlink" href="#write" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">write</span></code> command locates teh address of the provided procedure/function and writes the specified bytes.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» memory write ntdll.dll EtwEventWrite 9090C3
 [-] Created job XTXJBLoZuO for agent c1090dbc-f2f7-4d90-a241-86e0c0217786
@@ -1121,7 +1126,7 @@ Wrote 3 bytes to ntdll.dll!EtwEventWrite: 9090C3
 </section>
 </section>
 <section id="netstat">
-<h2>netstat<a class="headerlink" href="#netstat" title="Permalink to this heading"></a></h2>
+<h2>netstat<a class="headerlink" href="#netstat" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This command is only available to agent running on a <code class="docutils literal notranslate"><span class="pre">Windows</span></code> operating system!</p>
@@ -1156,7 +1161,7 @@ tcp6  :::3389                 :::0                    LISTEN       984/svchost.e
 </div>
 </section>
 <section id="note">
-<h2>note<a class="headerlink" href="#note" title="Permalink to this heading"></a></h2>
+<h2>note<a class="headerlink" href="#note" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">note</span></code> command creates a server-side note that operators can use to record miscellaneous information about an agent.
 The note is displayed in a column of the output from the <a class="reference internal" href="#sessions">sessions</a> command</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» note Demo Agent Here
@@ -1170,7 +1175,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» sessions
 </div>
 </section>
 <section id="nslookup">
-<h2>nslookup<a class="headerlink" href="#nslookup" title="Permalink to this heading"></a></h2>
+<h2>nslookup<a class="headerlink" href="#nslookup" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">nslookup</span></code> command takes a space separated list of IP addresses or hostnames and performs a DNS query using the
 host’s resolver and returns the results.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» nslookup 8.8.8.8 9.9.9.9 github.com google.com
@@ -1186,7 +1191,7 @@ Query: google.com, Result: 142.250.73.238 2607:f8b0:4004:82a::200e
 </div>
 </section>
 <section id="padding">
-<span id="id19"></span><h2>padding<a class="headerlink" href="#padding" title="Permalink to this heading"></a></h2>
+<span id="id19"></span><h2>padding<a class="headerlink" href="#padding" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">padding</span></code> control type is used to change the _maximum_ size of a message’s padding. A random value between 0 and the maximum padding value is selected on a per message basis and added to the end of each message. This is used in an attempt to evade detection when a program looks for messages with same size beaconing out. The default is 4096. There is no response on the CLI after the instruction has been provided to the agent. You can verify the setting was changed using the <code class="docutils literal notranslate"><span class="pre">agent</span> <span class="pre">info</span></code> command.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» set padding 8192
 Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
@@ -1195,7 +1200,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
 </div>
 </section>
 <section id="pipes">
-<h2>pipes<a class="headerlink" href="#pipes" title="Permalink to this heading"></a></h2>
+<h2>pipes<a class="headerlink" href="#pipes" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This command is only available to agent running on a <code class="docutils literal notranslate"><span class="pre">Windows</span></code> operating system!</p>
@@ -1233,7 +1238,7 @@ Named pipes:
 </div>
 </section>
 <section id="printenv">
-<h2>printenv<a class="headerlink" href="#printenv" title="Permalink to this heading"></a></h2>
+<h2>printenv<a class="headerlink" href="#printenv" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">printenv</span></code> command is an alias for the <code class="docutils literal notranslate"><span class="pre">env</span></code> <a class="reference internal" href="#showall">showall</a> command that enumerates and return all environment variables:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» printenv
 [-] Created job NzbQEytJpY for agent c1090dbc-f2f7-4d90-a241-86e0c0217786
@@ -1255,7 +1260,7 @@ SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 </div>
 </section>
 <section id="ps">
-<span id="id20"></span><h2>ps<a class="headerlink" href="#ps" title="Permalink to this heading"></a></h2>
+<span id="id20"></span><h2>ps<a class="headerlink" href="#ps" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This command is only available to agent running on a <code class="docutils literal notranslate"><span class="pre">Windows</span></code> operating system!</p>
@@ -1292,7 +1297,7 @@ PID     PPID    ARCH    OWNER   EXE
 </div>
 </section>
 <section id="pwd">
-<h2>pwd<a class="headerlink" href="#pwd" title="Permalink to this heading"></a></h2>
+<h2>pwd<a class="headerlink" href="#pwd" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">pwd</span></code> command uses native Go to get and return the current working directory.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» pwd
 [-]Created job JweUayTyTv for agent c1090dbc-f2f7-4d90-a241-86e0c0217786
@@ -1304,11 +1309,11 @@ PID     PPID    ARCH    OWNER   EXE
 </div>
 </section>
 <section id="quit">
-<h2>quit<a class="headerlink" href="#quit" title="Permalink to this heading"></a></h2>
+<h2>quit<a class="headerlink" href="#quit" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">quit</span></code> command is used to exit out of the Merlin Server application. This is also an alias for the <code class="docutils literal notranslate"><span class="pre">exit</span></code> command.</p>
 </section>
 <section id="rm">
-<span id="id21"></span><h2>rm<a class="headerlink" href="#rm" title="Permalink to this heading"></a></h2>
+<span id="id21"></span><h2>rm<a class="headerlink" href="#rm" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">rm</span></code> command will remove or delete a file using native Go functions.</p>
 <p>`` rm &lt;file path&gt;``</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][336154be-9ab9-4add-96e6-69c79f1ce77d]» rm C:\\Users\\rastley\\Downloads\\lyrics.txt
@@ -1321,7 +1326,7 @@ PID     PPID    ARCH    OWNER   EXE
 </div>
 </section>
 <section id="runas">
-<h2>runas<a class="headerlink" href="#runas" title="Permalink to this heading"></a></h2>
+<h2>runas<a class="headerlink" href="#runas" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">runas</span></code> command will run a program as another user. This is done using the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createprocesswithlogonw">CreateProcessWithLogonW</a> Windows API call.</p>
 <p><code class="docutils literal notranslate"><span class="pre">runas</span> <span class="pre">&lt;Domain\\User&gt;</span> <span class="pre">&lt;Password&gt;</span> <span class="pre">&lt;program&gt;</span> <span class="pre">[&lt;program</span> <span class="pre">args&gt;]</span></code></p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][336154be-9ab9-4add-96e6-69c79f1ce77d]» runas ACME\\Administrator S3cretPassw0rd cmd.exe /c dir \\\\DC01.ACME.COM\\C$
@@ -1334,7 +1339,7 @@ PID     PPID    ARCH    OWNER   EXE
 </div>
 </section>
 <section id="run">
-<span id="id22"></span><h2>run<a class="headerlink" href="#run" title="Permalink to this heading"></a></h2>
+<span id="id22"></span><h2>run<a class="headerlink" href="#run" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">run</span></code> command is used to task the agent to run a program on the host and return STDOUT/STDERR. When issuing a command to an agent from
 the server, the agent will execute the provided binary file for the program you specified and also pass along any
 arguments you provide. It is important to note that program must be in the path. This allows an operator to specify and
@@ -1375,7 +1380,7 @@ Microsoft Windows [Version 10.0.16299.64]
 </pre></div>
 </div>
 <section id="shell-functions">
-<h3>Shell Functions<a class="headerlink" href="#shell-functions" title="Permalink to this heading"></a></h3>
+<h3>Shell Functions<a class="headerlink" href="#shell-functions" title="Link to this heading"></a></h3>
 <p>Some commands and capabilities are components of a shell and can <em>ONLY</em> be used with a shell.
 For example, the <code class="docutils literal notranslate"><span class="pre">dir</span></code> command is a component of <code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code> and is not its own program executable.
 Therefore, <code class="docutils literal notranslate"><span class="pre">dir</span></code> can only be used within the <code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code> shell.
@@ -1391,7 +1396,7 @@ For Linux, an example would be:</p>
 </div>
 </section>
 <section id="quoted-arguments">
-<h3>Quoted Arguments<a class="headerlink" href="#quoted-arguments" title="Permalink to this heading"></a></h3>
+<h3>Quoted Arguments<a class="headerlink" href="#quoted-arguments" title="Link to this heading"></a></h3>
 <p>When running a command on an agent from the server, the provided arguments are passed to executable that was called.
 As long as there are no special characters (e.g., <code class="docutils literal notranslate"><span class="pre">\</span></code> , <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> , <code class="docutils literal notranslate"><span class="pre">;</span></code> , <code class="docutils literal notranslate"><span class="pre">|</span></code> , <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> etc.) the command will be processed fine.</p>
 <p>For example, this command will work fine because it does not have any special characters:</p>
@@ -1418,7 +1423,7 @@ The command be executed in both of these ways:</p>
 </div>
 </section>
 <section id="escape-sequence">
-<h3>Escape Sequence<a class="headerlink" href="#escape-sequence" title="Permalink to this heading"></a></h3>
+<h3>Escape Sequence<a class="headerlink" href="#escape-sequence" title="Link to this heading"></a></h3>
 <p>Following along with the Quoted Arguments section above, the <code class="docutils literal notranslate"><span class="pre">\</span></code> symbol will be interpreted as an escape sequence.
 This is beneficial because it can be used to escape other characters like the pipe symbol, <code class="docutils literal notranslate"><span class="pre">|</span></code> .
 However, it can work against you when working with Windows file paths and the arguments are not enclosed in quotes.</p>
@@ -1438,7 +1443,7 @@ operable program or batch file.
 </section>
 </section>
 <section id="sdelete">
-<h2>sdelete<a class="headerlink" href="#sdelete" title="Permalink to this heading"></a></h2>
+<h2>sdelete<a class="headerlink" href="#sdelete" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">sdelete</span></code> command securely deletes a file.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» sdelete /tmp/deleteMe.txt
 [-] Created job ZfLruZBwbR for agent c1090dbc-f2f7-4d90-a241-86e0c0217786
@@ -1450,7 +1455,7 @@ operable program or batch file.
 </div>
 </section>
 <section id="sessions">
-<h2>sessions<a class="headerlink" href="#sessions" title="Permalink to this heading"></a></h2>
+<h2>sessions<a class="headerlink" href="#sessions" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">sessions</span></code> command is used to quickly list information about established agents from the main menu to include their status.
 The sessions command is available from any menu in the CLI.</p>
 <ul class="simple">
@@ -1473,7 +1478,7 @@ The sessions command is available from any menu in the CLI.</p>
 </div>
 </section>
 <section id="sharpgen">
-<h2>sharpgen<a class="headerlink" href="#sharpgen" title="Permalink to this heading"></a></h2>
+<h2>sharpgen<a class="headerlink" href="#sharpgen" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This command is only available to agent running on a <code class="docutils literal notranslate"><span class="pre">Windows</span></code> operating system!</p>
@@ -1507,7 +1512,7 @@ True
 </div>
 </section>
 <section id="shell">
-<span id="id24"></span><h2>shell<a class="headerlink" href="#shell" title="Permalink to this heading"></a></h2>
+<span id="id24"></span><h2>shell<a class="headerlink" href="#shell" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">shell</span></code> command is used to task the agent to execute the provided arguments using the operating system’s default
 shell and return STDOUT/STDERR. On Windows the <code class="docutils literal notranslate"><span class="pre">%COMSPEC%</span></code> shell is used and if it is <code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code> then the <code class="docutils literal notranslate"><span class="pre">/c</span></code>
 argument is used. For macOS and Linux, the <code class="docutils literal notranslate"><span class="pre">/bin/sh</span></code> shell is used with the <code class="docutils literal notranslate"><span class="pre">-c</span></code> argument.
@@ -1521,7 +1526,7 @@ Microsoft Windows [Version 10.0.16299.64]
 </pre></div>
 </div>
 <section id="id25">
-<h3>Shell Functions<a class="headerlink" href="#id25" title="Permalink to this heading"></a></h3>
+<h3>Shell Functions<a class="headerlink" href="#id25" title="Link to this heading"></a></h3>
 <p>Some commands and capabilities are components of a shell and can <em>ONLY</em> be used with a shell.
 For example, the <code class="docutils literal notranslate"><span class="pre">dir</span></code> command is a component of <code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code> and is not its own program executable.
 Therefore, <code class="docutils literal notranslate"><span class="pre">dir</span></code> can only be used within the <code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code> shell.</p>
@@ -1534,7 +1539,7 @@ Therefore, <code class="docutils literal notranslate"><span class="pre">dir</spa
 </div>
 </section>
 <section id="id26">
-<h3>Quoted Arguments<a class="headerlink" href="#id26" title="Permalink to this heading"></a></h3>
+<h3>Quoted Arguments<a class="headerlink" href="#id26" title="Link to this heading"></a></h3>
 <p>When running a command on an agent from the server, the provided arguments are passed to executable that was called.
 As long as there are no special characters (e.g., <code class="docutils literal notranslate"><span class="pre">\</span></code> , <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> , <code class="docutils literal notranslate"><span class="pre">;</span></code> , <code class="docutils literal notranslate"><span class="pre">|</span></code> , <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> , <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> etc.) the command will be processed fine.</p>
 <p>For example, this command will work fine because it does not have any special characters:</p>
@@ -1561,7 +1566,7 @@ The command be executed in both of these ways:</p>
 </div>
 </section>
 <section id="id27">
-<h3>Escape Sequence<a class="headerlink" href="#id27" title="Permalink to this heading"></a></h3>
+<h3>Escape Sequence<a class="headerlink" href="#id27" title="Link to this heading"></a></h3>
 <p>Following along with the Quoted Arguments section above, the <code class="docutils literal notranslate"><span class="pre">\</span></code> symbol will be interpreted as an escape sequence.
 This is beneficial because it can be used to escape other characters like the pipe symbol, <code class="docutils literal notranslate"><span class="pre">|</span></code> .
 However, it can work against you when working with Windows file paths and the arguments are not enclosed in quotes.</p>
@@ -1584,7 +1589,7 @@ File Not Found
 </section>
 </section>
 <section id="skew">
-<span id="id28"></span><h2>skew<a class="headerlink" href="#skew" title="Permalink to this heading"></a></h2>
+<span id="id28"></span><h2>skew<a class="headerlink" href="#skew" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">skew</span></code> command is used to introduce a jitter or skew to the agent sleep time to keep traffic from occurring at exact time intervals.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» skew 5
 Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
@@ -1593,7 +1598,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
 </div>
 </section>
 <section id="sleep">
-<span id="id29"></span><h2>sleep<a class="headerlink" href="#sleep" title="Permalink to this heading"></a></h2>
+<span id="id29"></span><h2>sleep<a class="headerlink" href="#sleep" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">sleep</span></code> control type is used to change the amount of time that an agent will sleep before checking in again. The default is 30 seconds. The values provided to this command are written in a time format. For example, <code class="docutils literal notranslate"><span class="pre">30s</span></code> is 30 seconds and <code class="docutils literal notranslate"><span class="pre">60m</span></code> is 60 minutes. There is no response on the CLI after the instruction has been provided to the agent. You can verify the setting was changed using the <code class="docutils literal notranslate"><span class="pre">agent</span> <span class="pre">info</span></code> command.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» sleep 15s
 Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
@@ -1602,7 +1607,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
 </div>
 </section>
 <section id="socks">
-<h2>socks<a class="headerlink" href="#socks" title="Permalink to this heading"></a></h2>
+<h2>socks<a class="headerlink" href="#socks" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">socks</span></code> command is used to start, stop, or list SOCKS5 listeners. There can only be one SOCKS5 listener per agent.</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#socks-list"><span class="std std-ref">list</span></a></p></li>
@@ -1610,7 +1615,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
 <li><p><a class="reference internal" href="#socks-stop"><span class="std std-ref">stop</span></a></p></li>
 </ul>
 <section id="list">
-<span id="socks-list"></span><h3>list<a class="headerlink" href="#list" title="Permalink to this heading"></a></h3>
+<span id="socks-list"></span><h3>list<a class="headerlink" href="#list" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">list</span></code> command will list active SOCKS5 listeners per agent. If the SOCKS5 listener was configured to listen on
 all interfaces (e.g., 0.0.0.0), then the interface will be listed as <code class="docutils literal notranslate"><span class="pre">[::]:</span></code>.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» socks list
@@ -1624,7 +1629,7 @@ c1090dbc-f2f7-4d90-a241-86e0c0217786    127.0.0.1:9050
 </div>
 </section>
 <section id="start">
-<span id="socks-start"></span><h3>start<a class="headerlink" href="#start" title="Permalink to this heading"></a></h3>
+<span id="socks-start"></span><h3>start<a class="headerlink" href="#start" title="Link to this heading"></a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>SOCKS5 listeners do not require authentication. Control access accordingly using firewall rules or SSH tunnels.</p>
@@ -1646,7 +1651,7 @@ the listener will default to listen on <code class="docutils literal notranslate
 </div>
 </section>
 <section id="stop">
-<span id="socks-stop"></span><h3>stop<a class="headerlink" href="#stop" title="Permalink to this heading"></a></h3>
+<span id="socks-stop"></span><h3>stop<a class="headerlink" href="#stop" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">stop</span></code> command will stop and remove the SOCKS5 listener for the current agent.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» socks stop
 [-] Successfully stopped SOCKS listener for agent c1090dbc-f2f7-4d90-a241-86e0c0217786 on 127.0.0.1:9055
@@ -1655,7 +1660,7 @@ the listener will default to listen on <code class="docutils literal notranslate
 </section>
 </section>
 <section id="ssh">
-<h2>ssh<a class="headerlink" href="#ssh" title="Permalink to this heading"></a></h2>
+<h2>ssh<a class="headerlink" href="#ssh" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">ssh</span></code> command connects to target host over the SSH protocol, executes the provided command, and returns the results.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1675,7 +1680,7 @@ the listener will default to listen on <code class="docutils literal notranslate
 </div>
 </section>
 <section id="status">
-<h2>status<a class="headerlink" href="#status" title="Permalink to this heading"></a></h2>
+<h2>status<a class="headerlink" href="#status" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">status</span></code> command is used to simply print if the Merlin Agent is Active, Delayed, or Dead to the screen. This becomes useful when you come back to Merlin after a couple of hours or if you want to see if your shell has died.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» status
 Active
@@ -1684,7 +1689,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
 </div>
 </section>
 <section id="token">
-<h2>token<a class="headerlink" href="#token" title="Permalink to this heading"></a></h2>
+<h2>token<a class="headerlink" href="#token" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">token</span></code> command is used to perform various operations with Windows <a class="reference external" href="https://docs.microsoft.com/en-us/windows/win32/secauthz/access-tokens">access tokens</a>.
 The following commands are available:</p>
 <ul class="simple">
@@ -1721,7 +1726,7 @@ The following commands are available:</p>
 <li><p><a class="reference internal" href="#shell"><span class="std std-ref">shell</span></a></p></li>
 </ul>
 <section id="make">
-<span id="token-make"></span><h3>make<a class="headerlink" href="#make" title="Permalink to this heading"></a></h3>
+<span id="token-make"></span><h3>make<a class="headerlink" href="#make" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">make</span></code> command is use to create a new Windows access token with the Windows <a class="reference external" href="https://docs.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-logonuserw">LogonUserW</a> API call. The token is created with a type <code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">-</span> <span class="pre">NewCredentials</span></code> <a class="reference external" href="https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/reference-tools-logon-types">logon type</a>. This is the equivalent of using <code class="docutils literal notranslate"><span class="pre">runas.exe</span> <span class="pre">/netonly</span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -1745,7 +1750,7 @@ The following commands are available:</p>
 </div>
 </section>
 <section id="privs">
-<span id="token-privs"></span><h3>privs<a class="headerlink" href="#privs" title="Permalink to this heading"></a></h3>
+<span id="token-privs"></span><h3>privs<a class="headerlink" href="#privs" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">privs</span></code> command enumerates the privilege associated with either the current process or a remote process.
 If the current process has a created or stolen, and process ID argument is not provided, then the applied token’s
 privileges will be enumerated.</p>
@@ -1794,7 +1799,7 @@ privileges will be enumerated.</p>
 </div>
 </section>
 <section id="rev2self">
-<span id="token-rev2self"></span><h3>rev2self<a class="headerlink" href="#rev2self" title="Permalink to this heading"></a></h3>
+<span id="token-rev2self"></span><h3>rev2self<a class="headerlink" href="#rev2self" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">rev2self</span></code> command leverages the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-reverttoself">RevertToSelf</a>
 Windows API function and releases, or drops, any access token that have been created or stolen.</p>
 <div class="admonition note">
@@ -1810,7 +1815,7 @@ Windows API function and releases, or drops, any access token that have been cre
 </div>
 </section>
 <section id="steal">
-<span id="token-steal"></span><h3>steal<a class="headerlink" href="#steal" title="Permalink to this heading"></a></h3>
+<span id="token-steal"></span><h3>steal<a class="headerlink" href="#steal" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">steal</span></code> command obtains a handle to a remote process’ access token, duplicates it through the
 <a class="reference external" href="https://docs.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-duplicatetokenex">DuplicateTokenEx</a>
 Windows API, and subsequently uses it to perform future post-exploitation commands.</p>
@@ -1828,7 +1833,7 @@ Windows API, and subsequently uses it to perform future post-exploitation comman
 </div>
 </section>
 <section id="whoami">
-<span id="token-whoami"></span><h3>whoami<a class="headerlink" href="#whoami" title="Permalink to this heading"></a></h3>
+<span id="token-whoami"></span><h3>whoami<a class="headerlink" href="#whoami" title="Link to this heading"></a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">whoami</span></code> command leverages the Windows <a class="reference external" href="https://docs.microsoft.com/en-us/windows/win32/api/securitybaseapi/nf-securitybaseapi-gettokeninformation">GetTokenInformaion</a> API call to return information
 about both the process and thread Windows access token. This information includes:</p>
 <ul class="simple">
@@ -1855,7 +1860,7 @@ Thread (Primary) Token:
 </section>
 </section>
 <section id="touch">
-<span id="id30"></span><h2>touch<a class="headerlink" href="#touch" title="Permalink to this heading"></a></h2>
+<span id="id30"></span><h2>touch<a class="headerlink" href="#touch" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">touch</span></code> command is used to duplicate a timestamp from one file to another. This technique is also known as timestomp</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» shell ls -la /tmp/deleteMe.txt
 [-] Created job hEXYmbbGpW for agent c1090dbc-f2f7-4d90-a241-86e0c0217786
@@ -1879,7 +1884,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» shell ls -la /tmp/deleteMe
 </div>
 </section>
 <section id="upload">
-<span id="id31"></span><h2>upload<a class="headerlink" href="#upload" title="Permalink to this heading"></a></h2>
+<span id="id31"></span><h2>upload<a class="headerlink" href="#upload" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">upload</span></code> command is used to upload a file <em>from</em> the Merlin server <em>to</em> the host where the Merlin agent is running. The command is called by proving the location of the file on the Merlin server followed by the location to save the file on the host where the Merlin agent is running.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1895,7 +1900,7 @@ Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» [-]Created job vXJsZdZLPP 
 </div>
 </section>
 <section id="uptime">
-<h2>uptime<a class="headerlink" href="#uptime" title="Permalink to this heading"></a></h2>
+<h2>uptime<a class="headerlink" href="#uptime" title="Link to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This command is only available to agent running on a <code class="docutils literal notranslate"><span class="pre">Windows</span></code> operating system!</p>
@@ -1911,7 +1916,7 @@ System uptime: 853h31m14.921s
 </div>
 </section>
 <section id="id32">
-<h2>!<a class="headerlink" href="#id32" title="Permalink to this heading"></a></h2>
+<h2>!<a class="headerlink" href="#id32" title="Link to this heading"></a></h2>
 <p>Any command that begins with a <code class="docutils literal notranslate"><span class="pre">!</span></code> (a.k.a bang or exclamation point) will be executed on host itself where the Merlin server is running. This is useful when you want simple information, such as your interface address, without having to open a new terminal.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin» !ip a show ens32
 

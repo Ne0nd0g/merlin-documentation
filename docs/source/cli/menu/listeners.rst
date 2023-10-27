@@ -79,6 +79,8 @@ info
 
 The ``info`` command is used to display information about a previously created Listener.
 
+View the :doc:`Listeners </cli/listeners>` page for additional information on specific listener configurable options.
+
 .. Note::
     Cycle through the available listeners using the tab key after the info command.
 
@@ -227,6 +229,8 @@ The `use` command is leveraged to create a new listener. The ``use`` command exp
 
 **NOTE:** Cycle through the available listener types using the tab key after the use command.
 
+View the :doc:`Listeners </cli/listeners>` page for additional information on specific listener configurable options.
+
 .. code-block:: html
 
     Merlin[listeners]» use http3
@@ -315,6 +319,8 @@ info
 
 The ``info`` command is used to display information about the Listener you are currently interacting with, indicated in the square brackets in the Merlin prompt.
 
+View the :doc:`Listeners </cli/listeners>` page for additional information on specific listener configurable options.
+
 .. code-block:: html
 
     Merlin[listeners][Default]» info
@@ -387,6 +393,8 @@ The ``set`` command is used to set the value of a configurable option for the Li
 
 **NOTE:** Cycle through the available configurable options for the current Listener using the tab key after the ``set`` command.
 
+View the :doc:`Listeners </cli/listeners>` page for additional information on specific listener configurable options.
+
 .. code-block:: html
 
     Merlin[listeners][Default]» set Name AcmeHTTPS
@@ -429,7 +437,9 @@ show
 
 The ``show`` command is used to show a table of all configurable options.
 
-.. code-block:: html
+View the :doc:`Listeners </cli/listeners>` page for additional information on specific listener configurable options.
+
+.. code-block:: text
 
     Merlin[listeners][Default]» show
     +-------------+--------------------------------------+
@@ -521,7 +531,12 @@ Any command that begins with a ``!`` (a.k.a bang or exclamation point) will be e
 Template
 ========
 
-The Listener Template menu is accessed by issuing the ``use`` command followed by a valid listener type from the Listener Main menu. The ``help`` command is used to view available commands for the Listener menu. Tab completion can be used at any time to provide the user a list of commands that can be selected.
+The Listener Template menu is accessed by issuing the ``use`` command followed by a valid listener type from the Listener Main menu.
+The ``help`` command is used to view available commands for the Listener menu.
+Tab completion can be used at any time to provide the user a list of commands that can be selected.
+
+
+View the :doc:`Listeners </cli/listeners>` page for additional information on specific listener configurable options.
 
 .. code-block:: text
 
@@ -582,6 +597,8 @@ info
 ----
 
 The ``info`` command is used to display the Listener template configurable options and their current value.
+
+View the :doc:`Listeners </cli/listeners>` page for additional information on specific listener configurable options.
 
 .. code-block:: html
 
@@ -655,6 +672,8 @@ The ``set`` command is used to set the value of a configurable option for the Li
 
 **NOTE:** Cycle through the available configurable options for the current Listener using the tab key after the ``set`` command.
 
+View the :doc:`Listeners </cli/listeners>` page for additional information on specific listener configurable options.
+
 .. code-block:: html
 
     Merlin[listeners]» use https
@@ -666,6 +685,8 @@ show
 ----
 
 The ``show`` command is used to display the Listener template configurable options and their current value.
+
+View the :doc:`Listeners </cli/listeners>` page for additional information on specific listener configurable options.
 
 .. code-block:: html
 

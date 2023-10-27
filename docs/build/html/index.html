@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Merlin Command and Control framework &mdash; Merlin BETA documentation</title>
@@ -11,15 +11,15 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=850acc4c"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Merlin Server" href="quickStart/server.html" /> 
+    <link rel="next" title="FAQ" href="faq/faq.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,11 +44,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Quick Start</span></p>
+              <p class="caption" role="heading"><span class="caption-text">FAQ</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="quickStart/server.html">Merlin Server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickStart/agent.html">Merlin Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quickStart/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickStart/quickstart.html">Quick Start</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Merlin Agent</span></p>
 <ul>
@@ -56,12 +58,23 @@
 <li class="toctree-l1"><a class="reference internal" href="agent/dll.html">DLL Agent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent/custom.html">Custom Build</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin CLI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="cli/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/cli.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/tls.html">TLS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/listeners.html">Listeners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/commands.html">Command Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/menu/main.html">Main Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/menu/agents.html">Agent Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/menu/listeners.html">Listener Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli/menu/modules.html">Modules Menu</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Merlin Server</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="server/menu/main.html">Main Menu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="server/menu/agents.html">Agent Menu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="server/menu/listeners.html">Listener Menu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="server/menu/modules.html">Modules Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/server.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="server/logging.html">Logging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="server/x509.html">TLS Certificates</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Modules</span></p>
@@ -72,7 +85,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="misc/blogs.html">Blog Posts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="misc/contrib.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="misc/logging.html">Logging</a></li>
 </ul>
 
         </div>
@@ -100,14 +112,31 @@
            <div itemprop="articleBody">
              
   <section id="merlin-command-and-control-framework">
-<h1>Merlin Command and Control framework<a class="headerlink" href="#merlin-command-and-control-framework" title="Permalink to this heading"></a></h1>
+<h1>Merlin Command and Control framework<a class="headerlink" href="#merlin-command-and-control-framework" title="Link to this heading"></a></h1>
 <a class="reference internal image-reference" href="_images/merlin-horizontal.png"><img alt="Merlin Banner" class="align-center" src="_images/merlin-horizontal.png" style="width: 300px;" /></a>
-<p>Merlin is a post-exploit Command &amp; Control (C2) tool, also known as a Remote Access Tool (RAT), that communicates using the HTTP/1.1, HTTP/2, and HTTP/3 protocols. HTTP/3 is the combination of HTTP/2 over the Quick UDP Internet Connections (QUIC) protocol. This tool was the result of my work evaluating HTTP/2 in a paper titled <a class="reference external" href="https://www.sans.org/reading-room/whitepapers/protocols/practical-approach-detecting-preventing-web-application-attacks-http-2-36877/">Practical Approach to Detecting and Preventing Web Application Attacks over HTTP/2</a>. Merlin is also my first attempts at learning <a class="reference external" href="https://golang.org/">Golang</a>.</p>
+<p>Merlin is a post-exploit Command &amp; Control (C2) tool, also known as a Remote Access Tool (RAT), that communicates using
+the HTTP/1.1, HTTP/2, and HTTP/3 protocols. HTTP/3 is the combination of HTTP/2 over the Quick UDP Internet Connections
+(QUIC) protocol. This tool was the result of my work evaluating HTTP/2 in a paper titled
+<a class="reference external" href="https://www.sans.org/reading-room/whitepapers/protocols/practical-approach-detecting-preventing-web-application-attacks-http-2-36877/">Practical Approach to Detecting and Preventing Web Application Attacks over HTTP/2</a>.
+Merlin is also my first attempts at learning <a class="reference external" href="https://golang.org/">Golang</a>.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>This tool is intended to only be used during research and authorized testing.</p>
 </div>
 <script id="asciicast-166722" src="https://asciinema.org/a/166722.js" async></script><div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="faq/faq.html">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq/faq.html#when-i-double-click-the-pre-compiled-windows-agent-binary-nothing-happens">When I double click the pre-compiled Windows agent binary, nothing happens.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq/faq.html#i-get-errors-when-trying-to-compile-merlin">I get errors when trying to compile Merlin.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq/faq.html#input-and-output-redirection-pipes-don-t-work">Input and output redirection pipes don’t work</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -123,7 +152,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="quickStart/server.html" class="btn btn-neutral float-right" title="Merlin Server" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="faq/faq.html" class="btn btn-neutral float-right" title="FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

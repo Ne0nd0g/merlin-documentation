@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TLS Certificates &mdash; Merlin BETA documentation</title>
@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=850acc4c"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -57,8 +57,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../agent/dll.html">DLL Agent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../agent/custom.html">Custom Build</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin CLI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/cli.html">HOME</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Merlin Server</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="server.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="menu/main.html">Main Menu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="menu/agents.html">Agent Menu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="menu/listeners.html">Listener Menu</a></li>
@@ -101,7 +106,7 @@
            <div itemprop="articleBody">
              
   <section id="tls-certificates">
-<h1>TLS Certificates<a class="headerlink" href="#tls-certificates" title="Permalink to this heading"></a></h1>
+<h1>TLS Certificates<a class="headerlink" href="#tls-certificates" title="Link to this heading"></a></h1>
 <p><strong>WARNING: You should generate and use a TLS certificate signed by a trusted Certificate Authority</strong></p>
 <p>Versions later than <code class="docutils literal notranslate"><span class="pre">0.6.8.BETA</span></code> will automatically generate a new <strong>UNTRUSTED</strong> and <strong>self-signed</strong> certificate when the server is started if a TLS certificate and TLS key are not provided.</p>
 <p>To facilitate ease of use, a TLS X.509 private and public certificate is distributed with Merlin for versions less than <code class="docutils literal notranslate"><span class="pre">0.6.8.BETA</span></code>. This allowed a user to start using Merlin right away. However, this key is widely distributed and is considered public knowledge. You should generate your own certificates and replace the default certificates that ship with Merlin. The default location for the certificates is the <code class="docutils literal notranslate"><span class="pre">data/x509</span></code> directory. The <code class="docutils literal notranslate"><span class="pre">openssl</span></code> command can be used from a Linux system to generate a key pair.</p>

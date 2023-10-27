@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Merlin Server &mdash; Merlin BETA documentation</title>
@@ -11,11 +11,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=850acc4c"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -47,10 +47,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Quick Start</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Merlin Server</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#ubuntu-server-18-04">Ubuntu Server 18.04</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Merlin Server</a></li>
 <li class="toctree-l1"><a class="reference internal" href="agent.html">Merlin Agent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
 </ul>
@@ -60,12 +57,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../agent/dll.html">DLL Agent</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../agent/custom.html">Custom Build</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin CLI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/cli.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/tls.html">TLS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/menu/main.html">Main Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/menu/agents.html">Agent Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/menu/listeners.html">Listener Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/menu/modules.html">Modules Menu</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Merlin Server</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../server/menu/main.html">Main Menu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../server/menu/agents.html">Agent Menu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../server/menu/listeners.html">Listener Menu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../server/menu/modules.html">Modules Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/server.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/logging.html">Logging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../server/x509.html">TLS Certificates</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Modules</span></p>
@@ -104,18 +110,16 @@
            <div itemprop="articleBody">
              
   <section id="merlin-server">
-<h1>Merlin Server<a class="headerlink" href="#merlin-server" title="Permalink to this heading"></a></h1>
-<p>The quickest and recommended way is to download Merlin Server from the <a class="reference external" href="https://github.com/Ne0nd0g/merlin/releases">releases</a> page for your host operating system (i.e Windows, macOS, or Linux).</p>
-<section id="ubuntu-server-18-04">
-<h2>Ubuntu Server 18.04<a class="headerlink" href="#ubuntu-server-18-04" title="Permalink to this heading"></a></h2>
+<h1>Merlin Server<a class="headerlink" href="#merlin-server" title="Link to this heading"></a></h1>
+<p>The quickest and recommended way is to download Merlin Server from the <a class="reference external" href="https://github.com/Ne0nd0g/merlin/releases">releases</a>
+page for your host operating system (i.e Windows, macOS, or Linux).</p>
 <p>The following single line of code can be used to download, extract, and run Merlin Server on an Ubuntu Server:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>bash<span class="p">;</span>apt<span class="w"> </span>update<span class="p">;</span>apt<span class="w"> </span>install<span class="w"> </span>p7zip-full<span class="w"> </span>-y<span class="p">;</span><span class="nb">cd</span><span class="w"> </span>/opt<span class="p">;</span>wget<span class="w"> </span>https://github.com/Ne0nd0g/merlin/releases/latest/download/merlinServer-Linux-x64.7z<span class="p">;</span>7z<span class="w"> </span>x<span class="w"> </span>-pmerlin<span class="w"> </span>-omerlin<span class="w"> </span>merlinServer-Linux-x64.7z<span class="p">;</span><span class="nb">cd</span><span class="w"> </span>merlin<span class="p">;</span>./merlinServer-Linux-x64
 </pre></div>
 </div>
 <p>If you’re using 7zip from the command line, but sure to use the <code class="docutils literal notranslate"><span class="pre">x</span></code> flag so that the files are extracted into their respective directories.</p>
-<p><strong>The Merlin Server file download includes the compiled agents for all 3 major platforms in the</strong> <code class="docutils literal notranslate"><span class="pre">data/bin/</span></code> <strong>directory</strong></p>
+<p><strong>The Merlin Server file download includes the CLI and compiled agents for all 3 major platforms in the</strong> <code class="docutils literal notranslate"><span class="pre">data/bin/</span></code> <strong>directory</strong></p>
 <p>Visit the <a class="reference internal" href="agent.html"><span class="doc">Merlin Agent</span></a> quick start to launch an agent.</p>
-</section>
 </section>
 
 
