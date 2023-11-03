@@ -40,9 +40,11 @@ View the :doc:`Listeners </cli/listeners>` page for additional information on sp
     LISTENER, The UUID of the listener that the peer-to-peer agent is configured to communicate with., Overrides the ``-listener`` flag
     RETRY, The maximum amount of failed checkins before the agent will quit running, Overrides the ``-maxretry`` commandline flag
     PAD, The maximum amount of data that will be randomly selected and appended to every message, Overrides the ``-padding`` commandline flag
+    PARROT, Configure the HTTP client's TLS configuration to match the provided browser string, Overrides the ``-parrot`` commandline flag
     PROTO, "Protocol for the agent to connect with [https (HTTP/1.1), http (HTTP/1.1 Clear-Text), h2 (HTTP/2), h2c (HTTP/2 Clear-Text), http3 (QUIC or HTTP/3.0)] (default 'h2')", Overrides the ``-proto`` commandline flag
     PROXY, Hardcoded proxy to use for http/1.1 traffic only that will override host configuration, Overrides the ``-proxy`` commandline flag
     PSK, Pre-Shared Key used to encrypt initial communications (default "merlin"), Overrides the ``-psk`` commandline flag
+    SECURE, Require TLS certificate validation for HTTP communications, Overrides the ``-secure`` commandline flag
     SKEW, "Amount of skew, or variance, between agent checkins", Overrides the ``-skew`` commandline flag
     SLEEP, "The amount of time the Agent will sleep between checkins Must use golang time notation (e.g., ``10s`` for ten seconds)", Overrides the ``-sleep`` command line flag
     TRANSFORMS, Ordered CSV of transforms to construct a message with, Overrides the ``-transforms`` commandline flag.

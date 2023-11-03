@@ -11,10 +11,10 @@ Documentation source code repository for Merlin C2 at https://merlin-c2.readthed
 
 This repository contains documentation for the following Merlin components and their individual version numbers:
 
-- [Merlin Server v1.5.1](https://github.com/Ne0nd0g/merlin/releases/tag/v1.5.1)
+- [Merlin Server v2.0.0](https://github.com/Ne0nd0g/merlin/releases/tag/v2.0.0)
 - [Merlin CLI](https://github.com/Ne0nd0g/merlin-cli)
-- [Merlin Agent v1.6.3](https://github.com/Ne0nd0g/merlin-agent/releases/tag/v1.6.3)
-- [Merlin Agent DLL v1.6.0](https://github.com/Ne0nd0g/merlin-agent-dll)
+- [Merlin Agent v2.0.0](https://github.com/Ne0nd0g/merlin-agent/releases/tag/v2.0.0)
+- [Merlin Agent DLL v2.0.0](https://github.com/Ne0nd0g/merlin-agent-dll)
 
 ## Build & View
 

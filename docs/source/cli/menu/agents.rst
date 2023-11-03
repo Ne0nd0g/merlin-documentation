@@ -96,6 +96,9 @@ The ``core`` commands are available to every agent regardless of which operating
                 | IP address                     | [hostname|ip address] ...
       padding   | Set the MAXIMUM amount of      | padding size
                 | random message padding         |
+      parrot    | Change the HTTP TLS            | parrot browserString
+                | configuration to match         |
+                | (parrot) the provided browser  |
       printenv  | List all environment           | printenv
                 | variables.                     |
       pwd       | Print the current working      | pwd
@@ -1742,6 +1745,30 @@ You can verify the setting was changed using the ``agent info`` command.
     Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» set padding 8192
     Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
     [-]Created job wlGTwgtqNx for agent c1090dbc-f2f7-4d90-a241-86e0c0217786
+
+parrot
+------
+
+.. note::
+    USAGE: ``parrot browserString``
+
+The ``parrot`` command changes the HTTP client's TLS configuration to match the provided browser string.
+Tab completion contains **some** of, but not all, the supported browser strings.
+This setting will override the ``ja3`` setting.
+Examples of some supported values are:
+
+* ``HelloChrome_Auto``
+* ``HelloChrome_102``
+* ``HelloGolang``
+* ``HelloFirefox_Auto``
+* ``HelloIOS_Auto``
+* ``HelloEdge_Auto``
+* ``HelloSafari_Auto``
+* ``Hello360_Auto``
+* ``HelloQQ_Auto``
+
+A full list of options can be found in the ``u_common.go`` file in the `utls library <https://github.com/refraction-networking/utls/tree/master>`_.
+
 
 pipes
 -----

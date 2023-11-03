@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 Use `sphinx-build --version` to determine the current version of sphinx in use
 
+## 2.1.0 - 2023-11-03
+
+### Added
+
+- Added `parrot` & `secure` commands for the Agent CLI arguments and Makefile
+  - Added `parrot` command to the Merlin CLI 
+- Documentation for proxying Agent DLL provided by @HuskyHacks in [PR 136](https://github.com/Ne0nd0g/merlin/pull/136)
+
 ## 2.0.0 - 2023-10-27
 
 ### Added 

@@ -27,12 +27,16 @@ The following command line flags can be used when executing Merlin agent:
             The maximum amount of failed checkins before the agent will quit running (default "7")
       -padding string
             The maximum amount of data that will be randomly selected and appended to every message (default "4096")
+      -parrot string
+        parrot or mimic a specific browser from github.com/refraction-networking/utls (e.g., HelloChrome_Auto)
       -proto string
             Protocol for the agent to connect with [https (HTTP/1.1), http (HTTP/1.1 Clear-Text), h2 (HTTP/2), h2c (HTTP/2 Clear-Text), http3 (QUIC or HTTP/3.0), tcp-bind, tcp-reverse, udp-bind, udp-reverse, smb-bind] (default "h2")
       -proxy string
             Hardcoded proxy to use for http/1.1 traffic only that will override host configuration
       -psk string
             Pre-Shared Key used to encrypt initial communications (default "merlin")
+      -secure string
+            Require TLS certificate validation for HTTP communications (default "false")
       -skew string
             Amount of skew, or variance, between agent checkins (default "3000")
       -sleep string
@@ -129,6 +133,25 @@ padding
 The ``-padding`` flag is maximum amount of data that will be randomly selected and appended to every message.
 The default value is 4096 bytes. The data padding is intended to increase the detection difficulty for idle checkin
 behavior when the message size was fixed everytime.
+
+parrot
+======
+
+The ``-parrot`` flag is used to configure the HTTP TLS client to parrot or mimic a specific browser.
+This setting will override the ``-ja3`` flag.
+Examples of some supported values are:
+
+* ``HelloChrome_Auto``
+* ``HelloChrome_102``
+* ``HelloGolang``
+* ``HelloFirefox_Auto``
+* ``HelloIOS_Auto``
+* ``HelloEdge_Auto``
+* ``HelloSafari_Auto``
+* ``Hello360_Auto``
+* ``HelloQQ_Auto``
+
+A full list of options can be found in the ``u_common.go`` in the `utls library <https://github.com/refraction-networking/utls/tree/master>`_.
 
 proto
 =====

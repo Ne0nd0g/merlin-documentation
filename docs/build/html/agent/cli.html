@@ -66,6 +66,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#listener">listener</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#maxretry">maxretry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#padding">padding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parrot">parrot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#proto">proto</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#proxy">proxy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#psk">psk</a></li>
@@ -83,10 +84,12 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Merlin CLI</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/faq.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cli/cli.html">Command Line Flags</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cli/tls.html">TLS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cli/commands.html">Commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../cli/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/listeners.html">Listeners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/commands.html">Command Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cli/logging.html">Logging</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cli/menu/main.html">Main Menu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cli/menu/agents.html">Agent Menu</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cli/menu/listeners.html">Listener Menu</a></li>
@@ -106,7 +109,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../misc/blogs.html">Blog Posts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../misc/contrib.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../misc/logging.html">Logging</a></li>
 </ul>
 
         </div>
@@ -157,12 +159,16 @@
         The maximum amount of failed checkins before the agent will quit running (default &quot;7&quot;)
   -padding string
         The maximum amount of data that will be randomly selected and appended to every message (default &quot;4096&quot;)
+  -parrot string
+    parrot or mimic a specific browser from github.com/refraction-networking/utls (e.g., HelloChrome_Auto)
   -proto string
         Protocol for the agent to connect with [https (HTTP/1.1), http (HTTP/1.1 Clear-Text), h2 (HTTP/2), h2c (HTTP/2 Clear-Text), http3 (QUIC or HTTP/3.0), tcp-bind, tcp-reverse, udp-bind, udp-reverse, smb-bind] (default &quot;h2&quot;)
   -proxy string
         Hardcoded proxy to use for http/1.1 traffic only that will override host configuration
   -psk string
         Pre-Shared Key used to encrypt initial communications (default &quot;merlin&quot;)
+  -secure string
+        Require TLS certificate validation for HTTP communications (default &quot;false&quot;)
   -skew string
         Amount of skew, or variance, between agent checkins (default &quot;3000&quot;)
   -sleep string
@@ -251,6 +257,24 @@ The Agent’s configuration must match the Listener’s configuration on the ser
 <p>The <code class="docutils literal notranslate"><span class="pre">-padding</span></code> flag is maximum amount of data that will be randomly selected and appended to every message.
 The default value is 4096 bytes. The data padding is intended to increase the detection difficulty for idle checkin
 behavior when the message size was fixed everytime.</p>
+</section>
+<section id="parrot">
+<h2>parrot<a class="headerlink" href="#parrot" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">-parrot</span></code> flag is used to configure the HTTP TLS client to parrot or mimic a specific browser.
+This setting will override the <code class="docutils literal notranslate"><span class="pre">-ja3</span></code> flag.
+Examples of some supported values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">HelloChrome_Auto</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HelloChrome_102</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HelloGolang</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HelloFirefox_Auto</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HelloIOS_Auto</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HelloEdge_Auto</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HelloSafari_Auto</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Hello360_Auto</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">HelloQQ_Auto</span></code></p></li>
+</ul>
+<p>A full list of options can be found in the <code class="docutils literal notranslate"><span class="pre">u_common.go</span></code> in the <a class="reference external" href="https://github.com/refraction-networking/utls/tree/master">utls library</a>.</p>
 </section>
 <section id="proto">
 <h2>proto<a class="headerlink" href="#proto" title="Link to this heading"></a></h2>
