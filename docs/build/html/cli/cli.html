@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Command Line Flags &mdash; Merlin BETA documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=850acc4c"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="TLS" href="tls.html" />
+    <link rel="prev" title="Custom Build" href="../agent/custom.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Merlin
+          </a>
+              <div class="version">
+                0.8.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickStart/quickstart.html">Quick Start</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin Agent</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agent/cli.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/dll.html">DLL Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/custom.html">Custom Build</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin CLI</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Command Line Flags</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#addr">addr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#password">password</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#secure">secure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tlsca">tlsCA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tlscert">tlsCert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#version">version</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tls.html">TLS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/main.html">Main Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/agents.html">Agent Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/listeners.html">Listener Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/modules.html">Modules Menu</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/server.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/x509.html">TLS Certificates</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/build.html">Building Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Misc.</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/blogs.html">Blog Posts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/logging.html">Logging</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Merlin</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Command Line Flags</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cli/cli.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="command-line-flags">
+<h1>Command Line Flags<a class="headerlink" href="#command-line-flags" title="Link to this heading"></a></h1>
+<p>Merlin is composed of the following components:</p>
+<ul class="simple">
+<li><p>Merlin Server - The program that receives and handles Agent traffic and operator CLI commands to control the server and Agents</p></li>
+<li><p>Merlin Agent - The post-exploitation command and control Agent that runs on a compromised host</p></li>
+<li><p>Merlin CLI - The command line interface that allows operators to interact with the Merlin Server and Agents</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page cover the Merlin Command Line Interface (CLI) program</p>
+</div>
+<p>The CLI uses Google RPC (gRPC) protocol buffers over TLS to communicate with the Merlin Server.
+All API calls require a password to authenticate to the server.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ ./merlin-cli -h
+Usage of merlin-cli:
+  -addr string
+        The address of the Merlin server to connect to (default &quot;127.0.0.1:50051&quot;)
+  -password string
+        the password to connect to the Merlin server (default &quot;merlin&quot;)
+  -secure
+        Require server TLS certificate verification
+  -tlsCA string
+        TLS Certificate Authority file path
+  -tlsCert string
+        TLS certificate file path
+  -tlsKey string
+        TLS private key file path
+  -version
+        Print the version number and exit
+</pre></div>
+</div>
+<section id="addr">
+<h2>addr<a class="headerlink" href="#addr" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default address is <code class="docutils literal notranslate"><span class="pre">127.0.0.1:50051</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">addr</span></code> flag specifies the address of the Merlin Server to connect to. The connection uses gRPC over TLS.</p>
+</section>
+<section id="password">
+<h2>password<a class="headerlink" href="#password" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The default password is <code class="docutils literal notranslate"><span class="pre">merlin</span></code> and should always be changed to prevent unauthorized access</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">password</span></code> flag sets the password needed to authenticate all gRPC requests.</p>
+</section>
+<section id="secure">
+<h2>secure<a class="headerlink" href="#secure" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, the Merlin Server will generate a self-signed TLS certificate that will not be trusted by the CLI if this flag is enabled.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">secure</span></code> flag enables TLS certificate verification. When this flag is set, the CLI will verify the Server’s TLS certificate.</p>
+</section>
+<section id="tlsca">
+<h2>tlsCA<a class="headerlink" href="#tlsca" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">tlsCA</span></code> flag specifies a custom CA certificate file to validate and trust the Server’s certificate.</p>
+</section>
+<section id="tlscert">
+<h2>tlsCert<a class="headerlink" href="#tlscert" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">tlsCert</span></code> flag specifies the certificate file the Merlin CLI will use for mutual TLS authentication with the Merlin Server.</p>
+<p>tlsKey</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">tlsKey</span></code> flag specifies the private key file for the <code class="docutils literal notranslate"><span class="pre">tlsCert</span></code>.</p>
+</section>
+<section id="version">
+<h2>version<a class="headerlink" href="#version" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">version</span></code> flag prints the version number of the Merlin Server and exits.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ ./merlin-cli -version
+Merlin Version: 1.0.0, Build: nonRelease
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../agent/custom.html" class="btn btn-neutral float-left" title="Custom Build" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tls.html" class="btn btn-neutral float-right" title="TLS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Russel Van Tuyl (@Ne0nd0g).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logging &mdash; Merlin BETA documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=850acc4c"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Main Menu" href="menu/main.html" />
+    <link rel="prev" title="Command Interface" href="commands.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Merlin
+          </a>
+              <div class="version">
+                0.8.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickStart/quickstart.html">Quick Start</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin Agent</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agent/cli.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/dll.html">DLL Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/custom.html">Custom Build</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin CLI</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tls.html">TLS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Command Interface</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/main.html">Main Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/agents.html">Agent Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/listeners.html">Listener Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/modules.html">Modules Menu</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/server.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/x509.html">TLS Certificates</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/build.html">Building Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Misc.</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/blogs.html">Blog Posts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/logging.html">Logging</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Merlin</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Logging</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cli/logging.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="logging">
+<h1>Logging<a class="headerlink" href="#logging" title="Link to this heading"></a></h1>
+<p>The Merlin CLI program creates a log file in the current working directory named <cite>merlinClientLog.txt</cite>.
+This file contains log data about the CLI program itself along with the executed commands and their output.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{&quot;time&quot;:&quot;2023-10-26T09:46:50.660713487-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin-cli/services/cli.(*Service).Run&quot;,&quot;file&quot;:&quot;/home/rastley/Dev/merlin-cli/services/cli/cli.go&quot;,&quot;line&quot;:143},&quot;msg&quot;:&quot;Starting Merlin version: 0.0.0, build: nonRelease, client ID: 891bf3bc-2474-43c8-8ee0-072427b4ecbc&quot;}
+{&quot;time&quot;:&quot;2023-10-26T09:46:50.700554795-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin-cli/services/cli.(*Service).displayUserMessages.func1&quot;,&quot;file&quot;:&quot;/home/rastley/Dev/merlin-cli/services/cli/cli.go&quot;,&quot;line&quot;:558},&quot;msg&quot;:&quot;[+] 2023-10-26T13:46:50Z Succesfully connected to Merlin server at 127.0.0.1:50051&quot;}
+{&quot;time&quot;:&quot;2023-10-26T09:47:07.157172376-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin-cli/services/cli.(*Service).handle&quot;,&quot;file&quot;:&quot;/home/rastley/Dev/merlin-cli/services/cli/cli.go&quot;,&quot;line&quot;:201},&quot;msg&quot;:&quot;Command entered: listeners&quot;}
+{&quot;time&quot;:&quot;2023-10-26T09:47:12.776028985-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin-cli/services/cli.(*Service).handle&quot;,&quot;file&quot;:&quot;/home/rastley/Dev/merlin-cli/services/cli/cli.go&quot;,&quot;line&quot;:201},&quot;msg&quot;:&quot;Command entered: interact dc61d4c9-9114-4482-a09e-f33e13aa8541&quot;}
+{&quot;time&quot;:&quot;2023-10-26T09:47:15.236683208-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin-cli/services/cli.(*Service).handle&quot;,&quot;file&quot;:&quot;/home/rastley/Dev/merlin-cli/services/cli/cli.go&quot;,&quot;line&quot;:201},&quot;msg&quot;:&quot;Command entered: main&quot;}
+{&quot;time&quot;:&quot;2023-10-26T09:47:17.430615308-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin-cli/services/cli.(*Service).handle&quot;,&quot;file&quot;:&quot;/home/rastley/Dev/merlin-cli/services/cli/cli.go&quot;,&quot;line&quot;:201},&quot;msg&quot;:&quot;Command entered: interact 617d2d8f-5349-4532-8d7e-12b342589897&quot;}
+{&quot;time&quot;:&quot;2023-10-26T09:47:19.725450154-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin-cli/services/cli.(*Service).handle&quot;,&quot;file&quot;:&quot;/home/rastley/Dev/merlin-cli/services/cli/cli.go&quot;,&quot;line&quot;:201},&quot;msg&quot;:&quot;Command entered: run whoami&quot;}
+{&quot;time&quot;:&quot;2023-10-26T09:47:19.75005658-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin-cli/services/cli.(*Service).displayUserMessages.func1&quot;,&quot;file&quot;:&quot;/home/rastley/Dev/merlin-cli/services/cli/cli.go&quot;,&quot;line&quot;:544},&quot;msg&quot;:&quot;[-] 2023-10-26T13:47:19Z Created job oHcHIcojhs for agent 617d2d8f-5349-4532-8d7e-12b342589897 at 2023-10-26T13:47:19Z&quot;}
+{&quot;time&quot;:&quot;2023-10-26T09:47:44.849542612-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin-cli/services/cli.(*Service).displayUserMessages.func1&quot;,&quot;file&quot;:&quot;/home/rastley/Dev/merlin-cli/services/cli/cli.go&quot;,&quot;line&quot;:544},&quot;msg&quot;:&quot;[-] 2023-10-26T13:47:44Z Results of job oHcHIcojhs for agent 617d2d8f-5349-4532-8d7e-12b342589897 at 2023-10-26T13:47:44Z&quot;}
+{&quot;time&quot;:&quot;2023-10-26T09:47:44.849670815-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin-cli/services/cli.(*Service).displayUserMessages.func1&quot;,&quot;file&quot;:&quot;/home/rastley/Dev/merlin-cli/services/cli/cli.go&quot;,&quot;line&quot;:558},&quot;msg&quot;:&quot;[+] 2023-10-26T13:47:44Z Created whoami process with an ID of 353566\nrastley\n&quot;}
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="commands.html" class="btn btn-neutral float-left" title="Command Interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="menu/main.html" class="btn btn-neutral float-right" title="Main Menu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Russel Van Tuyl (@Ne0nd0g).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Command Interface &mdash; Merlin BETA documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=850acc4c"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Logging" href="logging.html" />
+    <link rel="prev" title="TLS" href="tls.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Merlin
+          </a>
+              <div class="version">
+                0.8.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickStart/quickstart.html">Quick Start</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin Agent</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agent/cli.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/dll.html">DLL Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/custom.html">Custom Build</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin CLI</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tls.html">TLS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Command Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/main.html">Main Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/agents.html">Agent Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/listeners.html">Listener Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/modules.html">Modules Menu</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/server.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/x509.html">TLS Certificates</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/build.html">Building Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Misc.</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/blogs.html">Blog Posts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/logging.html">Logging</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Merlin</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Command Interface</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cli/commands.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="command-interface">
+<h1>Command Interface<a class="headerlink" href="#command-interface" title="Link to this heading"></a></h1>
+<p>Merlin CLI commands are defined in the <cite>commands</cite> directory. Each command is its own file.
+The following top-level directory structure is used:</p>
+<ul class="simple">
+<li><p><strong>agent</strong> - Commands that are only accessible in the <code class="docutils literal notranslate"><span class="pre">Merlin[agent]»</span></code> menu, used to interact with Agent</p></li>
+<li><p><strong>all</strong> - Commands that are accessible on all menus in the CLI</p></li>
+<li><p><strong>listeners</strong> - Commands that are only accessible in the <code class="docutils literal notranslate"><span class="pre">Merlin[listeners]»</span></code> menu, used to interact with listeners</p></li>
+<li><p><strong>mainMenu</strong> - Commands that are only accessible in the <code class="docutils literal notranslate"><span class="pre">Merlin»</span></code> menu</p></li>
+<li><p><strong>modules</strong> - Commands that are only accessible in the <code class="docutils literal notranslate"><span class="pre">Merlin[modules]»</span></code> menu, used to interact with modules</p></li>
+<li><p><strong>multi</strong> - Commands that are accessible in multiple menus, but not all (e.g., <code class="docutils literal notranslate"><span class="pre">info</span></code>)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">commands/template/template.go</span></code> file can be used as a template for new commands</p>
+</div>
+<p>New commands must implement the <code class="docutils literal notranslate"><span class="pre">Command</span></code> interface which has the following functions:</p>
+<div class="highlight-go notranslate"><div class="highlight"><pre><span></span><span class="c1">// Completer returns the data that is displayed in the CLI for tab completion depending on the menu the command is for</span>
+<span class="c1">// Errors are not returned to ensure the CLI is not interrupted.</span>
+<span class="c1">// Errors are logged and can be viewed by enabling debug output in the CLI</span>
+<span class="nx">Completer</span><span class="p">(</span><span class="nx">m</span><span class="w"> </span><span class="nx">menu</span><span class="p">.</span><span class="nx">Menu</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="nx">uuid</span><span class="p">.</span><span class="nx">UUID</span><span class="p">)</span><span class="w"> </span><span class="nx">readline</span><span class="p">.</span><span class="nx">PrefixCompleterInterface</span>
+<span class="c1">// Do executes the command and returns a Response to the caller to facilitate changes in the CLI service</span>
+<span class="c1">// m, an optional parameter, is the Menu the command was executed from</span>
+<span class="c1">// id, an optional parameter, used to identify a specific Agent, Listener, or Module</span>
+<span class="c1">// arguments, and optional, parameter, is the full unparsed string entered on the command line to include the</span>
+<span class="c1">// command itself passed into command for processing</span>
+<span class="c1">// Errors are returned through the Error and Message fields of the embedded messages.UserMessage struct in the Response struct</span>
+<span class="nx">Do</span><span class="p">(</span><span class="nx">m</span><span class="w"> </span><span class="nx">menu</span><span class="p">.</span><span class="nx">Menu</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="nx">uuid</span><span class="p">.</span><span class="nx">UUID</span><span class="p">,</span><span class="w"> </span><span class="nx">arguments</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">response</span><span class="w"> </span><span class="nx">Response</span><span class="p">)</span>
+<span class="c1">// Help returns a help.Help structure that can be used to view a command&#39;s Description, Notes, Usage, and an example</span>
+<span class="nx">Help</span><span class="p">(</span><span class="nx">m</span><span class="w"> </span><span class="nx">menu</span><span class="p">.</span><span class="nx">Menu</span><span class="p">)</span><span class="w"> </span><span class="nx">help</span><span class="p">.</span><span class="nx">Help</span>
+<span class="c1">// Menu checks to see if the command is supported for the provided menu</span>
+<span class="nx">Menu</span><span class="p">(</span><span class="nx">menu</span><span class="p">.</span><span class="nx">Menu</span><span class="p">)</span><span class="w"> </span><span class="kt">bool</span>
+<span class="c1">// OS returns the supported operating system the command can be executed on</span>
+<span class="nx">OS</span><span class="p">()</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">OS</span>
+<span class="c1">// String returns the unique name of the command as a string</span>
+<span class="nx">String</span><span class="p">()</span><span class="w"> </span><span class="kt">string</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Once a new command file has been added to the directory, it must be added to the <code class="docutils literal notranslate"><span class="pre">load</span></code> function in <code class="docutils literal notranslate"><span class="pre">commands/repository/repository.go</span></code></p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tls.html" class="btn btn-neutral float-left" title="TLS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="logging.html" class="btn btn-neutral float-right" title="Logging" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Russel Van Tuyl (@Ne0nd0g).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

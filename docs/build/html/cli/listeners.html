@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Listeners &mdash; Merlin BETA documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=850acc4c"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Command Interface" href="commands.html" />
+    <link rel="prev" title="TLS" href="tls.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Merlin
+          </a>
+              <div class="version">
+                0.8.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">FAQ</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../faq/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickStart/quickstart.html">Quick Start</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin Agent</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agent/cli.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/dll.html">DLL Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/custom.html">Custom Build</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin CLI</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tls.html">TLS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Listeners</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#core-configuration-options">Core Configuration Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#authenticator">Authenticator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id">ID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#name">Name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#protocol">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#psk">PSK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transforms">Transforms</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#http-configuration-options">HTTP Configuration Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interface">Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jwtkey">JWTKey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jwtleeway">JWTLeeway</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#port">Port</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#urls">URLS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x509cert">X509Cert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x509key">X509Key</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#smb-configuration-options">SMB Configuration Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pipe">Pipe</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tcp-configuration-options">TCP Configuration Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tcp-interface">Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tcp-port">Port</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#udp-configuration-options">UDP Configuration Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#udp-interface">Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#udp-port">Port</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="commands.html">Command Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/main.html">Main Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/agents.html">Agent Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/listeners.html">Listener Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/modules.html">Modules Menu</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../server/server.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../server/x509.html">TLS Certificates</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/build.html">Building Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Misc.</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/blogs.html">Blog Posts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/logging.html">Logging</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Merlin</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Listeners</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/cli/listeners.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="listeners">
+<h1>Listeners<a class="headerlink" href="#listeners" title="Link to this heading"></a></h1>
+<p>This page covers information about listener configurations</p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>Listeners are instantiated on the Merlin Server and are how Merlin Agents communicate with the server.
+Listeners are configured through the Merlin CLI.
+Listeners contain the configuration that the Merlin Server uses to understand Merlin Agent traffic.
+Some Listeners have an associated associated server, like an HTTP server, not to be confused with the Merlin Server.
+Peer-to-peer Listeners do not have a server because traffic is passed to them through delegate messages, they don’t
+actually bind to a network interface.</p>
+<p>Available Listener types are:</p>
+<ul class="simple">
+<li><p><strong>HTTP</strong> - Uses the HTTP/1.1 protocol to communicate with Merlin Agents without TLS</p></li>
+<li><p><strong>HTTPS</strong> - Uses the HTTP/1.1 protocol to communicate with Merlin Agents with TLS</p></li>
+<li><p><strong>H2C</strong> - Uses the HTTP/2 clear-text protocol to communicate with Merlin Agents without TLS</p></li>
+<li><p><strong>HTTP2</strong> - Uses the HTTP/2 protocol to communicate with Merlin Agents with TLS</p></li>
+<li><p><strong>HTTP3</strong> - Uses the UDP-based HTTP/3 protocol (HTTP/2 over QUIC) to communicate with Merlin Agents with TLS</p></li>
+<li><p><strong>SMB</strong> - Processes messages for SMB-based peer-to-peer Agents but does not listen for traffic itself, just handling</p></li>
+<li><p><strong>TCP</strong> - Processes messages for TCP-based peer-to-peer Agents but does not listen for traffic itself, just handling</p></li>
+<li><p><strong>UDP</strong> - Processes messages for UDP-based peer-to-peer Agents but does not listen for traffic itself, just handling</p></li>
+</ul>
+</section>
+<section id="core-configuration-options">
+<h2>Core Configuration Options<a class="headerlink" href="#core-configuration-options" title="Link to this heading"></a></h2>
+<p>The following configuration options are standard across all Listener types:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#authenticator"><span class="std std-ref">Authenticator</span></a></p></li>
+<li><p><a class="reference internal" href="#description"><span class="std std-ref">Description</span></a></p></li>
+<li><p><a class="reference internal" href="#id"><span class="std std-ref">ID</span></a></p></li>
+<li><p><a class="reference internal" href="#listener-name"><span class="std std-ref">Name</span></a></p></li>
+<li><p><a class="reference internal" href="#protocol"><span class="std std-ref">Protocol</span></a></p></li>
+<li><p><a class="reference internal" href="#psk"><span class="std std-ref">PSK</span></a></p></li>
+<li><p><a class="reference internal" href="#transforms"><span class="std std-ref">Transforms</span></a></p></li>
+</ul>
+<section id="authenticator">
+<span id="id1"></span><h3>Authenticator<a class="headerlink" href="#authenticator" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Authenticator</span></code> configuration option is used to set what method of authentication is used by the Merlin Agent to
+authenticate to the server.</p>
+<p>The following options are available:</p>
+<ul class="simple">
+<li><p><strong>OPAQUE</strong> - This is the default option and uses the <a class="reference external" href="https://datatracker.ietf.org/doc/draft-irtf-cfrg-opaque/">OPAQUE</a> Asymmetric Password Authenticated Key Exchange (PAKE)</p></li>
+<li><p><strong>None</strong> - This option disables authentication and allows any Merlin Agent to connect to the Listener</p></li>
+</ul>
+</section>
+<section id="description">
+<span id="id2"></span><h3>Description<a class="headerlink" href="#description" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Description</span></code> configuration option is used to set a description for the Listener.
+Mainly used by operators to describe the purpose of the Listener.</p>
+</section>
+<section id="id">
+<span id="id3"></span><h3>ID<a class="headerlink" href="#id" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">ID</span></code> is a UUID for the instantiated listener tracked on the Merlin Server.
+If this value is not set, a random one will be generated when the Listener is created.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ID</span></code> field can be set to a specific UUID before it is created.
+This is useful when the Server is restarted and the Listener needs to be recreated.
+It is also useful when a peer-to-peer Agent was configured to communicat with a specific Listener ID does not exist.</p>
+</section>
+<section id="name">
+<span id="listener-name"></span><h3>Name<a class="headerlink" href="#name" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Name</span></code> configuration option is used to set a name for the Listener.
+Mainly used by operators to identify the listener in tables displayed in the Merlin CLI.</p>
+</section>
+<section id="protocol">
+<span id="id4"></span><h3>Protocol<a class="headerlink" href="#protocol" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Protocol</span></code> configuration option is used to set what protocol the Listener will use to communicate with the Merlin Agent.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Because peer-to-peer listeners do not have an associated server, there are not separate types for bind and reverse</p>
+</div>
+<p>The following options are available:</p>
+<ul class="simple">
+<li><p><strong>HTTP</strong> - Uses the HTTP/1.1 protocol to communicate with Merlin Agents without TLS</p></li>
+<li><p><strong>HTTPS</strong> - Uses the HTTP/1.1 protocol to communicate with Merlin Agents with TLS</p></li>
+<li><p><strong>H2C</strong> - Uses the HTTP/2 clear-text protocol to communicate with Merlin Agents without TLS</p></li>
+<li><p><strong>HTTP2</strong> - Uses the HTTP/2 protocol to communicate with Merlin Agents with TLS</p></li>
+<li><p><strong>HTTP3</strong> - Uses the UDP-based HTTP/3 protocol (HTTP/2 over QUIC) to communicate with Merlin Agents with TLS</p></li>
+<li><p><strong>SMB</strong> - Processes messages for SMB-based peer-to-peer Agents but does not listen for traffic itself, just handling</p></li>
+<li><p><strong>TCP</strong> - Processes messages for TCP-based peer-to-peer Agents but does not listen for traffic itself, just handling</p></li>
+<li><p><strong>UDP</strong> - Processes messages for UDP-based peer-to-peer Agents but does not listen for traffic itself, just handling</p></li>
+</ul>
+</section>
+<section id="psk">
+<span id="id5"></span><h3>PSK<a class="headerlink" href="#psk" title="Link to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The default PSK is <code class="docutils literal notranslate"><span class="pre">merlin</span></code> and should not be used</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">PSK</span></code> configuration option is used to set the pre-shared key that is used to encrypt traffic between the Merlin Agent and the Listener.</p>
+</section>
+<section id="transforms">
+<span id="id6"></span><h3>Transforms<a class="headerlink" href="#transforms" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Transforms</span></code> option is used to specify the ordered list of transforms that will be used to construct/deconstruct a message.
+The default value is <code class="docutils literal notranslate"><span class="pre">jwe,gob-base</span></code>. The transforms are applied in the order they are specified.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">gob-base</span></code> transform must be the last transform in the list to unmarshall into a Go structure</p>
+</div>
+<p>Available transforms consist of encoders and encrypters:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">aes</span></code> - AES encrypt/decrypt the data</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base64-byte</span></code> - Encode/decode the data to/from base64 as bytes using the <a class="reference external" href="https://pkg.go.dev/encoding/base64#Encoding.EncodedLen">EncodeLen()</a> function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base64-string</span></code> - Encode/decode the data to/from base64 as a string using the <a class="reference external" href="https://pkg.go.dev/encoding/base64#Encoding.EncodeToString">EncodeToString()</a> function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hex-byte</span></code> - Encode/decode the data to/from hex as bytes using the <a class="reference external" href="https://pkg.go.dev/encoding/hex#EncodedLen">EncodeLen</a> function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hex-string</span></code> - Encode/decode the data to/from hex as a string using the <a class="reference external" href="https://pkg.go.dev/encoding/hex#EncodeToString">EncodeToString</a> function</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gob-base</span></code> - Gob encode/decode the message in to a <a class="reference external" href="https://github.com/Ne0nd0g/merlin-message/blob/main/messages.go">Merlin Base</a> message structure</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gob-string</span></code> - Gob encode/decode the message in to a string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">jwe</span></code> - Encode/decode the data into a <a class="reference external" href="https://www.rfc-editor.org/info/rfc7516">JSON Web Encryption (RFC 7516)</a> structure</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rc4</span></code> - Encode/decode the data using the RC4 stream cipher</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xor</span></code> - Encode/decode the data using the XOR cipher</p></li>
+</ul>
+<p>The JWE transform uses the following configuration:</p>
+<ul class="simple">
+<li><p>Encrypter: <code class="docutils literal notranslate"><span class="pre">A256GCM</span></code></p></li>
+<li><p>Algorithm: <code class="docutils literal notranslate"><span class="pre">PBES2_HS512_A256KW</span></code></p></li>
+<li><p>PBES2Count: <code class="docutils literal notranslate"><span class="pre">3000</span></code></p></li>
+</ul>
+</section>
+</section>
+<section id="http-configuration-options">
+<span id="http"></span><h2>HTTP Configuration Options<a class="headerlink" href="#http-configuration-options" title="Link to this heading"></a></h2>
+<p>The following configuration options are specific to HTTP-based Listeners:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#http-interface"><span class="std std-ref">Interface</span></a></p></li>
+<li><p><a class="reference internal" href="#jwtkey"><span class="std std-ref">JWTKey</span></a></p></li>
+<li><p><a class="reference internal" href="#jwtleeway"><span class="std std-ref">JWTLeeway</span></a></p></li>
+<li><p><a class="reference internal" href="#http-port"><span class="std std-ref">Port</span></a></p></li>
+<li><p><a class="reference internal" href="#urls"><span class="std std-ref">URLS</span></a></p></li>
+<li><p><a class="reference internal" href="#x509cert"><span class="std std-ref">X509Cert</span></a></p></li>
+<li><p><a class="reference internal" href="#x509key"><span class="std std-ref">X509Key</span></a></p></li>
+</ul>
+<section id="interface">
+<span id="http-interface"></span><h3>Interface<a class="headerlink" href="#interface" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Interface</span></code> configuration option is used to set the network interface that the Listener will bind to.
+The default is the loopback adapter at <code class="docutils literal notranslate"><span class="pre">127.0.0.1</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">0.0.0.0</span></code> as a shortcut for all interfaces</p>
+</div>
+</section>
+<section id="jwtkey">
+<span id="id9"></span><h3>JWTKey<a class="headerlink" href="#jwtkey" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">JWTKey</span></code> configuration option is used to set the key that is used to sign &amp; encrypt the JWTs that Merlin Agents
+use to authenticate to the HTTP server. The key is represented as a base64 encoded string.</p>
+<p>This is useful when the Merlin Server has restarted but existing Merlin Agents are still using the old key.
+However, Merlin Agent’s can recover if a new JWTKey is used so long as the PSK matches.</p>
+<p>If a JWTKey is excluded, or set to an empty value, then JWTs will not be used by the HTTP server to authenticate Merlin Agents.
+This is useful to disable using JWTs all together.</p>
+</section>
+<section id="jwtleeway">
+<span id="id10"></span><h3>JWTLeeway<a class="headerlink" href="#jwtleeway" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">JWTLeeway</span></code> configuration option is used to set the leeway for JWTs that are used to authenticate Merlin Agents.
+The Leeway is the amount of time difference, or skew, that is allowed between the Merlin Agent and the Merlin Server.
+This is very common for systems that are not synchronized with NTP such as virtual machines.</p>
+<p>If the time between the Server and the Agent is greater than the leeway, the JWT will be rejected and the Agent message will be rejected.</p>
+</section>
+<section id="port">
+<span id="http-port"></span><h3>Port<a class="headerlink" href="#port" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Port</span></code> configuration option is used to set the port that the Listener will bind to.</p>
+</section>
+<section id="urls">
+<span id="id11"></span><h3>URLS<a class="headerlink" href="#urls" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">URLS</span></code> configuration option is used to set the URLs that the HTTP server can receive Merlin Agent traffic on.
+Provide a comma separated list of URLs as a string.
+The HTTP server will reject Agent messages that are received on URLs not in the list.</p>
+</section>
+<section id="x509cert">
+<span id="id12"></span><h3>X509Cert<a class="headerlink" href="#x509cert" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">X509Cert</span></code> configuration option is used to set the X509 certificate that the HTTP server will use server TLS connections.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a valid certificate path is not provided, the server will generate a self-signed certificate</p>
+</div>
+</section>
+<section id="x509key">
+<span id="id13"></span><h3>X509Key<a class="headerlink" href="#x509key" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">X509Key</span></code> configuration option is used to set the X509 key that the HTTP server will use to encrypt traffic.</p>
+</section>
+</section>
+<section id="smb-configuration-options">
+<span id="smb"></span><h2>SMB Configuration Options<a class="headerlink" href="#smb-configuration-options" title="Link to this heading"></a></h2>
+<section id="pipe">
+<span id="id14"></span><h3>Pipe<a class="headerlink" href="#pipe" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Pipe</span></code> configuration option is used to set the named pipe that peer-to-peer SMB communications will occur on.
+Only include the name of the pipe. Do not include the UNC path or the interface.</p>
+<p>The SMB listener does not have an associated server, so the listener itself does not create or listen on the named pipe.
+It is just used to identify the configuration the Agent will use.</p>
+</section>
+</section>
+<section id="tcp-configuration-options">
+<span id="tcp"></span><h2>TCP Configuration Options<a class="headerlink" href="#tcp-configuration-options" title="Link to this heading"></a></h2>
+<section id="tcp-interface">
+<span id="id15"></span><h3>Interface<a class="headerlink" href="#tcp-interface" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Interface</span></code> configuration option is used to set the network interface that peer-to-peer Agents will bind or connect to.</p>
+<p>The TCP listener does not have an associated server, so the listener itself does not create or listen on the named pipe.
+It is just used to identify the configuration the Agent will use.</p>
+</section>
+<section id="tcp-port">
+<span id="id16"></span><h3>Port<a class="headerlink" href="#tcp-port" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Port</span></code> configuration option is used to set the port that peer-to-peer Agents will bind or connect to.</p>
+<p>The TCP listener does not have an associated server, so the listener itself does not create or listen on the named pipe.
+It is just used to identify the configuration the Agent will use.</p>
+</section>
+</section>
+<section id="udp-configuration-options">
+<span id="udp"></span><h2>UDP Configuration Options<a class="headerlink" href="#udp-configuration-options" title="Link to this heading"></a></h2>
+<section id="udp-interface">
+<span id="id17"></span><h3>Interface<a class="headerlink" href="#udp-interface" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Interface</span></code> configuration option is used to set the network interface that peer-to-peer Agents will bind or connect to.</p>
+<p>The UDP listener does not have an associated server, so the listener itself does not create or listen on the named pipe.
+It is just used to identify the configuration the Agent will use.</p>
+</section>
+<section id="udp-port">
+<span id="id18"></span><h3>Port<a class="headerlink" href="#udp-port" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Port</span></code> configuration option is used to set the port that peer-to-peer Agents will bind or connect to.</p>
+<p>The UDP listener does not have an associated server, so the listener itself does not create or listen on the named pipe.
+It is just used to identify the configuration the Agent will use.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tls.html" class="btn btn-neutral float-left" title="TLS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="commands.html" class="btn btn-neutral float-right" title="Command Interface" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Russel Van Tuyl (@Ne0nd0g).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

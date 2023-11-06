@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Command Line Flags &mdash; Merlin BETA documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=850acc4c"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Main Menu" href="menu/main.html" />
+    <link rel="prev" title="Command Line Flags" href="../cli/cli.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Merlin
+          </a>
+              <div class="version">
+                0.8.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickStart/server.html">Merlin Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickStart/agent.html">Merlin Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quickStart/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin Agent</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agent/cli.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/dll.html">DLL Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agent/custom.html">Custom Build</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin CLI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cli/cli.html">Command Line Flags</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin Server</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Command Line Flags</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Command Line Flags</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#addr">addr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#debug">debug</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extra">extra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#password">password</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#secure">secure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tlsca">tlsCA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tlscert">tlsCert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tlskey">tlsKey</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trace">trace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#version">version</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#logging">Logging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mutual-tls">Mutual TLS</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="menu/main.html">Main Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/agents.html">Agent Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/listeners.html">Listener Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="menu/modules.html">Modules Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="x509.html">TLS Certificates</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules/build.html">Building Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Misc.</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../misc/blogs.html">Blog Posts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc/logging.html">Logging</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Merlin</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Command Line Flags</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/server/server.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="command-line-flags">
+<h1>Command Line Flags<a class="headerlink" href="#command-line-flags" title="Link to this heading"></a></h1>
+<p>Merlin is composed of the following components:</p>
+<ul class="simple">
+<li><p>Merlin Server - The program that receives and handles Agent traffic and operator CLI commands to control the server and Agents</p></li>
+<li><p>Merlin Agent - The post-exploitation command and control Agent that runs on a compromised host</p></li>
+<li><p>Merlin CLI - The command line interface that allows operators to interact with the Merlin Server and Agents</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page cover the Merlin Server program</p>
+</div>
+<section id="id1">
+<h2>Command Line Flags<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ ./merlin-server -h
+Usage of merlin-server:
+  -addr string
+        The address to listen on for client connections (default &quot;127.0.0.1:50051&quot;)
+  -debug
+        Enable debug logging
+  -extra
+        Enable extra debug logging
+  -password string
+        the password to for CLI RPC clients to connect to this server (default &quot;merlin&quot;)
+  -secure
+        Require client TLS certificate verification
+  -tlsCA string
+        TLS Certificate Authority file path to verify client certificates
+  -tlsCert string
+        TLS certificate file path
+  -tlsKey string
+        TLS private key file path
+  -trace
+        Enable trace logging
+  -version
+        Print the version number and exit
+</pre></div>
+</div>
+<section id="addr">
+<h3>addr<a class="headerlink" href="#addr" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default address is <code class="docutils literal notranslate"><span class="pre">127.0.0.1:50051</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">addr</span></code> flag specifies the address to listen on for Merlin CLI connections. This <strong>IS NOT</strong> the interface for Merlin
+Agents to connect to. The Merlin Server uses gRPC for over TLS for CLI connections.</p>
+</section>
+<section id="debug">
+<h3>debug<a class="headerlink" href="#debug" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">debug</span></code> flag enables the <code class="docutils literal notranslate"><span class="pre">debug</span></code> log level for the Merlin Server and writes debug logs to the log file at
+<code class="docutils literal notranslate"><span class="pre">data/log/merlinServerLog.txt</span></code>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{&quot;time&quot;:&quot;2023-10-17T14:43:27.333763628-04:00&quot;,&quot;level&quot;:&quot;DEBUG&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin/pkg/authenticators/opaque.(*Authenticator).Authenticate&quot;,&quot;file&quot;:&quot;/merlin/pkg/authenticators/opaque/opaque.go&quot;,&quot;line&quot;:78},&quot;msg&quot;:&quot;Received OPAQUE message&quot;,&quot;OPAQUE type&quot;:1,&quot;Agent&quot;:&quot;6b25e714-93fb-45e6-85c8-38963efd09d9&quot;}
+{&quot;time&quot;:&quot;2023-10-17T14:43:27.333886943-04:00&quot;,&quot;level&quot;:&quot;DEBUG&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin/pkg/authenticators/opaque.(*Authenticator).registrationInit&quot;,&quot;file&quot;:&quot;/merlin/pkg/authenticators/opaque/opaque.go&quot;,&quot;line&quot;:128},&quot;msg&quot;:&quot;Received new agent OPAQUE user registration initialization from 6b25e714-93fb-45e6-85c8-38963efd09d9&quot;}
+</pre></div>
+</div>
+</section>
+<section id="extra">
+<h3>extra<a class="headerlink" href="#extra" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">extra</span></code> flag enables the <code class="docutils literal notranslate"><span class="pre">extra</span></code> log level for the Merlin Server and writes extra debug logs to the log file at
+<code class="docutils literal notranslate"><span class="pre">data/log/merlinServerLog.txt</span></code>. The <code class="docutils literal notranslate"><span class="pre">extra</span></code> level inherently enables the <code class="docutils literal notranslate"><span class="pre">debug</span></code> and <code class="docutils literal notranslate"><span class="pre">trace</span></code> levels as well.
+This level is primarily used to log HTTP requests and responses that contain a lot of data.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{&quot;time&quot;:&quot;2023-10-18T21:04:12.653012066-04:00&quot;,&quot;level&quot;:&quot;DEBUG-8&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin/pkg/servers/http.(*Handler).agentHandler&quot;,&quot;file&quot;:&quot;/merlin/pkg/servers/http/handler.go&quot;,&quot;line&quot;:60},&quot;msg&quot;:&quot;HTTP Connection Details&quot;,&quot;host&quot;:&quot;127.0.0.1:443&quot;,&quot;uri&quot;:&quot;/&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;protocol&quot;:&quot;HTTP/2.0&quot;,&quot;headers&quot;:{&quot;Accept-Encoding&quot;:[&quot;gzip&quot;],&quot;Authorization&quot;:[&quot;Bearer eyJhbGciOiJkaXIiLCJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwidHlwIjoiSldUIn0..71SU4sj_ilrDyCCJ.lQxvax0K4U1rcIBWAk8tF2rZ_9Jxw_hyatTMkXWAO1YKtr8F9IdNEnlK8tJE0TwnKxK0UGd5KzuwpKBvfkyJIaTPxMELRTqW71CxRgnRlsFt8GvJrnY2E8_btJthKmZAaCl3DJEPocZuYDp0rB5VQSufsG0FPoJAuCw_p-cZAJntSGzlJqrjjIHi6z_ZI60vpz4N-sQrJWbOc2et07ULute2UVKuOcDNMH5MRMOATZqyFJUJlwkw9HVsml4.gH1Z6HrchxY_9DlRMfR_NA&quot;],&quot;Content-Length&quot;:[&quot;735&quot;],&quot;Content-Type&quot;:[&quot;application/octet-stream; charset=utf-8&quot;],&quot;User-Agent&quot;:[&quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.85 Safari/537.36&quot;]},&quot;content length&quot;:735,&quot;tls negotiated protocol&quot;:&quot;h2&quot;,&quot;tls cipher suite&quot;:4865,&quot;tls server name&quot;:&quot;&quot;}
+{&quot;time&quot;:&quot;2023-10-18T21:04:12.663746773-04:00&quot;,&quot;level&quot;:&quot;DEBUG-8&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin/pkg/servers/http.(*Handler).agentHandler&quot;,&quot;file&quot;:&quot;/merlin/pkg/servers/http/handler.go&quot;,&quot;line&quot;:60},&quot;msg&quot;:&quot;HTTP Connection Details&quot;,&quot;host&quot;:&quot;127.0.0.1:443&quot;,&quot;uri&quot;:&quot;/&quot;,&quot;method&quot;:&quot;POST&quot;,&quot;protocol&quot;:&quot;HTTP/2.0&quot;,&quot;headers&quot;:{&quot;Accept-Encoding&quot;:[&quot;gzip&quot;],&quot;Authorization&quot;:[&quot;Bearer eyJhbGciOiJkaXIiLCJjdHkiOiJKV1QiLCJlbmMiOiJBMjU2R0NNIiwidHlwIjoiSldUIn0..71SU4sj_ilrDyCCJ.lQxvax0K4U1rcIBWAk8tF2rZ_9Jxw_hyatTMkXWAO1YKtr8F9IdNEnlK8tJE0TwnKxK0UGd5KzuwpKBvfkyJIaTPxMELRTqW71CxRgnRlsFt8GvJrnY2E8_btJthKmZAaCl3DJEPocZuYDp0rB5VQSufsG0FPoJAuCw_p-cZAJntSGzlJqrjjIHi6z_ZI60vpz4N-sQrJWbOc2et07ULute2UVKuOcDNMH5MRMOATZqyFJUJlwkw9HVsml4.gH1Z6HrchxY_9DlRMfR_NA&quot;],&quot;Content-Length&quot;:[&quot;883&quot;],&quot;Content-Type&quot;:[&quot;application/octet-stream; charset=utf-8&quot;],&quot;User-Agent&quot;:[&quot;Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.85 Safari/537.36&quot;]},&quot;content length&quot;:883,&quot;tls negotiated protocol&quot;:&quot;h2&quot;,&quot;tls cipher suite&quot;:4865,&quot;tls server name&quot;:&quot;&quot;}
+</pre></div>
+</div>
+</section>
+<section id="password">
+<h3>password<a class="headerlink" href="#password" title="Link to this heading"></a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The default password is <code class="docutils literal notranslate"><span class="pre">merlin</span></code> and should always be changed to prevent unauthorized access</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">password</span></code> flag sets the password that Merlin CLI clients need in order to authenticate all gRPC requests.</p>
+</section>
+<section id="secure">
+<h3>secure<a class="headerlink" href="#secure" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">secure</span></code> flag enables mutual TLS authentication requiring Merlin CLI clients to authenticate to the server.
+Use the <code class="docutils literal notranslate"><span class="pre">tlsCA</span></code> flag to provide a Certificate Authority file to verify client certificates.</p>
+</section>
+<section id="tlsca">
+<h3>tlsCA<a class="headerlink" href="#tlsca" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">tlsCA</span></code> flag specifies the path to a Certificate Authority file to verify client certificates when the <code class="docutils literal notranslate"><span class="pre">secure</span></code> flag is set.</p>
+</section>
+<section id="tlscert">
+<h3>tlsCert<a class="headerlink" href="#tlscert" title="Link to this heading"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Server will auto generate a self-signed TLS certificate if one is not provided</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">tlsCert</span></code> flag specifies the path to a TLS certificate file for the Server to use for TLS connections.</p>
+</section>
+<section id="tlskey">
+<h3>tlsKey<a class="headerlink" href="#tlskey" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">tlsKey</span></code> flag specifies the path to a TLS private key file for the Server to use for TLS connections.</p>
+</section>
+<section id="trace">
+<h3>trace<a class="headerlink" href="#trace" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">trace</span></code> flag enables the <code class="docutils literal notranslate"><span class="pre">trace</span></code> log level for the Merlin Server and writes trace logs to the log file at
+<code class="docutils literal notranslate"><span class="pre">data/log/merlinServerLog.txt</span></code>. The <code class="docutils literal notranslate"><span class="pre">trace</span></code> level inherently enables the <code class="docutils literal notranslate"><span class="pre">debug</span></code> level as well.
+This level is primarily used to log the entry and exit of functions to troubleshoot.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{&quot;time&quot;:&quot;2023-10-19T07:03:44.030764364-04:00&quot;,&quot;level&quot;:&quot;DEBUG-4&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin/pkg/services/rpc.(*Service).Run&quot;,&quot;file&quot;:&quot;/merlin/pkg/services/rpc/rpc.go&quot;,&quot;line&quot;:331},&quot;msg&quot;:&quot;entering into function&quot;,&quot;addr&quot;:&quot;127.0.0.1:50051&quot;}
+{&quot;time&quot;:&quot;2023-10-19T07:03:44.031342997-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;msg&quot;:&quot;Starting gRPC server on 127.0.0.1:50051&quot;}
+{&quot;time&quot;:&quot;2023-10-19T07:03:52.609812218-04:00&quot;,&quot;level&quot;:&quot;DEBUG&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin/pkg/services/rpc.(*Service).authenticationStream&quot;,&quot;file&quot;:&quot;/merlin/pkg/services/rpc/rpc.go&quot;,&quot;line&quot;:325},&quot;msg&quot;:&quot;authentication successful&quot;,&quot;Method&quot;:&quot;/rpc.Merlin/Listen&quot;,&quot;Client&quot;:&quot;127.0.0.1:39536&quot;}
+{&quot;time&quot;:&quot;2023-10-19T07:03:52.610193878-04:00&quot;,&quot;level&quot;:&quot;DEBUG-4&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin/pkg/services/rpc.(*Server).Listen&quot;,&quot;file&quot;:&quot;/merlin/pkg/services/rpc/rpc.go&quot;,&quot;line&quot;:129},&quot;msg&quot;:&quot;entering into function&quot;,&quot;in&quot;:{&quot;id&quot;:&quot;a07b33cd-5b46-4e5c-81bb-38d06f91f5ee&quot;}}
+{&quot;time&quot;:&quot;2023-10-19T07:04:06.235845947-04:00&quot;,&quot;level&quot;:&quot;DEBUG&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin/pkg/services/rpc.(*Service).authentication&quot;,&quot;file&quot;:&quot;/merlin/pkg/services/rpc/rpc.go&quot;,&quot;line&quot;:296},&quot;msg&quot;:&quot;authentication successful&quot;,&quot;Method&quot;:&quot;/rpc.Merlin/GetListenerTypes&quot;,&quot;Client&quot;:&quot;127.0.0.1:39536&quot;}
+{&quot;time&quot;:&quot;2023-10-19T07:04:06.236009755-04:00&quot;,&quot;level&quot;:&quot;DEBUG-4&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin/pkg/services/rpc.(*Server).GetListenerTypes&quot;,&quot;file&quot;:&quot;/merlin/pkg/services/rpc/listener.go&quot;,&quot;line&quot;:163},&quot;msg&quot;:&quot;entering into function&quot;,&quot;context&quot;:{&quot;Context&quot;:{&quot;Context&quot;:{&quot;Context&quot;:{&quot;Context&quot;:{&quot;Context&quot;:{}}}}}},&quot;empty&quot;:{}}
+{&quot;time&quot;:&quot;2023-10-19T07:04:06.236749705-04:00&quot;,&quot;level&quot;:&quot;DEBUG&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin/pkg/services/rpc.(*Service).authentication&quot;,&quot;file&quot;:&quot;/merlin/pkg/services/rpc/rpc.go&quot;,&quot;line&quot;:296},&quot;msg&quot;:&quot;authentication successful&quot;,&quot;Method&quot;:&quot;/rpc.Merlin/GetListenerDefaultOptions&quot;,&quot;Client&quot;:&quot;127.0.0.1:39536&quot;}
+{&quot;time&quot;:&quot;2023-10-19T07:04:06.236834196-04:00&quot;,&quot;level&quot;:&quot;DEBUG-4&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin/pkg/services/rpc.(*Server).GetListenerDefaultOptions&quot;,&quot;file&quot;:&quot;/merlin/pkg/services/rpc/listener.go&quot;,&quot;line&quot;:59},&quot;msg&quot;:&quot;entering into function&quot;,&quot;context&quot;:{&quot;Context&quot;:{&quot;Context&quot;:{&quot;Context&quot;:{&quot;Context&quot;:{&quot;Context&quot;:{}}}}}},&quot;in&quot;:{&quot;data&quot;:&quot;HTTPS&quot;}}
+{&quot;time&quot;:&quot;2023-10-19T07:04:07.968606945-04:00&quot;,&quot;level&quot;:&quot;DEBUG&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin/pkg/services/rpc.(*Service).authentication&quot;,&quot;file&quot;:&quot;/merlin/pkg/services/rpc/rpc.go&quot;,&quot;line&quot;:296},&quot;msg&quot;:&quot;authentication successful&quot;,&quot;Method&quot;:&quot;/rpc.Merlin/CreateListener&quot;,&quot;Client&quot;:&quot;127.0.0.1:39536&quot;}
+{&quot;time&quot;:&quot;2023-10-19T07:04:07.968773738-04:00&quot;,&quot;level&quot;:&quot;DEBUG-4&quot;,&quot;source&quot;:{&quot;function&quot;:&quot;github.com/Ne0nd0g/merlin/pkg/services/rpc.(*Server).CreateListener&quot;,&quot;file&quot;:&quot;/merlin/pkg/services/rpc/listener.go&quot;,&quot;line&quot;:44},&quot;msg&quot;:&quot;entering into function&quot;,&quot;context&quot;:{&quot;Context&quot;:{&quot;Context&quot;:{&quot;Context&quot;:{&quot;Context&quot;:{&quot;Context&quot;:{}}}}}},&quot;in&quot;:{&quot;options&quot;:{&quot;Authenticator&quot;:&quot;OPAQUE&quot;,&quot;Description&quot;:&quot;Default HTTP Listener&quot;,&quot;Interface&quot;:&quot;127.0.0.1&quot;,&quot;JWTKey&quot;:&quot;ZVdxdlFUVnJhcXNQV0doRkRoV2pwWk5PSk1mRXBLTkY=&quot;,&quot;JWTLeeway&quot;:&quot;1m&quot;,&quot;Name&quot;:&quot;My HTTP Listener&quot;,&quot;PSK&quot;:&quot;merlin&quot;,&quot;Port&quot;:&quot;443&quot;,&quot;Protocol&quot;:&quot;HTTPS&quot;,&quot;Transforms&quot;:&quot;jwe,gob-base&quot;,&quot;URLS&quot;:&quot;/&quot;,&quot;X509Cert&quot;:&quot;/merlin/data/x509/server.crt&quot;,&quot;X509Key&quot;:&quot;/merlin/data/x509/server.key&quot;}}}
+</pre></div>
+</div>
+</section>
+<section id="version">
+<h3>version<a class="headerlink" href="#version" title="Link to this heading"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">version</span></code> flag prints the version number of the Merlin Server and exits.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>$ ./merlin-server -version
+Merlin Version: 2.0.0, Build: nonRelease
+</pre></div>
+</div>
+</section>
+</section>
+<section id="logging">
+<h2>Logging<a class="headerlink" href="#logging" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Server typically requires administrative privileges so that it can bind to an interface and TCP port.
+The log file will be created with the permissions of the user that started the Merlin Server.</p>
+</div>
+<p>The Merlin Server creates a log file in the <code class="docutils literal notranslate"><span class="pre">data/log</span></code> directory called <code class="docutils literal notranslate"><span class="pre">merlinServerLog.txt</span></code> and <strong>ALSO</strong> writes
+messages to STDOUT where the server was executed. The default logging level is <code class="docutils literal notranslate"><span class="pre">INFO</span></code>. Use the <code class="docutils literal notranslate"><span class="pre">debug</span></code>, <code class="docutils literal notranslate"><span class="pre">trace</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">extra</span></code> flags to enable more verbose logging.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>{&quot;time&quot;:&quot;2023-10-17T15:37:38.91950926-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;msg&quot;:&quot;Created new TLS certificate&quot;,&quot;Serial&quot;:142904993534574102007199776395950920709,&quot;Subject&quot;:[&quot;Merlin&quot;],&quot;NotBefore&quot;:&quot;2023-10-17T15:37:38.91050229-04:00&quot;,&quot;NotAfter&quot;:&quot;2024-10-22T15:37:38.910516592-04:00&quot;}
+{&quot;time&quot;:&quot;2023-10-17T15:37:38.921245266-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;msg&quot;:&quot;Starting gRPC server on 127.0.0.1:50051&quot;}
+{&quot;time&quot;:&quot;2023-10-17T15:39:27.784636096-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;msg&quot;:&quot;Registered new RPC client with ID 9d9a3e2a-ecee-49d5-bbc8-c95a6d5c54d6&quot;}
+{&quot;time&quot;:&quot;2023-10-17T15:39:34.801648979-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;msg&quot;:&quot;Create new listener&quot;,&quot;protocol&quot;:&quot;HTTPS&quot;,&quot;address&quot;:&quot;127.0.0.1:443&quot;,&quot;name&quot;:&quot;My HTTP Listener&quot;,&quot;id&quot;:&quot;f726d4b2-fd2f-44aa-bb60-ea8ab3731440&quot;,&quot;authenticator&quot;:&quot;OPAQUE&quot;,&quot;transforms&quot;:&quot;[jwe gob-base]&quot;}
+{&quot;time&quot;:&quot;2023-10-17T15:39:34.803925949-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;msg&quot;:&quot;Certificate was not found at: /merlin/data/x509/server.crt. Creating in-memory x.509 certificate used for this session only&quot;}
+{&quot;time&quot;:&quot;2023-10-17T15:39:48.885672042-04:00&quot;,&quot;level&quot;:&quot;INFO&quot;,&quot;msg&quot;:&quot;New authenticated agent checkin for 0db4203d-1b5a-40cb-9800-8e75cdf04013&quot;}
+</pre></div>
+</div>
+</section>
+<section id="mutual-tls">
+<h2>Mutual TLS<a class="headerlink" href="#mutual-tls" title="Link to this heading"></a></h2>
+<p>The Merlin Server can be configured to use mutual TLS authentication with the Merlin CLI (not for Merlin Agent connections).
+Use the <code class="docutils literal notranslate"><span class="pre">secure</span></code> flag to enable mutual TLS authentication and the <code class="docutils literal notranslate"><span class="pre">tlsCA</span></code> flag to provide a Certificate Authority
+file that was used to sign the client certificates.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../cli/cli.html" class="btn btn-neutral float-left" title="Command Line Flags" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="menu/main.html" class="btn btn-neutral float-right" title="Main Menu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Russel Van Tuyl (@Ne0nd0g).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

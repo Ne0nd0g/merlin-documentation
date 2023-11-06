@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modules Menu &mdash; Merlin BETA documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=850acc4c"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Command Line Flags" href="../../server/server.html" />
+    <link rel="prev" title="Listener Menu" href="listeners.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Merlin
+          </a>
+              <div class="version">
+                0.8.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Quick Start</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickStart/server.html">Merlin Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickStart/agent.html">Merlin Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickStart/faq.html">FAQ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin Agent</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../agent/cli.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../agent/dll.html">DLL Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../agent/custom.html">Custom Build</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin CLI</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../cli.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tls.html">TLS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../commands.html">Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">Main Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agents.html">Agent Menu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="listeners.html">Listener Menu</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Modules Menu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#back">back</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#banner">banner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clear">clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debug">debug</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#info">info</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#interact">interact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#listeners">listeners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#main">main</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reload">reload</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run">run</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sessions">sessions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set">set</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-agent">set Agent</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#show">show</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verbose">verbose</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Merlin Server</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../server/server.html">Command Line Flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/logging.html">Logging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../server/x509.html">TLS Certificates</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/build.html">Building Modules</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Misc.</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/blogs.html">Blog Posts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/contrib.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../misc/logging.html">Logging</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Merlin</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Modules Menu</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/cli/menu/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="modules-menu">
+<h1>Modules Menu<a class="headerlink" href="#modules-menu" title="Link to this heading"></a></h1>
+<p>The module menu context is used to interact with, and configure, a module.
+Use the <code class="docutils literal notranslate"><span class="pre">modules</span></code> command to enter the modules menu from any other menu.</p>
+<p>Prefix any command with <code class="docutils literal notranslate"><span class="pre">help</span></code> (e.g., <code class="docutils literal notranslate"><span class="pre">help</span> <span class="pre">run</span></code>) to view the command’s help information.
+Use any of the following flags after a command name to view the help information for that command:
+<code class="docutils literal notranslate"><span class="pre">help</span></code>, <code class="docutils literal notranslate"><span class="pre">-h</span></code>, <code class="docutils literal notranslate"><span class="pre">--help</span></code>, <code class="docutils literal notranslate"><span class="pre">?</span></code>, <code class="docutils literal notranslate"><span class="pre">/?</span></code></p>
+<p>While the help information below shows a number of commands, only the following commands are unique to just the
+<code class="docutils literal notranslate"><span class="pre">modules</span></code> menu:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#info2"><span class="std std-ref">info</span></a></p></li>
+<li><p><a class="reference internal" href="#reload"><span class="std std-ref">reload</span></a></p></li>
+<li><p><a class="reference internal" href="#run2"><span class="std std-ref">run</span></a></p></li>
+<li><p><a class="reference internal" href="#set"><span class="std std-ref">set</span></a></p></li>
+<li><p><a class="reference internal" href="#show"><span class="std std-ref">show</span></a></p></li>
+</ul>
+<p>Help menu from the root <code class="docutils literal notranslate"><span class="pre">modules</span></code> menu:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin» modules
+Merlin[modules]» help
+
+   COMMAND  |          DESCRIPTION           |             USAGE
+------------+--------------------------------+--------------------------------
+  !         | Execute a command on the local | ! command [args]
+            | system                         |
+  back      | Go to the main menu            | back
+  banner    | Display the Merlin ASCII art   | banner
+            | banner                         |
+  clear     | Cancel all Agent jobs that     | clear
+            | have not been sent             |
+  debug     | Switch debug output to the     | debug
+            | console on or off              |
+  interact  | Interact with an agent or a    | interact {agentID|listenerID}
+            | listener                       |
+  listeners | Move to the listeners menu     | listeners
+  main      | Go to the Main menu            | main
+  modules   | Move to the modules menu       | modules
+  quit      | Stop and exit Merlin           | quit [-y]
+  sessions  | List established Agent         | sessions
+            | sessions                       |
+  use       | Select a protocol to create a  | use protocol
+            | listener for                   |
+  verbose   | Switch verbose output to the   | verbose
+            | console on or off              |
+</pre></div>
+</div>
+<p>Help menu from a selected module:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[modules]» use windows/x64/powershell/powersploit/Invoke-Mimikatz
+Merlin[modules][windows/x64/powershell/powersploit/Invoke-Mimikatz]» help
+
+   COMMAND  |          DESCRIPTION           |             USAGE
+------------+--------------------------------+--------------------------------
+  !         | Execute a command on the local | ! command [args]
+            | system                         |
+  back      | Go to the main menu            | back
+  banner    | Display the Merlin ASCII art   | banner
+            | banner                         |
+  clear     | Cancel all Agent jobs that     | clear
+            | have not been sent             |
+  debug     | Switch debug output to the     | debug
+            | console on or off              |
+  info      | Show information about the     | info
+            | module                         |
+  interact  | Interact with an agent or a    | interact {agentID|listenerID}
+            | listener                       |
+  listeners | Move to the listeners menu     | listeners
+  main      | Go to the Main menu            | main
+  modules   | Move to the modules menu       | modules
+  quit      | Stop and exit Merlin           | quit [-y]
+  reload    | reload the module to reset the | reload
+            | module&#39;s state                 |
+  run       | Execute the module             | run
+  sessions  | List established Agent         | sessions
+            | sessions                       |
+  set       | set the value of a             | set key value
+            | configurable module option     |
+  show      | Show the module&#39;s configurable | show
+            | options                        |
+  verbose   | Switch verbose output to the   | verbose
+            | console on or off              |
+</pre></div>
+</div>
+<section id="id1">
+<h2>!<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USAGE: <code class="docutils literal notranslate"><span class="pre">!</span> <span class="pre">command</span> <span class="pre">[args]</span></code></p>
+</div>
+<p>Any command that begins with a <code class="docutils literal notranslate"><span class="pre">!</span></code> (a.k.a bang or exclamation point) will be executed on host itself where the Merlin
+server is running. This is useful when you want simple information, such as your interface address, without having to
+open a new terminal.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There must be a space after the <code class="docutils literal notranslate"><span class="pre">!</span></code> for the command to be executed.</p>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin» ! ip a show ens32
+
+[i] Executing system command...
+
+[+] 2: ens32: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 00:0c:29:z3:ff:91 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.211.221/24 brd 192.168.211.255 scope global dynamic noprefixroute ens32
+       valid_lft 1227sec preferred_lft 1227sec
+    inet6 fe80::a71d:1f6a:a0d1:7985/64 scope link noprefixroute
+       valid_lft forever preferred_lft forever
+
+Merlin»
+</pre></div>
+</div>
+</section>
+<section id="back">
+<span id="id2"></span><h2>back<a class="headerlink" href="#back" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USAGE: <code class="docutils literal notranslate"><span class="pre">back</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">back</span></code> command is used to leave the Module menu and return back to the <a class="reference internal" href="main.html"><span class="doc">Main Menu</span></a>.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[module][Invoke-Mimikatz]» back
+Merlin»
+</pre></div>
+</div>
+</section>
+<section id="banner">
+<h2>banner<a class="headerlink" href="#banner" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USAGE: <code class="docutils literal notranslate"><span class="pre">banner</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">banner</span></code> command is used too print the super cool ascii art banner along with the version and build numbers.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin» banner
+Merlin»
+
+
+                               &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+                             &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+                            &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+                          &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp; &amp;&amp;&amp;&amp;
+                         &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;
+                        &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp; &amp;  &amp;&amp;&amp;&amp;
+                       &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;     &amp;&amp;&amp;&amp;
+                      &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;     &amp;&amp;&amp;
+                     &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;     &amp;&amp;&amp;
+                    &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;     &amp;&amp;&amp;
+                   &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+                  &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+                  &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+                 &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+                &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+               &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+              &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+             &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+       &amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;
+    &amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;
+  &amp;&amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;  &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;     &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;     &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+  &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;          MERLIN         &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+    &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+       &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+           &amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;&amp;
+                   Version: 2.0.0
+                   Build: nonRelease
+</pre></div>
+</div>
+</section>
+<section id="clear">
+<h2>clear<a class="headerlink" href="#clear" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USAGE: <code class="docutils literal notranslate"><span class="pre">clear</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">clear</span></code> command will cancel all jobs in the queue that have not been sent to the agent yet.
+This command will only clear jobs for the current agent.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» clear
+[+] jobs cleared for agent c1090dbc-f2f7-4d90-a241-86e0c0217786
+</pre></div>
+</div>
+</section>
+<section id="debug">
+<h2>debug<a class="headerlink" href="#debug" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USAGE: <code class="docutils literal notranslate"><span class="pre">debug</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">debug</span></code> command is a switch used to enable or disable debug output to the console.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][13f6ebee-78ec-4414-a04c-74188b95c01c]» debug
+[+] 2023-10-19T12:16:13Z Debug output enabled
+Merlin[agent][13f6ebee-78ec-4414-a04c-74188b95c01c]» debug
+[+] 2023-10-19T12:16:15Z Debug output disabled
+</pre></div>
+</div>
+</section>
+<section id="info">
+<span id="info2"></span><h2>info<a class="headerlink" href="#info" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USAGE: <code class="docutils literal notranslate"><span class="pre">info</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">info</span></code> command command is used to print all of the information about a module to the screen.
+This information includes items such as module’s name, authors, credits, description, notes, and configurable options.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[modules][windows/x64/powershell/powersploit/Invoke-Mimikatz]» info
+[i] 2023-10-25T02:50:48Z
+&#39;Invoke-Mimikatz&#39; module information
+
+Platform:
+        windows\x64\PowerShell
+Module Authors:
+        Russel Van Tuyl (@Ne0nd0g)
+Credits:
+        Joe Bialek (@JosephBialek)
+        Benjamin Delpy (@gentilkiwi)
+Description:
+        This script leverages Mimikatz 2.2.0 and Invoke-ReflectivePEInjection to reflectively load Mimikatz completely in memory. This allows you to do things such as dump credentials without ever writing the mimikatz binary to disk. The script has a ComputerName parameter which allows it to be executed against multiple computers. This script should be able to dump credentials from any version of Windows through Windows 8.1 that has PowerShell v2 or higher installed.
+Options:
+
+      NAME     | VALUE | REQUIRED |          DESCRIPTION
+---------------+-------+----------+---------------------------------
+  Agent        |       | true     | Agent on which to run module
+               |       |          | Invoke-Mimikatz
+  DumpCreds    | true  | false    | [Switch]Use mimikatz to dump
+               |       |          | credentials out of LSASS.
+  DumpCerts    |       | false    | [Switch]Use mimikatz to export
+               |       |          | all private certificates
+               |       |          | (even if they are marked
+               |       |          | non-exportable).
+  Command      |       | false    | Supply mimikatz a custom
+               |       |          | command line. This works
+               |       |          | exactly the same as running
+               |       |          | the mimikatz executable
+               |       |          | like this: mimikatz
+               |       |          | &quot;privilege::debug exit&quot; as an
+               |       |          | example.
+  ComputerName |       | false    | Optional, an array of
+               |       |          | computernames to run the
+               |       |          | script on.
+Notes:
+        Invoke-Mimikatz.ps1 is currently part of the Empire project https://github.com/BC-SECURITY/Empire and was originally part of the PowerSploit project https://github.com/PowerShellMafia/PowerSploit
+</pre></div>
+</div>
+</section>
+<section id="interact">
+<h2>interact<a class="headerlink" href="#interact" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USAGE: <code class="docutils literal notranslate"><span class="pre">interact</span> <span class="pre">{agentID|listenerID}</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">interact</span></code> command takes one argument, the agent ID, and is used to switch agents and interact with a different, specified agent.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use the built-in tab completion to cycle through and select the agent to interact with.</p>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[module][BASH]» interact c1090dbc-f2f7-4d90-a241-86e0c0217786
+Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]»
+</pre></div>
+</div>
+</section>
+<section id="listeners">
+<h2>listeners<a class="headerlink" href="#listeners" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USAGE: <code class="docutils literal notranslate"><span class="pre">listeners</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">listeners</span></code> command moves to the Listeners menu.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[agent][c1090dbc-f2f7-4d90-a241-86e0c0217786]» listeners
+    Merlin[listeners]»
+</pre></div>
+</div>
+</section>
+<section id="main">
+<h2>main<a class="headerlink" href="#main" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USAGE: <code class="docutils literal notranslate"><span class="pre">main</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">main</span></code> command is used to leave the Agent menu and return back to the <a class="reference internal" href="main.html"><span class="doc">Main Menu</span></a>. It is an alias for the <a class="reference internal" href="#back">back</a> command.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[module][Invoke-Mimikatz]» main
+Merlin»
+</pre></div>
+</div>
+</section>
+<section id="reload">
+<span id="id3"></span><h2>reload<a class="headerlink" href="#reload" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USAGE: <code class="docutils literal notranslate"><span class="pre">reload</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">reload</span></code> command is used to clear out all of a module’s configurable options and return its settings to the default state.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[module][Invoke-Mimikatz]» reload
+[+] 2023-10-25T03:15:51Z The &#39;Invoke-Mimikatz&#39; module was reloaded
+</pre></div>
+</div>
+</section>
+<section id="run">
+<span id="run2"></span><h2>run<a class="headerlink" href="#run" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USAGE: <code class="docutils literal notranslate"><span class="pre">run</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">run</span></code> command is used to execute the module on the agent configured for the module’s [agent](#set-agent) value.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[module][Invoke-Mimikatz]» run
+Merlin[module][Invoke-Mimikatz]» [-]Created job iReycchrck for agent ebf1b1d2-44d5-4f85-86f5-cae112600870
+[+]Results for job iReycchrck
+[+]
+  .#####.   mimikatz 2.1 (x64) built on Nov 10 2016 15:31:14
+ .## ^ ##.  &quot;A La Vie, A L&#39;Amour&quot;
+ ## / \ ##  /* * *
+ ## \ / ##   Benjamin DELPY `gentilkiwi` ( benjamin@gentilkiwi.com )
+ &#39;## v ##&#39;   http://blog.gentilkiwi.com/mimikatz             (oe.eo)
+  &#39;#####&#39;                                     with 20 modules * * */
+&lt;snip&gt;
+Merlin[module][Invoke-Mimikatz]»
+</pre></div>
+</div>
+</section>
+<section id="sessions">
+<h2>sessions<a class="headerlink" href="#sessions" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USAGE: <code class="docutils literal notranslate"><span class="pre">sessions</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">sessions</span></code> command is used to quickly list information about established agents from the module menu to include their status.
+The sessions command is available from any menu in the CLI.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[module][BASH]» sessions
+
+               AGENT GUID              |    TRANSPORT    |   PLATFORM    |      HOST       |        USER         |                 PROCESS                  | STATUS | LAST CHECKIN |      NOTE
++--------------------------------------+-----------------+---------------+-----------------+---------------------+------------------------------------------+--------+--------------+-----------------+
+  d07edfda-e119-4be2-a20f-918ab701fa3c | HTTP/2 over TLS | linux/amd64   | ubuntu          | rastley             | main(200769)                             | Active | 0:00:08 ago  | Demo Agent Here
+</pre></div>
+</div>
+</section>
+<section id="set">
+<span id="id4"></span><h2>set<a class="headerlink" href="#set" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">set</span></code> command is used to set the value for one of the module’s configurable options.
+This command is used by specifying the name of the option that should be set followed by a value.
+Tab completion is enabled and provides a list of all configurable options.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[module][Invoke-Mimikatz]» set DumpCerts true
+[+]DumpCerts set to true
+Merlin[module][Invoke-Mimikatz]»
+</pre></div>
+</div>
+<section id="set-agent">
+<span id="id5"></span><h3>set Agent<a class="headerlink" href="#set-agent" title="Link to this heading"></a></h3>
+<p>The <cite>Agent</cite> <em>option</em> for every module must be set in order for it have a target to execute on.
+By default, the module is configured with a blank value of <code class="docutils literal notranslate"><span class="pre">00000000-0000-0000-0000-000000000000</span></code>.
+To set an agent, provide the agent’s ID (tab completion enabled).</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[module][Invoke-Mimikatz]» set Agent c1090dbc-f2f7-4d90-a241-86e0c0217786
+[+]agent set to c1090dbc-f2f7-4d90-a241-86e0c0217786
+Merlin[module][Invoke-Mimikatz]»
+</pre></div>
+</div>
+<p>The special value <code class="docutils literal notranslate"><span class="pre">all</span></code> can be provided and instructs Merlin to execute the module on all agents.
+When this value is provided, the module’s agent option is set to all F’s like: <code class="docutils literal notranslate"><span class="pre">ffffffff-ffff-ffff-ffff-ffffffffffff</span></code></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[module][Invoke-Mimikatz]» set Agent all
+[+] 2023-10-25T03:20:59Z set &#39;Agent&#39; to: all
+</pre></div>
+</div>
+</section>
+</section>
+<section id="show">
+<span id="id6"></span><h2>show<a class="headerlink" href="#show" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USAGE: <code class="docutils literal notranslate"><span class="pre">show</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">show</span></code> command is used to show the module’s configurable options</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Merlin[modules][windows/x64/powershell/powersploit/Invoke-Mimikatz]» show
+[i] 2023-10-25T03:24:12Z
+&#39;Invoke-Mimikatz&#39; module options
+
+      NAME     | VALUE | REQUIRED |          DESCRIPTION
+---------------+-------+----------+---------------------------------
+  Agent        |       | true     | Agent on which to run module
+               |       |          | Invoke-Mimikatz
+               |       | false    |
+               |       | false    |
+               |       | false    |
+               |       | false    |
+  DumpCreds    | true  | false    | [Switch]Use mimikatz to dump
+               |       |          | credentials out of LSASS.
+  DumpCerts    |       | false    | [Switch]Use mimikatz to export
+               |       |          | all private certificates
+               |       |          | (even if they are marked
+               |       |          | non-exportable).
+  Command      |       | false    | Supply mimikatz a custom
+               |       |          | command line. This works
+               |       |          | exactly the same as running
+               |       |          | the mimikatz executable
+               |       |          | like this: mimikatz
+               |       |          | &quot;privilege::debug exit&quot; as an
+               |       |          | example.
+  ComputerName |       | false    | Optional, an array of
+               |       |          | computernames to run the
+               |       |          | script on.
+</pre></div>
+</div>
+</section>
+<section id="verbose">
+<h2>verbose<a class="headerlink" href="#verbose" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>USAGE: <code class="docutils literal notranslate"><span class="pre">verbose</span></code></p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">verbose</span></code> command is a switch used to enable or disable verbose output to the console.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Merlin» verbose
+[+] 2023-10-19T12:40:44Z Verbose output enabled
+Merlin» verbose
+[+] 2023-10-19T12:40:46Z Verbose output disabled
+Merlin»
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="listeners.html" class="btn btn-neutral float-left" title="Listener Menu" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../server/server.html" class="btn btn-neutral float-right" title="Command Line Flags" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Russel Van Tuyl (@Ne0nd0g).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
