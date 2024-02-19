@@ -60,6 +60,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Custom Build</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#basic">Basic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#advanced">Advanced</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-tags">Build Tags</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#windows-agent">Windows Agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cross-compiling">Cross-Compiling</a></li>
 </ul>
@@ -92,7 +93,6 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../misc/blogs.html">Blog Posts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../misc/contrib.html">Contributing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../misc/logging.html">Logging</a></li>
 </ul>
 
         </div>
@@ -166,25 +166,33 @@ commandline arguments and allows the Agent to simply be executed. The table belo
 <td><p>HTTP Host header</p></td>
 <td><p>Overrides the <code class="docutils literal notranslate"><span class="pre">-host</span></code> commandline flag</p></td>
 </tr>
-<tr class="row-even"><td><p>JA3</p></td>
+<tr class="row-even"><td><p>HTTPCLIENT</p></td>
+<td><p>The type of HTTP client (or driver) to use (e.g., go or winhttp)</p></td>
+<td><p>Overrides the <code class="docutils literal notranslate"><span class="pre">-http-client</span></code> commandline flag</p></td>
+</tr>
+<tr class="row-odd"><td><p>JA3</p></td>
 <td><p>JA3 signature string (not the MD5 hash)</p></td>
 <td><p>Overrides the <code class="docutils literal notranslate"><span class="pre">-ja3</span></code> commandline flag</p></td>
 </tr>
-<tr class="row-odd"><td><p>KILLDATE</p></td>
+<tr class="row-even"><td><p>KILLDATE</p></td>
 <td><p>The date, as a Unix EPOCH timestamp, that the agent will quit running</p></td>
 <td><p>Overrides the <code class="docutils literal notranslate"><span class="pre">-killdate</span></code> commandline flag</p></td>
 </tr>
-<tr class="row-even"><td><p>LISTENER</p></td>
+<tr class="row-odd"><td><p>LISTENER</p></td>
 <td><p>The UUID of the listener that the peer-to-peer agent is configured to communicate with.</p></td>
 <td><p>Overrides the <code class="docutils literal notranslate"><span class="pre">-listener</span></code> flag</p></td>
 </tr>
-<tr class="row-odd"><td><p>RETRY</p></td>
+<tr class="row-even"><td><p>RETRY</p></td>
 <td><p>The maximum amount of failed checkins before the agent will quit running</p></td>
 <td><p>Overrides the <code class="docutils literal notranslate"><span class="pre">-maxretry</span></code> commandline flag</p></td>
 </tr>
-<tr class="row-even"><td><p>PAD</p></td>
+<tr class="row-odd"><td><p>PAD</p></td>
 <td><p>The maximum amount of data that will be randomly selected and appended to every message</p></td>
 <td><p>Overrides the <code class="docutils literal notranslate"><span class="pre">-padding</span></code> commandline flag</p></td>
+</tr>
+<tr class="row-even"><td><p>PARROT</p></td>
+<td><p>Configure the HTTP client’s TLS configuration to match the provided browser string</p></td>
+<td><p>Overrides the <code class="docutils literal notranslate"><span class="pre">-parrot</span></code> commandline flag</p></td>
 </tr>
 <tr class="row-odd"><td><p>PROTO</p></td>
 <td><p>Protocol for the agent to connect with [https (HTTP/1.1), http (HTTP/1.1 Clear-Text), h2 (HTTP/2), h2c (HTTP/2 Clear-Text), http3 (QUIC or HTTP/3.0)] (default ‘h2’)</p></td>
@@ -198,17 +206,25 @@ commandline arguments and allows the Agent to simply be executed. The table belo
 <td><p>Pre-Shared Key used to encrypt initial communications (default “merlin”)</p></td>
 <td><p>Overrides the <code class="docutils literal notranslate"><span class="pre">-psk</span></code> commandline flag</p></td>
 </tr>
-<tr class="row-even"><td><p>SKEW</p></td>
+<tr class="row-even"><td><p>SECURE</p></td>
+<td><p>Require TLS certificate validation for HTTP communications</p></td>
+<td><p>Overrides the <code class="docutils literal notranslate"><span class="pre">-secure</span></code> commandline flag</p></td>
+</tr>
+<tr class="row-odd"><td><p>SKEW</p></td>
 <td><p>Amount of skew, or variance, between agent checkins</p></td>
 <td><p>Overrides the <code class="docutils literal notranslate"><span class="pre">-skew</span></code> commandline flag</p></td>
 </tr>
-<tr class="row-odd"><td><p>SLEEP</p></td>
+<tr class="row-even"><td><p>SLEEP</p></td>
 <td><p>The amount of time the Agent will sleep between checkins Must use golang time notation (e.g., <code class="docutils literal notranslate"><span class="pre">10s</span></code> for ten seconds)</p></td>
 <td><p>Overrides the <code class="docutils literal notranslate"><span class="pre">-sleep</span></code> command line flag</p></td>
 </tr>
+<tr class="row-odd"><td><p>TAGS</p></td>
+<td><p>Comma separated list of Go build tags for compiling the agent</p></td>
+<td><p>Overrides Go’s <code class="docutils literal notranslate"><span class="pre">-tags</span></code> commandline flag</p></td>
+</tr>
 <tr class="row-even"><td><p>TRANSFORMS</p></td>
 <td><p>Ordered CSV of transforms to construct a message with</p></td>
-<td><p>Overrides the <code class="docutils literal notranslate"><span class="pre">-transforms</span></code> commandline flag.</p></td>
+<td><p>Overrides the <code class="docutils literal notranslate"><span class="pre">-transforms</span></code> commandline flag</p></td>
 </tr>
 <tr class="row-odd"><td><p>URL</p></td>
 <td><p>Full URL for agent to connect to (default “<a class="reference external" href="https://127.0.0.1:443">https://127.0.0.1:443</a>”)</p></td>
@@ -223,6 +239,58 @@ commandline arguments and allows the Agent to simply be executed. The table belo
 <p>An example of creating a new Linux HTTP agent that is using domain fronting through <code class="docutils literal notranslate"><span class="pre">https://merlin.com/c2endpoint.php</span></code> using a PSK of <code class="docutils literal notranslate"><span class="pre">SecurePassword1</span></code>:</p>
 <p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">linux</span> <span class="pre">URL=https://merlin.com:443/c2endpoint.php</span> <span class="pre">HOST=myendpoint.azureedge.net</span> <span class="pre">PROTO=https</span> <span class="pre">PSK=SecurePassword1</span></code></p>
 </section>
+<section id="build-tags">
+<h2>Build Tags<a class="headerlink" href="#build-tags" title="Link to this heading"></a></h2>
+<p>By default, the Merlin Agent is built with all available features and components compiled in.
+Build tags can be used to control what features are compiled into the agent to reduce the size of the binary or to
+restrict the agent’s capabilities.</p>
+<p>When any build tag is included, the agent will ONLY include that feature and nothing else.
+For example, if ONLY the <code class="docutils literal notranslate"><span class="pre">http</span></code> tag is provided, the SMB, TCP, and UDP clients will not be included.</p>
+<p>The following build tags are available:</p>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Build Tags</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tag</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>http</p></td>
+<td><p>Include ALL HTTP clients</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>http1</p></td>
+<td><p>Include Go’s built-in HTTP/1.1 client</p></td>
+<td><p>Used with the <code class="docutils literal notranslate"><span class="pre">-proto</span></code> flag’s <code class="docutils literal notranslate"><span class="pre">http</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">https</span></code> options</p></td>
+</tr>
+<tr class="row-even"><td><p>http2</p></td>
+<td><p>Include the HTTP/2 client</p></td>
+<td><p>Used with the <code class="docutils literal notranslate"><span class="pre">-proto</span></code> flag’s <code class="docutils literal notranslate"><span class="pre">http2</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">h2c</span></code> options</p></td>
+</tr>
+<tr class="row-odd"><td><p>http3</p></td>
+<td><p>Include the HTTP/3 UDP client</p></td>
+<td><p>Used with the <code class="docutils literal notranslate"><span class="pre">-proto</span></code> flag’s <code class="docutils literal notranslate"><span class="pre">http3</span></code> option</p></td>
+</tr>
+<tr class="row-even"><td><p>mythic</p></td>
+<td><p>Include the Mythic C2 client</p></td>
+<td><p>Used with the Mythic C2 Framework’s <a class="reference external" href="https://github.com/MythicC2Profiles/http">http</a> profile</p></td>
+</tr>
+<tr class="row-odd"><td><p>smb</p></td>
+<td><p>Include the SMB client</p></td>
+<td><p>Used with the <code class="docutils literal notranslate"><span class="pre">-proto</span></code> flag’s <code class="docutils literal notranslate"><span class="pre">smb-bind</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">smb-reverse</span></code> options</p></td>
+</tr>
+<tr class="row-even"><td><p>tcp</p></td>
+<td><p>Include the TCP client</p></td>
+<td><p>Used with the <code class="docutils literal notranslate"><span class="pre">-proto</span></code> flag’s <code class="docutils literal notranslate"><span class="pre">tcp-bind</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">tcp-reverse</span></code> options</p></td>
+</tr>
+<tr class="row-odd"><td><p>udp</p></td>
+<td><p>Include the UDP client</p></td>
+<td><p>Used with the <code class="docutils literal notranslate"><span class="pre">-proto</span></code> flag’s <code class="docutils literal notranslate"><span class="pre">udp-bind</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">udp-reverse</span></code> options</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="windows-agent">
 <h2>Windows Agent<a class="headerlink" href="#windows-agent" title="Link to this heading"></a></h2>
 <p>The Windows Merlin Agent executable is compiled as a GUI application instead of console application. The Merlin Agent
@@ -236,8 +304,8 @@ output, use the Makefile <code class="docutils literal notranslate"><span class=
 <h2>Cross-Compiling<a class="headerlink" href="#cross-compiling" title="Link to this heading"></a></h2>
 <p>The Merlin agent and server can be cross-compiled to any operating system or architecture.
 A list of golang supported operating systems and architectures can be found here: <a class="reference external" href="https://golang.org/doc/install/source#environment">https://golang.org/doc/install/source#environment</a></p>
-<table class="docutils align-default" id="id2">
-<caption><span class="caption-text">Supported Platforms</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-text">Supported Platforms</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>$GOOS</p></th>
 <th class="head"><p>$GOARCH</p></th>

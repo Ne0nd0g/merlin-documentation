@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 Use `sphinx-build --version` to determine the current version of sphinx in use
 
+## 2.2.0 - 2024-02-19
+
+### Added
+
+- Added Merlin Agent Go build tags section to the Custom Build page
+- Added Merlin Agent `-http-client` flag and associated `HTTPCLIENT` Makefile variable
+
 ## 2.1.0 - 2023-11-03
 
 ### Added

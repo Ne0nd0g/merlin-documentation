@@ -17,6 +17,8 @@ The following command line flags can be used when executing Merlin agent:
             A new line separated (e.g., \n) list of additional HTTP headers to use
       -host string
             HTTP Host header
+      -http-client string
+            The HTTP client to use for communication [go, winhttp] (default "go")
       -ja3 string
             JA3 signature string (not the MD5 hash). Overrides -proto flag
       -killdate string
@@ -90,6 +92,17 @@ host
 The ``-host`` flag is used to specify the HTTP *Host:* header when communicating with the server.
 This feature is predominately used for `Domain Fronting <https://attack.mitre.org/techniques/T1090/004/>`_.
 
+http-client
+===========
+
+The ``-http-client`` flag is used to specify the HTTP client that the Agent will use for communication.
+
+.. note::
+    Set the ``-proto`` flag to ``http`` or ``https` when using the ``winhttp`` client on Windows.
+
+* ``go`` is the default HTTP client from Go's standard library
+* ``winhttp`` is ONLY available on Windows and uses the `WinHTTP <https://docs.microsoft.com/en-us/windows/win32/winhttp/about-winhttp>`_ API
+
 ja3
 ===
 
@@ -151,7 +164,7 @@ Examples of some supported values are:
 * ``Hello360_Auto``
 * ``HelloQQ_Auto``
 
-A full list of options can be found in the ``u_common.go`` in the `utls library <https://github.com/refraction-networking/utls/tree/master>`_.
+A full list of options can be found in the ``u_common.go`` file in the `utls library <https://github.com/refraction-networking/utls/tree/master>`_.
 
 proto
 =====

@@ -35,6 +35,7 @@ View the :doc:`Listeners </cli/listeners>` page for additional information on sp
     AUTH, The method of Agent authentication to the server, Overrides the ``-auth`` flag
     HEADERS, Comma Separated list of HTTP headers to send with every HTTP request., Overrides the ``-headers`` flag
     HOST, HTTP Host header, Overrides the ``-host`` commandline flag
+    HTTPCLIENT, "The type of HTTP client (or driver) to use (e.g., go or winhttp)", Overrides the ``-http-client`` commandline flag
     JA3, JA3 signature string (not the MD5 hash), Overrides the ``-ja3`` commandline flag
     KILLDATE, "The date, as a Unix EPOCH timestamp, that the agent will quit running", Overrides the ``-killdate`` commandline flag
     LISTENER, The UUID of the listener that the peer-to-peer agent is configured to communicate with., Overrides the ``-listener`` flag
@@ -47,13 +48,39 @@ View the :doc:`Listeners </cli/listeners>` page for additional information on sp
     SECURE, Require TLS certificate validation for HTTP communications, Overrides the ``-secure`` commandline flag
     SKEW, "Amount of skew, or variance, between agent checkins", Overrides the ``-skew`` commandline flag
     SLEEP, "The amount of time the Agent will sleep between checkins Must use golang time notation (e.g., ``10s`` for ten seconds)", Overrides the ``-sleep`` command line flag
-    TRANSFORMS, Ordered CSV of transforms to construct a message with, Overrides the ``-transforms`` commandline flag.
+    TAGS, Comma separated list of Go build tags for compiling the agent, Overrides Go's ``-tags`` commandline flag
+    TRANSFORMS, Ordered CSV of transforms to construct a message with, Overrides the ``-transforms`` commandline flag
     URL, Full URL for agent to connect to (default "https://127.0.0.1:443"), Overrides the ``-url`` commandline flag
     USERAGENT, The HTTP User-Agent header string that Agent will use while sending traffic, Overrides the ``-useragent`` commandline flag
 
 An example of creating a new Linux HTTP agent that is using domain fronting through ``https://merlin.com/c2endpoint.php`` using a PSK of ``SecurePassword1``:
 
 ``make linux URL=https://merlin.com:443/c2endpoint.php HOST=myendpoint.azureedge.net PROTO=https PSK=SecurePassword1``
+
+Build Tags
+----------
+
+By default, the Merlin Agent is built with all available features and components compiled in.
+Build tags can be used to control what features are compiled into the agent to reduce the size of the binary or to
+restrict the agent's capabilities.
+
+When any build tag is included, the agent will ONLY include that feature and nothing else.
+For example, if ONLY the ``http`` tag is provided, the SMB, TCP, and UDP clients will not be included.
+
+The following build tags are available:
+
+.. csv-table:: Build Tags
+   :header: "Tag", "Description", "Notes"
+   :widths: auto
+
+    http, Include ALL HTTP clients,
+    http1, Include Go's built-in HTTP/1.1 client, Used with the ``-proto`` flag's ``http`` & ``https`` options
+    http2, Include the HTTP/2 client, Used with the ``-proto`` flag's ``http2`` & ``h2c`` options
+    http3, Include the HTTP/3 UDP client, Used with the ``-proto`` flag's ``http3`` option
+    mythic, Include the Mythic C2 client, Used with the Mythic C2 Framework's `http <https://github.com/MythicC2Profiles/http>`_ profile
+    smb, Include the SMB client, Used with the ``-proto`` flag's ``smb-bind`` & ``smb-reverse`` options
+    tcp, Include the TCP client, Used with the ``-proto`` flag's ``tcp-bind`` & ``tcp-reverse`` options
+    udp, Include the UDP client, Used with the ``-proto`` flag's ``udp-bind`` & ``udp-reverse`` options
 
 Windows Agent
 -------------

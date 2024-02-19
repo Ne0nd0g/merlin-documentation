@@ -1767,7 +1767,7 @@ Examples of some supported values are:
 * ``Hello360_Auto``
 * ``HelloQQ_Auto``
 
-A full list of options can be found in the ``u_common.go`` in the `utls library <https://github.com/refraction-networking/utls/tree/master>`_.
+A full list of options can be found in the ``u_common.go`` file in the `utls library <https://github.com/refraction-networking/utls/tree/master>`_.
 
 
 pipes

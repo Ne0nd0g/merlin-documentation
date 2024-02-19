@@ -61,6 +61,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#debug">debug</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#headers">headers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#host">host</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#http-client">http-client</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ja3">ja3</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#killdate">killdate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#listener">listener</a></li>
@@ -149,6 +150,8 @@
         A new line separated (e.g., \n) list of additional HTTP headers to use
   -host string
         HTTP Host header
+  -http-client string
+        The HTTP client to use for communication [go, winhttp] (default &quot;go&quot;)
   -ja3 string
         JA3 signature string (not the MD5 hash). Overrides -proto flag
   -killdate string
@@ -220,6 +223,18 @@ For example, <code class="docutils literal notranslate"><span class="pre">-heade
 <p>The <code class="docutils literal notranslate"><span class="pre">-host</span></code> flag is used to specify the HTTP <em>Host:</em> header when communicating with the server.
 This feature is predominately used for <a class="reference external" href="https://attack.mitre.org/techniques/T1090/004/">Domain Fronting</a>.</p>
 </section>
+<section id="http-client">
+<h2>http-client<a class="headerlink" href="#http-client" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">-http-client</span></code> flag is used to specify the HTTP client that the Agent will use for communication.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Set the <code class="docutils literal notranslate"><span class="pre">-proto</span></code> flag to <code class="docutils literal notranslate"><span class="pre">http</span></code> or <code class="docutils literal notranslate"><span class="pre">https`</span> <span class="pre">when</span> <span class="pre">using</span> <span class="pre">the</span> <span class="pre">``winhttp</span></code> client on Windows.</p>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">go</span></code> is the default HTTP client from Go’s standard library</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">winhttp</span></code> is ONLY available on Windows and uses the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/win32/winhttp/about-winhttp">WinHTTP</a> API</p></li>
+</ul>
+</section>
 <section id="ja3">
 <h2>ja3<a class="headerlink" href="#ja3" title="Link to this heading"></a></h2>
 <p><a class="reference external" href="https://engineering.salesforce.com/tls-fingerprinting-with-ja3-and-ja3s-247362855967">JA3 is a method for fingerprinting TLS clients on the wire</a>.
@@ -274,7 +289,7 @@ Examples of some supported values are:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">Hello360_Auto</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">HelloQQ_Auto</span></code></p></li>
 </ul>
-<p>A full list of options can be found in the <code class="docutils literal notranslate"><span class="pre">u_common.go</span></code> in the <a class="reference external" href="https://github.com/refraction-networking/utls/tree/master">utls library</a>.</p>
+<p>A full list of options can be found in the <code class="docutils literal notranslate"><span class="pre">u_common.go</span></code> file in the <a class="reference external" href="https://github.com/refraction-networking/utls/tree/master">utls library</a>.</p>
 </section>
 <section id="proto">
 <h2>proto<a class="headerlink" href="#proto" title="Link to this heading"></a></h2>
