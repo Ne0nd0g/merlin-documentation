@@ -22,6 +22,8 @@ Command Line Flags
             The address to listen on for client connections (default "127.0.0.1:50051")
       -debug
             Enable debug logging
+      -dotnetBin string
+            File path to the 'dotnet' executable used by the SharpGen module; defaults to 'dotnet' resolved from the server's PATH (default "dotnet")
       -extra
             Enable extra debug logging
       -password string
@@ -58,6 +60,20 @@ The ``debug`` flag enables the ``debug`` log level for the Merlin Server and wri
 
     {"time":"2023-10-17T14:43:27.333763628-04:00","level":"DEBUG","source":{"function":"github.com/Ne0nd0g/merlin/pkg/authenticators/opaque.(*Authenticator).Authenticate","file":"/merlin/pkg/authenticators/opaque/opaque.go","line":78},"msg":"Received OPAQUE message","OPAQUE type":1,"Agent":"6b25e714-93fb-45e6-85c8-38963efd09d9"}
     {"time":"2023-10-17T14:43:27.333886943-04:00","level":"DEBUG","source":{"function":"github.com/Ne0nd0g/merlin/pkg/authenticators/opaque.(*Authenticator).registrationInit","file":"/merlin/pkg/authenticators/opaque/opaque.go","line":128},"msg":"Received new agent OPAQUE user registration initialization from 6b25e714-93fb-45e6-85c8-38963efd09d9"}
+
+dotnetBin
+^^^^^^^^^
+
+.. note::
+    The default is ``dotnet``, resolved from the Merlin Server's ``PATH``
+
+The ``dotnetBin`` flag sets the file path to the ``dotnet`` executable the ``SharpGen`` module uses to compile C#.
+Set it when the .NET SDK is installed somewhere that is not on the Server's ``PATH`` (for example
+``$HOME/.dotnet/dotnet`` when installed with the ``dotnet-install.sh`` script).
+
+This is a Server-launch setting only; the ``dotnet`` executable path is intentionally **not** an operator-controllable
+module option, because allowing a remote operator to choose the executable is remotely exploitable (see security
+advisory ``GHSA-gmq6-43v4-9vrv``).
 
 extra
 ^^^^^
